@@ -48,18 +48,17 @@ public class CacheConfiguration {
             createCache(cm, com.pro.ynov.com.domain.User.class.getName());
             createCache(cm, com.pro.ynov.com.domain.Authority.class.getName());
             createCache(cm, com.pro.ynov.com.domain.User.class.getName() + ".authorities");
-            createCache(cm, com.pro.ynov.com.domain.Region.class.getName());
-            createCache(cm, com.pro.ynov.com.domain.Country.class.getName());
-            createCache(cm, com.pro.ynov.com.domain.Location.class.getName());
-            createCache(cm, com.pro.ynov.com.domain.Department.class.getName());
-            createCache(cm, com.pro.ynov.com.domain.Department.class.getName() + ".employees");
-            createCache(cm, com.pro.ynov.com.domain.Task.class.getName());
-            createCache(cm, com.pro.ynov.com.domain.Task.class.getName() + ".jobs");
-            createCache(cm, com.pro.ynov.com.domain.Employee.class.getName());
-            createCache(cm, com.pro.ynov.com.domain.Employee.class.getName() + ".jobs");
-            createCache(cm, com.pro.ynov.com.domain.Job.class.getName());
-            createCache(cm, com.pro.ynov.com.domain.Job.class.getName() + ".tasks");
-            createCache(cm, com.pro.ynov.com.domain.JobHistory.class.getName());
+            createCache(cm, com.pro.ynov.com.domain.Livre.class.getName());
+            createCache(cm, com.pro.ynov.com.domain.Livre.class.getName() + ".exemplaires");
+            createCache(cm, com.pro.ynov.com.domain.Livre.class.getName() + ".themes");
+            createCache(cm, com.pro.ynov.com.domain.Livre.class.getName() + ".auteurs");
+            createCache(cm, com.pro.ynov.com.domain.Auteur.class.getName());
+            createCache(cm, com.pro.ynov.com.domain.Auteur.class.getName() + ".livres");
+            createCache(cm, com.pro.ynov.com.domain.Emplacement.class.getName());
+            createCache(cm, com.pro.ynov.com.domain.Theme.class.getName());
+            createCache(cm, com.pro.ynov.com.domain.Theme.class.getName() + ".livres");
+            createCache(cm, com.pro.ynov.com.domain.Exemplaire.class.getName());
+            createCache(cm, com.pro.ynov.com.domain.Emprunt.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.pro.ynov.com.web.rest.UserResourceIT
--------------------------------------------------------------------------------
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.272 s - in com.pro.ynov.com.web.rest.UserResourceIT
