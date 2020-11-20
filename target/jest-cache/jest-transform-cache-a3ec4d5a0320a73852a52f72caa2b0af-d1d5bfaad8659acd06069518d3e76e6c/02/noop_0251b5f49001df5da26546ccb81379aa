@@ -1,0 +1,10 @@
+ec08cbd090eb788504d11003c07c00e6
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function noop() {}
+
+exports.noop = noop;

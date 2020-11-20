@@ -1,0 +1,14 @@
+5a56a1c8b30bd6a30c5530b3a45f8657
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var Observable_1 = require("../Observable");
+
+function isObservable(obj) {
+  return !!obj && (obj instanceof Observable_1.Observable || typeof obj.lift === 'function' && typeof obj.subscribe === 'function');
+}
+
+exports.isObservable = isObservable;

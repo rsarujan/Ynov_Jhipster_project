@@ -1,0 +1,12 @@
+348b49b8dd7b05873f2c2928a391e492
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function isPromise(value) {
+  return !!value && typeof value.subscribe !== 'function' && typeof value.then === 'function';
+}
+
+exports.isPromise = isPromise;

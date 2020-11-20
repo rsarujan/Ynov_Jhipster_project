@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TaskResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.web.rest</a> &gt; <span class="el_source">TaskResource.java</span></div><h1>TaskResource.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.web.rest;
+
+import com.pro.ynov.com.domain.Task;
+import com.pro.ynov.com.service.TaskService;
+import com.pro.ynov.com.web.rest.errors.BadRequestAlertException;
+
+import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * REST controller for managing {@link com.pro.ynov.com.domain.Task}.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+public class TaskResource {
+
+<span class="fc" id="L27">    private final Logger log = LoggerFactory.getLogger(TaskResource.class);</span>
+
+    private static final String ENTITY_NAME = &quot;task&quot;;
+
+    @Value(&quot;${jhipster.clientApp.name}&quot;)
+    private String applicationName;
+
+    private final TaskService taskService;
+
+<span class="fc" id="L36">    public TaskResource(TaskService taskService) {</span>
+<span class="fc" id="L37">        this.taskService = taskService;</span>
+<span class="fc" id="L38">    }</span>
+
+    /**
+     * {@code POST  /tasks} : Create a new task.
+     *
+     * @param task the task to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new task, or with status {@code 400 (Bad Request)} if the task has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping(&quot;/tasks&quot;)
+    public ResponseEntity&lt;Task&gt; createTask(@RequestBody Task task) throws URISyntaxException {
+<span class="fc" id="L49">        log.debug(&quot;REST request to save Task : {}&quot;, task);</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (task.getId() != null) {</span>
+<span class="fc" id="L51">            throw new BadRequestAlertException(&quot;A new task cannot already have an ID&quot;, ENTITY_NAME, &quot;idexists&quot;);</span>
+        }
+<span class="fc" id="L53">        Task result = taskService.save(task);</span>
+<span class="fc" id="L54">        return ResponseEntity.created(new URI(&quot;/api/tasks/&quot; + result.getId()))</span>
+<span class="fc" id="L55">            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))</span>
+<span class="fc" id="L56">            .body(result);</span>
+    }
+
+    /**
+     * {@code PUT  /tasks} : Updates an existing task.
+     *
+     * @param task the task to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated task,
+     * or with status {@code 400 (Bad Request)} if the task is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the task couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PutMapping(&quot;/tasks&quot;)
+    public ResponseEntity&lt;Task&gt; updateTask(@RequestBody Task task) throws URISyntaxException {
+<span class="fc" id="L70">        log.debug(&quot;REST request to update Task : {}&quot;, task);</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (task.getId() == null) {</span>
+<span class="fc" id="L72">            throw new BadRequestAlertException(&quot;Invalid id&quot;, ENTITY_NAME, &quot;idnull&quot;);</span>
+        }
+<span class="fc" id="L74">        Task result = taskService.save(task);</span>
+<span class="fc" id="L75">        return ResponseEntity.ok()</span>
+<span class="fc" id="L76">            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, task.getId().toString()))</span>
+<span class="fc" id="L77">            .body(result);</span>
+    }
+
+    /**
+     * {@code GET  /tasks} : get all the tasks.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of tasks in body.
+     */
+    @GetMapping(&quot;/tasks&quot;)
+    public List&lt;Task&gt; getAllTasks() {
+<span class="fc" id="L87">        log.debug(&quot;REST request to get all Tasks&quot;);</span>
+<span class="fc" id="L88">        return taskService.findAll();</span>
+    }
+
+    /**
+     * {@code GET  /tasks/:id} : get the &quot;id&quot; task.
+     *
+     * @param id the id of the task to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the task, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping(&quot;/tasks/{id}&quot;)
+    public ResponseEntity&lt;Task&gt; getTask(@PathVariable Long id) {
+<span class="fc" id="L99">        log.debug(&quot;REST request to get Task : {}&quot;, id);</span>
+<span class="fc" id="L100">        Optional&lt;Task&gt; task = taskService.findOne(id);</span>
+<span class="fc" id="L101">        return ResponseUtil.wrapOrNotFound(task);</span>
+    }
+
+    /**
+     * {@code DELETE  /tasks/:id} : delete the &quot;id&quot; task.
+     *
+     * @param id the id of the task to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping(&quot;/tasks/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteTask(@PathVariable Long id) {
+<span class="fc" id="L112">        log.debug(&quot;REST request to delete Task : {}&quot;, id);</span>
+<span class="fc" id="L113">        taskService.delete(id);</span>
+<span class="fc" id="L114">        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

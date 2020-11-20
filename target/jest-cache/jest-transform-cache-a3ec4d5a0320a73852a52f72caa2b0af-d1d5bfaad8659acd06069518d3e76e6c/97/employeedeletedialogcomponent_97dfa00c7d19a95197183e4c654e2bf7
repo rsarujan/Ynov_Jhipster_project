@@ -1,0 +1,413 @@
+cb88c412ddfe6a09d4476d1f7b572a30
+"use strict";
+
+/* istanbul ignore next */
+function cov_1toyssel9d() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/employee/employee-delete-dialog.component.ts";
+  var hash = "6eae5c7fabf2bfd3eda2b6f390edf6211521993c";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/employee/employee-delete-dialog.component.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 47
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 23
+        },
+        end: {
+          line: 6,
+          column: 60
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 22
+        },
+        end: {
+          line: 7,
+          column: 44
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 27
+        },
+        end: {
+          line: 8,
+          column: 56
+        }
+      },
+      "7": {
+        start: {
+          line: 9,
+          column: 36
+        },
+        end: {
+          line: 24,
+          column: 1
+        }
+      },
+      "8": {
+        start: {
+          line: 11,
+          column: 8
+        },
+        end: {
+          line: 11,
+          column: 47
+        }
+      },
+      "9": {
+        start: {
+          line: 12,
+          column: 8
+        },
+        end: {
+          line: 12,
+          column: 39
+        }
+      },
+      "10": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 13,
+          column: 41
+        }
+      },
+      "11": {
+        start: {
+          line: 16,
+          column: 8
+        },
+        end: {
+          line: 16,
+          column: 35
+        }
+      },
+      "12": {
+        start: {
+          line: 19,
+          column: 8
+        },
+        end: {
+          line: 22,
+          column: 11
+        }
+      },
+      "13": {
+        start: {
+          line: 20,
+          column: 12
+        },
+        end: {
+          line: 20,
+          column: 68
+        }
+      },
+      "14": {
+        start: {
+          line: 21,
+          column: 12
+        },
+        end: {
+          line: 21,
+          column: 37
+        }
+      },
+      "15": {
+        start: {
+          line: 25,
+          column: 0
+        },
+        end: {
+          line: 30,
+          column: 34
+        }
+      },
+      "16": {
+        start: {
+          line: 31,
+          column: 0
+        },
+        end: {
+          line: 31,
+          column: 70
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 10,
+            column: 4
+          },
+          end: {
+            line: 10,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 10,
+            column: 60
+          },
+          end: {
+            line: 14,
+            column: 5
+          }
+        },
+        line: 10
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 15,
+            column: 4
+          },
+          end: {
+            line: 15,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 15,
+            column: 13
+          },
+          end: {
+            line: 17,
+            column: 5
+          }
+        },
+        line: 15
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 18,
+            column: 4
+          },
+          end: {
+            line: 18,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 18,
+            column: 22
+          },
+          end: {
+            line: 23,
+            column: 5
+          }
+        },
+        line: 18
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 19,
+            column: 50
+          },
+          end: {
+            line: 19,
+            column: 51
+          }
+        },
+        loc: {
+          start: {
+            line: 19,
+            column: 56
+          },
+          end: {
+            line: 22,
+            column: 9
+          }
+        },
+        line: 19
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/employee/employee-delete-dialog.component.ts",
+      mappings: ";;;;AAAA,wCAA0C;AAC1C,6DAA4D;AAC5D,6CAA8C;AAG9C,yDAAqD;AAKrD,IAAa,6BAA6B,GAA1C,MAAa,6BAA6B;IAGxC,YAAsB,eAAgC,EAAS,WAA2B,EAAY,YAA6B;QAA7G,oBAAe,GAAf,eAAe,CAAiB;QAAS,gBAAW,GAAX,WAAW,CAAgB;QAAY,iBAAY,GAAZ,YAAY,CAAiB;IAAG,CAAC;IAEvI,MAAM;QACJ,IAAI,CAAC,WAAW,CAAC,OAAO,EAAE,CAAC;IAC7B,CAAC;IAED,aAAa,CAAC,EAAU;QACtB,IAAI,CAAC,eAAe,CAAC,MAAM,CAAC,EAAE,CAAC,CAAC,SAAS,CAAC,GAAG,EAAE;YAC7C,IAAI,CAAC,YAAY,CAAC,SAAS,CAAC,0BAA0B,CAAC,CAAC;YACxD,IAAI,CAAC,WAAW,CAAC,KAAK,EAAE,CAAC;QAC3B,CAAC,CAAC,CAAC;IACL,CAAC;CACF,CAAA;AAfY,6BAA6B;IAHzC,gBAAS,CAAC;QACT,kBAAa,yCAAyC,CAAA;KACvD,CAAC;6CAIuC,kCAAe,EAAsB,6BAAc,EAA0B,6BAAe;GAHxH,6BAA6B,CAezC;AAfY,sEAA6B",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/employee/employee-delete-dialog.component.ts"],
+      sourcesContent: ["import { Component } from '@angular/core';\nimport { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';\nimport { JhiEventManager } from 'ng-jhipster';\n\nimport { IEmployee } from 'app/shared/model/employee.model';\nimport { EmployeeService } from './employee.service';\n\n@Component({\n  templateUrl: './employee-delete-dialog.component.html',\n})\nexport class EmployeeDeleteDialogComponent {\n  employee?: IEmployee;\n\n  constructor(protected employeeService: EmployeeService, public activeModal: NgbActiveModal, protected eventManager: JhiEventManager) {}\n\n  cancel(): void {\n    this.activeModal.dismiss();\n  }\n\n  confirmDelete(id: number): void {\n    this.employeeService.delete(id).subscribe(() => {\n      this.eventManager.broadcast('employeeListModification');\n      this.activeModal.close();\n    });\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "6eae5c7fabf2bfd3eda2b6f390edf6211521993c"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1toyssel9d = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1toyssel9d();
+cov_1toyssel9d().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1toyssel9d().s[1]++;
+exports.EmployeeDeleteDialogComponent = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_1toyssel9d().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_1toyssel9d().s[3]++, require("@angular/core"));
+const ng_bootstrap_1 =
+/* istanbul ignore next */
+(cov_1toyssel9d().s[4]++, require("@ng-bootstrap/ng-bootstrap"));
+const ng_jhipster_1 =
+/* istanbul ignore next */
+(cov_1toyssel9d().s[5]++, require("ng-jhipster"));
+const employee_service_1 =
+/* istanbul ignore next */
+(cov_1toyssel9d().s[6]++, require("./employee.service"));
+
+/* istanbul ignore next */
+cov_1toyssel9d().s[7]++;
+let EmployeeDeleteDialogComponent = class EmployeeDeleteDialogComponent {
+  constructor(employeeService, activeModal, eventManager) {
+    /* istanbul ignore next */
+    cov_1toyssel9d().f[0]++;
+    cov_1toyssel9d().s[8]++;
+    this.employeeService = employeeService;
+
+    /* istanbul ignore next */
+    cov_1toyssel9d().s[9]++;
+    this.activeModal = activeModal;
+
+    /* istanbul ignore next */
+    cov_1toyssel9d().s[10]++;
+    this.eventManager = eventManager;
+  }
+
+  cancel() {
+    /* istanbul ignore next */
+    cov_1toyssel9d().f[1]++;
+    cov_1toyssel9d().s[11]++;
+    this.activeModal.dismiss();
+  }
+
+  confirmDelete(id) {
+    /* istanbul ignore next */
+    cov_1toyssel9d().f[2]++;
+    cov_1toyssel9d().s[12]++;
+    this.employeeService.delete(id).subscribe(() => {
+      /* istanbul ignore next */
+      cov_1toyssel9d().f[3]++;
+      cov_1toyssel9d().s[13]++;
+      this.eventManager.broadcast('employeeListModification');
+
+      /* istanbul ignore next */
+      cov_1toyssel9d().s[14]++;
+      this.activeModal.close();
+    });
+  }
+
+};
+
+/* istanbul ignore next */
+cov_1toyssel9d().s[15]++;
+EmployeeDeleteDialogComponent = tslib_1.__decorate([core_1.Component({
+  template: require('./employee-delete-dialog.component.html')
+}), tslib_1.__metadata("design:paramtypes", [employee_service_1.EmployeeService, ng_bootstrap_1.NgbActiveModal, ng_jhipster_1.JhiEventManager])], EmployeeDeleteDialogComponent);
+
+/* istanbul ignore next */
+cov_1toyssel9d().s[16]++;
+exports.EmployeeDeleteDialogComponent = EmployeeDeleteDialogComponent;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL2VudGl0aWVzL2VtcGxveWVlL2VtcGxveWVlLWRlbGV0ZS1kaWFsb2cuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBZ0JROzs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQWhCUixNQUFBLE1BQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsQ0FBQTtBQUNBLE1BQUEsY0FBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLDRCQUFBLENBQUEsQ0FBQTtBQUNBLE1BQUEsYUFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQSxDQUFBO0FBR0EsTUFBQSxrQkFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLG9CQUFBLENBQUEsQ0FBQTs7OztBQUtBLElBQWEsNkJBQTZCLEdBQTFDLE1BQWEsNkJBQWIsQ0FBMEM7QUFHeEMsRUFBQSxXQUFBLENBQXNCLGVBQXRCLEVBQStELFdBQS9ELEVBQXNHLFlBQXRHLEVBQW1JO0FBQUE7QUFBQTtBQUFBO0FBQTdHLFNBQUEsZUFBQSxHQUFBLGVBQUE7O0FBQTZHO0FBQUE7QUFBcEUsU0FBQSxXQUFBLEdBQUEsV0FBQTs7QUFBb0U7QUFBQTtBQUE3QixTQUFBLFlBQUEsR0FBQSxZQUFBO0FBQWlDOztBQUV2SSxFQUFBLE1BQU0sR0FBQTtBQUFBO0FBQUE7QUFBQTtBQUNKLFNBQUssV0FBTCxDQUFpQixPQUFqQjtBQUNEOztBQUVELEVBQUEsYUFBYSxDQUFDLEVBQUQsRUFBVztBQUFBO0FBQUE7QUFBQTtBQUN0QixTQUFLLGVBQUwsQ0FBcUIsTUFBckIsQ0FBNEIsRUFBNUIsRUFBZ0MsU0FBaEMsQ0FBMEMsTUFBSztBQUFBO0FBQUE7QUFBQTtBQUM3QyxXQUFLLFlBQUwsQ0FBa0IsU0FBbEIsQ0FBNEIsMEJBQTVCOztBQUQ2QztBQUFBO0FBRTdDLFdBQUssV0FBTCxDQUFpQixLQUFqQjtBQUNELEtBSEQ7QUFJRDs7QUFkdUMsQ0FBMUM7Ozs7QUFBYSw2QkFBNkIsR0FBQSxPQUFBLENBQUEsVUFBQSxDQUFBLENBSHpDLE1BQUEsQ0FBQSxTQUFBLENBQVU7QUFDVCxFQUFBLFFBQUEsRUFBQSxPQUFBLENBQWEseUNBQWI7QUFEUyxDQUFWLENBR3lDLEUseUNBR0Qsa0JBQUEsQ0FBQSxlLEVBQXFDLGNBQUEsQ0FBQSxjLEVBQXdDLGFBQUEsQ0FBQSxlLEVBSDVFLENBQUEsRUFBN0IsNkJBQTZCLENBQTdCOzs7O0FBQUEsT0FBQSxDQUFBLDZCQUFBLEdBQUEsNkJBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IE5nYkFjdGl2ZU1vZGFsIH0gZnJvbSAnQG5nLWJvb3RzdHJhcC9uZy1ib290c3RyYXAnO1xuaW1wb3J0IHsgSmhpRXZlbnRNYW5hZ2VyIH0gZnJvbSAnbmctamhpcHN0ZXInO1xuXG5pbXBvcnQgeyBJRW1wbG95ZWUgfSBmcm9tICdhcHAvc2hhcmVkL21vZGVsL2VtcGxveWVlLm1vZGVsJztcbmltcG9ydCB7IEVtcGxveWVlU2VydmljZSB9IGZyb20gJy4vZW1wbG95ZWUuc2VydmljZSc7XG5cbkBDb21wb25lbnQoe1xuICB0ZW1wbGF0ZVVybDogJy4vZW1wbG95ZWUtZGVsZXRlLWRpYWxvZy5jb21wb25lbnQuaHRtbCcsXG59KVxuZXhwb3J0IGNsYXNzIEVtcGxveWVlRGVsZXRlRGlhbG9nQ29tcG9uZW50IHtcbiAgZW1wbG95ZWU/OiBJRW1wbG95ZWU7XG5cbiAgY29uc3RydWN0b3IocHJvdGVjdGVkIGVtcGxveWVlU2VydmljZTogRW1wbG95ZWVTZXJ2aWNlLCBwdWJsaWMgYWN0aXZlTW9kYWw6IE5nYkFjdGl2ZU1vZGFsLCBwcm90ZWN0ZWQgZXZlbnRNYW5hZ2VyOiBKaGlFdmVudE1hbmFnZXIpIHt9XG5cbiAgY2FuY2VsKCk6IHZvaWQge1xuICAgIHRoaXMuYWN0aXZlTW9kYWwuZGlzbWlzcygpO1xuICB9XG5cbiAgY29uZmlybURlbGV0ZShpZDogbnVtYmVyKTogdm9pZCB7XG4gICAgdGhpcy5lbXBsb3llZVNlcnZpY2UuZGVsZXRlKGlkKS5zdWJzY3JpYmUoKCkgPT4ge1xuICAgICAgdGhpcy5ldmVudE1hbmFnZXIuYnJvYWRjYXN0KCdlbXBsb3llZUxpc3RNb2RpZmljYXRpb24nKTtcbiAgICAgIHRoaXMuYWN0aXZlTW9kYWwuY2xvc2UoKTtcbiAgICB9KTtcbiAgfVxufVxuIl19

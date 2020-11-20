@@ -8,6 +8,45 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Pro Biblio</name>
+	
+	<developers>
+		<developer>
+			<name>Clémence</name>
+			<email>clement.palau@ynov.com</email>
+			<roles>
+				<role></role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Sarujan</name>
+			<email>sarujan.rajaratnam@ynov.com</email>
+			<roles>
+				<role>Création du projet sous Jhipster</role>
+				<role>Deployer le projet sous Heroku</role>
+				<role>Déployer le code sous Sonar</role>
+			</roles>
+		</developer>
+	</developers>
+	
+	<contributors>
+		<contributor>
+			<name>M. BILONG</name>
+			<email>j.bilong@gmail.comm</email>
+			<roles>
+				<role>Enseignant</role>
+				<role>Aider sur le projet</role>
+				<role>Mettre une note</role>
+			</roles>
+		</contributor>
+	</contributors>
+
+	<scm>
+		<connection>scm:git:git@github.com:rsarujan/Ynov_TEST_Projet.git</connection>
+		<developerConnection>scm:git:git@github.com:rsarujan/Ynov_TEST_Projet.git</developerConnection>
+		<url>scm:git:git@github.com:rsarujan/Ynov_TEST_Projet.git</url>
+		<tag></tag>
+	</scm>
+
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->

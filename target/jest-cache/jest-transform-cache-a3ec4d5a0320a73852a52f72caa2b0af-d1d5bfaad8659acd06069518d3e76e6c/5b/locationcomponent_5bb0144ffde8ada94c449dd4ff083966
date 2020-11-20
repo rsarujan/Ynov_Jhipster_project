@@ -1,0 +1,51 @@
+341119d0008c9e32bbae17912c5e6d7e
+/* istanbul ignore next */
+function cov_1jzaf34pr1() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/location/location.component.html";
+  var hash = "92b10ef56b4f74c22033839b7f1aac482ca70ad8";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/location/location.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 3961
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "92b10ef56b4f74c22033839b7f1aac482ca70ad8"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1jzaf34pr1 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1jzaf34pr1();
+cov_1jzaf34pr1().s[0]++;
+module.exports = "<div>\n    <h2 id=\"page-heading\">\n        <span jhiTranslate=\"proBiblioApp.location.home.title\">Locations</span>\n\n        <button id=\"jh-create-entity\" class=\"btn btn-primary float-right jh-create-entity create-location\" [routerLink]=\"['/location/new']\">\n            <fa-icon icon=\"plus\"></fa-icon>\n            <span  jhiTranslate=\"proBiblioApp.location.home.createLabel\">\n            Create a new Location\n            </span>\n        </button>\n    </h2>\n\n    <jhi-alert-error></jhi-alert-error>\n\n    <jhi-alert></jhi-alert>\n\n    <div class=\"alert alert-warning\" id=\"no-result\" *ngIf=\"locations?.length === 0\">\n        <span jhiTranslate=\"proBiblioApp.location.home.notFound\">No locations found</span>\n    </div>\n\n    <div class=\"table-responsive\" id=\"entities\" *ngIf=\"locations && locations.length > 0\">\n        <table class=\"table table-striped\" aria-describedby=\"page-heading\">\n            <thead>\n                <tr>\n                    <th scope=\"col\" ><span jhiTranslate=\"global.field.id\">ID</span></th>\n                    <th scope=\"col\" ><span jhiTranslate=\"proBiblioApp.location.streetAddress\">Street Address</span></th>\n                    <th scope=\"col\" ><span jhiTranslate=\"proBiblioApp.location.postalCode\">Postal Code</span></th>\n                    <th scope=\"col\" ><span jhiTranslate=\"proBiblioApp.location.city\">City</span></th>\n                    <th scope=\"col\" ><span jhiTranslate=\"proBiblioApp.location.stateProvince\">State Province</span></th>\n                    <th scope=\"col\" ><span jhiTranslate=\"proBiblioApp.location.country\">Country</span></th>\n                    <th scope=\"col\"></th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr *ngFor=\"let location of locations ;trackBy: trackId\">\n                    <td><a [routerLink]=\"['/location', location.id, 'view']\">{{ location.id }}</a></td>\n                    <td>{{ location.streetAddress }}</td>\n                    <td>{{ location.postalCode }}</td>\n                    <td>{{ location.city }}</td>\n                    <td>{{ location.stateProvince }}</td>\n                    <td>\n                        <div *ngIf=\"location.country\">\n                            <a [routerLink]=\"['/country', location.country?.id, 'view']\" >{{ location.country?.id }}</a>\n                        </div>\n                    </td>\n                    <td class=\"text-right\">\n                        <div class=\"btn-group\">\n                            <button type=\"submit\"\n                                    [routerLink]=\"['/location', location.id, 'view']\"\n                                    class=\"btn btn-info btn-sm\">\n                                <fa-icon icon=\"eye\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                            </button>\n\n                            <button type=\"submit\"\n                                    [routerLink]=\"['/location', location.id, 'edit']\"\n                                    class=\"btn btn-primary btn-sm\">\n                                <fa-icon icon=\"pencil-alt\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                            </button>\n\n                            <button type=\"submit\" (click)=\"delete(location)\"\n                                    class=\"btn btn-danger btn-sm\">\n                                <fa-icon icon=\"times\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                            </button>\n                        </div>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n";

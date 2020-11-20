@@ -1,0 +1,2 @@
+eead78df803102499646fc830b13372a
+module.exports = require('./build/setupJest.js');

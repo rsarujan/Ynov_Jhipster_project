@@ -1,0 +1,51 @@
+eff26dc0eed5d442fc3662d24a8c3113
+/* istanbul ignore next */
+function cov_7o1avzj14() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/employee/employee.component.html";
+  var hash = "28cd5ed0383c612111aeca5d8b55078bbe8e2a9d";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/employee/employee.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 5676
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "28cd5ed0383c612111aeca5d8b55078bbe8e2a9d"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_7o1avzj14 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_7o1avzj14();
+cov_7o1avzj14().s[0]++;
+module.exports = "<div>\n    <h2 id=\"page-heading\">\n        <span jhiTranslate=\"proBiblioApp.employee.home.title\">Employees</span>\n\n        <button id=\"jh-create-entity\" class=\"btn btn-primary float-right jh-create-entity create-employee\" [routerLink]=\"['/employee/new']\">\n            <fa-icon icon=\"plus\"></fa-icon>\n            <span  jhiTranslate=\"proBiblioApp.employee.home.createLabel\">\n            Create a new Employee\n            </span>\n        </button>\n    </h2>\n\n    <jhi-alert-error></jhi-alert-error>\n\n    <jhi-alert></jhi-alert>\n\n    <div class=\"alert alert-warning\" id=\"no-result\" *ngIf=\"employees?.length === 0\">\n        <span jhiTranslate=\"proBiblioApp.employee.home.notFound\">No employees found</span>\n    </div>\n\n    <div class=\"table-responsive\" id=\"entities\" *ngIf=\"employees && employees.length > 0\">\n        <table class=\"table table-striped\" aria-describedby=\"page-heading\">\n            <thead>\n                <tr jhiSort [(predicate)]=\"predicate\" [(ascending)]=\"ascending\" [callback]=\"reset.bind(this)\">\n                    <th scope=\"col\"  jhiSortBy=\"id\"><span jhiTranslate=\"global.field.id\">ID</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"firstName\"><span jhiTranslate=\"proBiblioApp.employee.firstName\">First Name</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"lastName\"><span jhiTranslate=\"proBiblioApp.employee.lastName\">Last Name</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"email\"><span jhiTranslate=\"proBiblioApp.employee.email\">Email</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"phoneNumber\"><span jhiTranslate=\"proBiblioApp.employee.phoneNumber\">Phone Number</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"hireDate\"><span jhiTranslate=\"proBiblioApp.employee.hireDate\">Hire Date</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"salary\"><span jhiTranslate=\"proBiblioApp.employee.salary\">Salary</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"commissionPct\"><span jhiTranslate=\"proBiblioApp.employee.commissionPct\">Commission Pct</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"manager.id\"><span jhiTranslate=\"proBiblioApp.employee.manager\">Manager</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"department.id\"><span jhiTranslate=\"proBiblioApp.employee.department\">Department</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"></th>\n                </tr>\n            </thead>\n            <tbody infinite-scroll (scrolled)=\"loadPage(page + 1)\" [infiniteScrollDisabled]=\"page >= links['last']\" [infiniteScrollDistance]=\"0\">\n                <tr *ngFor=\"let employee of employees ;trackBy: trackId\">\n                    <td><a [routerLink]=\"['/employee', employee.id, 'view']\">{{ employee.id }}</a></td>\n                    <td>{{ employee.firstName }}</td>\n                    <td>{{ employee.lastName }}</td>\n                    <td>{{ employee.email }}</td>\n                    <td>{{ employee.phoneNumber }}</td>\n                    <td>{{ employee.hireDate | date:'medium' }}</td>\n                    <td>{{ employee.salary }}</td>\n                    <td>{{ employee.commissionPct }}</td>\n                    <td>\n                        <div *ngIf=\"employee.manager\">\n                            <a [routerLink]=\"['/employee', employee.manager?.id, 'view']\" >{{ employee.manager?.id }}</a>\n                        </div>\n                    </td>\n                    <td>\n                        <div *ngIf=\"employee.department\">\n                            <a [routerLink]=\"['/department', employee.department?.id, 'view']\" >{{ employee.department?.id }}</a>\n                        </div>\n                    </td>\n                    <td class=\"text-right\">\n                        <div class=\"btn-group\">\n                            <button type=\"submit\"\n                                    [routerLink]=\"['/employee', employee.id, 'view']\"\n                                    class=\"btn btn-info btn-sm\">\n                                <fa-icon icon=\"eye\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                            </button>\n\n                            <button type=\"submit\"\n                                    [routerLink]=\"['/employee', employee.id, 'edit']\"\n                                    class=\"btn btn-primary btn-sm\">\n                                <fa-icon icon=\"pencil-alt\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                            </button>\n\n                            <button type=\"submit\" (click)=\"delete(employee)\"\n                                    class=\"btn btn-danger btn-sm\">\n                                <fa-icon icon=\"times\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                            </button>\n                        </div>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n";

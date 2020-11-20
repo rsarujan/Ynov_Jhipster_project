@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pro.ynov.com.web.rest.RegionResourceIT
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 s - in com.pro.ynov.com.web.rest.RegionResourceIT

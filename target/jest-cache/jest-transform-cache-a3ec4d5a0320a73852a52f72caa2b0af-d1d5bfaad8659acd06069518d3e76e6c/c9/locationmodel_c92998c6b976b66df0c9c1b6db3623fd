@@ -1,0 +1,216 @@
+63ca7cde0ab5e0d340a92f3f73be6f57
+"use strict";
+
+/* istanbul ignore next */
+function cov_tdaadxbng() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/shared/model/location.model.ts";
+  var hash = "0d9176e7e14619627e483350a1c9c9ac7c75d280";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/shared/model/location.model.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 26
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 8
+        },
+        end: {
+          line: 6,
+          column: 21
+        }
+      },
+      "3": {
+        start: {
+          line: 7,
+          column: 8
+        },
+        end: {
+          line: 7,
+          column: 43
+        }
+      },
+      "4": {
+        start: {
+          line: 8,
+          column: 8
+        },
+        end: {
+          line: 8,
+          column: 37
+        }
+      },
+      "5": {
+        start: {
+          line: 9,
+          column: 8
+        },
+        end: {
+          line: 9,
+          column: 25
+        }
+      },
+      "6": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 43
+        }
+      },
+      "7": {
+        start: {
+          line: 11,
+          column: 8
+        },
+        end: {
+          line: 11,
+          column: 31
+        }
+      },
+      "8": {
+        start: {
+          line: 14,
+          column: 0
+        },
+        end: {
+          line: 14,
+          column: 28
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 4
+          },
+          end: {
+            line: 5,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 77
+          },
+          end: {
+            line: 12,
+            column: 5
+          }
+        },
+        line: 5
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/shared/model/location.model.ts",
+      mappings: ";;;AAWA,MAAa,QAAQ;IACnB,YACS,EAAW,EACX,aAAsB,EACtB,UAAmB,EACnB,IAAa,EACb,aAAsB,EACtB,OAAkB;QALlB,OAAE,GAAF,EAAE,CAAS;QACX,kBAAa,GAAb,aAAa,CAAS;QACtB,eAAU,GAAV,UAAU,CAAS;QACnB,SAAI,GAAJ,IAAI,CAAS;QACb,kBAAa,GAAb,aAAa,CAAS;QACtB,YAAO,GAAP,OAAO,CAAW;IACxB,CAAC;CACL;AATD,4BASC",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/shared/model/location.model.ts"],
+      sourcesContent: ["import { ICountry } from 'app/shared/model/country.model';\n\nexport interface ILocation {\n  id?: number;\n  streetAddress?: string;\n  postalCode?: string;\n  city?: string;\n  stateProvince?: string;\n  country?: ICountry;\n}\n\nexport class Location implements ILocation {\n  constructor(\n    public id?: number,\n    public streetAddress?: string,\n    public postalCode?: string,\n    public city?: string,\n    public stateProvince?: string,\n    public country?: ICountry\n  ) {}\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "0d9176e7e14619627e483350a1c9c9ac7c75d280"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_tdaadxbng = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_tdaadxbng();
+cov_tdaadxbng().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_tdaadxbng().s[1]++;
+exports.Location = void 0;
+
+class Location {
+  constructor(id, streetAddress, postalCode, city, stateProvince, country) {
+    /* istanbul ignore next */
+    cov_tdaadxbng().f[0]++;
+    cov_tdaadxbng().s[2]++;
+    this.id = id;
+
+    /* istanbul ignore next */
+    cov_tdaadxbng().s[3]++;
+    this.streetAddress = streetAddress;
+
+    /* istanbul ignore next */
+    cov_tdaadxbng().s[4]++;
+    this.postalCode = postalCode;
+
+    /* istanbul ignore next */
+    cov_tdaadxbng().s[5]++;
+    this.city = city;
+
+    /* istanbul ignore next */
+    cov_tdaadxbng().s[6]++;
+    this.stateProvince = stateProvince;
+
+    /* istanbul ignore next */
+    cov_tdaadxbng().s[7]++;
+    this.country = country;
+  }
+
+}
+
+/* istanbul ignore next */
+cov_tdaadxbng().s[8]++;
+exports.Location = Location;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL3NoYXJlZC9tb2RlbC9sb2NhdGlvbi5tb2RlbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBV0EsTUFBYSxRQUFiLENBQXFCO0FBQ25CLEVBQUEsV0FBQSxDQUNTLEVBRFQsRUFFUyxhQUZULEVBR1MsVUFIVCxFQUlTLElBSlQsRUFLUyxhQUxULEVBTVMsT0FOVCxFQU0yQjtBQUFBO0FBQUE7QUFBQTtBQUxsQixTQUFBLEVBQUEsR0FBQSxFQUFBOztBQUtrQjtBQUFBO0FBSmxCLFNBQUEsYUFBQSxHQUFBLGFBQUE7O0FBSWtCO0FBQUE7QUFIbEIsU0FBQSxVQUFBLEdBQUEsVUFBQTs7QUFHa0I7QUFBQTtBQUZsQixTQUFBLElBQUEsR0FBQSxJQUFBOztBQUVrQjtBQUFBO0FBRGxCLFNBQUEsYUFBQSxHQUFBLGFBQUE7O0FBQ2tCO0FBQUE7QUFBbEIsU0FBQSxPQUFBLEdBQUEsT0FBQTtBQUNMOztBQVJlOzs7O0FBQXJCLE9BQUEsQ0FBQSxRQUFBLEdBQUEsUUFBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IElDb3VudHJ5IH0gZnJvbSAnYXBwL3NoYXJlZC9tb2RlbC9jb3VudHJ5Lm1vZGVsJztcblxuZXhwb3J0IGludGVyZmFjZSBJTG9jYXRpb24ge1xuICBpZD86IG51bWJlcjtcbiAgc3RyZWV0QWRkcmVzcz86IHN0cmluZztcbiAgcG9zdGFsQ29kZT86IHN0cmluZztcbiAgY2l0eT86IHN0cmluZztcbiAgc3RhdGVQcm92aW5jZT86IHN0cmluZztcbiAgY291bnRyeT86IElDb3VudHJ5O1xufVxuXG5leHBvcnQgY2xhc3MgTG9jYXRpb24gaW1wbGVtZW50cyBJTG9jYXRpb24ge1xuICBjb25zdHJ1Y3RvcihcbiAgICBwdWJsaWMgaWQ/OiBudW1iZXIsXG4gICAgcHVibGljIHN0cmVldEFkZHJlc3M/OiBzdHJpbmcsXG4gICAgcHVibGljIHBvc3RhbENvZGU/OiBzdHJpbmcsXG4gICAgcHVibGljIGNpdHk/OiBzdHJpbmcsXG4gICAgcHVibGljIHN0YXRlUHJvdmluY2U/OiBzdHJpbmcsXG4gICAgcHVibGljIGNvdW50cnk/OiBJQ291bnRyeVxuICApIHt9XG59XG4iXX0=

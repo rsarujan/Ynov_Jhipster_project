@@ -1,0 +1,51 @@
+41dfcd8ed420b14c8f7a156ba44408c9
+/* istanbul ignore next */
+function cov_1ius5hcv96() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/department/department-update.component.html";
+  var hash = "a9503a3eed5043ee13ca24eebbbe705351f1fe4e";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/department/department-update.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 2936
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "a9503a3eed5043ee13ca24eebbbe705351f1fe4e"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1ius5hcv96 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1ius5hcv96();
+cov_1ius5hcv96().s[0]++;
+module.exports = "<div class=\"row justify-content-center\">\n    <div class=\"col-8\">\n        <form name=\"editForm\" role=\"form\" novalidate (ngSubmit)=\"save()\" [formGroup]=\"editForm\">\n            <h2 id=\"jhi-department-heading\" jhiTranslate=\"proBiblioApp.department.home.createOrEditLabel\">Create or edit a Department</h2>\n\n            <div>\n                <jhi-alert-error></jhi-alert-error>\n\n                <div class=\"form-group\" [hidden]=\"!editForm.get('id')!.value\">\n                    <label for=\"id\" jhiTranslate=\"global.field.id\">ID</label>\n                    <input type=\"text\" class=\"form-control\" id=\"id\" name=\"id\" formControlName=\"id\" readonly />\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.department.departmentName\" for=\"field_departmentName\">Department Name</label>\n                    <input type=\"text\" class=\"form-control\" name=\"departmentName\" id=\"field_departmentName\"\n                           formControlName=\"departmentName\"/>\n                    <div *ngIf=\"editForm.get('departmentName')!.invalid && (editForm.get('departmentName')!.dirty || editForm.get('departmentName')!.touched)\">\n                        <small class=\"form-text text-danger\"\n                               *ngIf=\"editForm.get('departmentName')?.errors?.required\" jhiTranslate=\"entity.validation.required\">\n                        This field is required.\n                        </small>\n                    </div>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.department.location\" for=\"field_location\">Location</label>\n                    <select class=\"form-control\" id=\"field_location\" name=\"location\" formControlName=\"location\">\n                        <option [ngValue]=\"null\"></option>\n                        <option [ngValue]=\"locationOption.id === editForm.get('location')!.value?.id ? editForm.get('location')!.value : locationOption\" *ngFor=\"let locationOption of locations; trackBy: trackById\">{{ locationOption.id }}</option>\n                    </select>\n                </div>\n            </div>\n\n            <div>\n                <button type=\"button\" id=\"cancel-save\" class=\"btn btn-secondary\" (click)=\"previousState()\">\n                    <fa-icon icon=\"ban\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.cancel\">Cancel</span>\n                </button>\n\n                <button type=\"submit\" id=\"save-entity\" [disabled]=\"editForm.invalid || isSaving\" class=\"btn btn-primary\">\n                    <fa-icon icon=\"save\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.save\">Save</span>\n                </button>\n            </div>\n        </form>\n    </div>\n</div>\n";

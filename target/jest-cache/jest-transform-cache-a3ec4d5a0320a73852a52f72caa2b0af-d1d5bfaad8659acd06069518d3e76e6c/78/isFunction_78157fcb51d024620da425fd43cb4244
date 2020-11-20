@@ -1,0 +1,12 @@
+7d687d3742b841674c9dd53d2fc17520
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function isFunction(x) {
+  return typeof x === 'function';
+}
+
+exports.isFunction = isFunction;

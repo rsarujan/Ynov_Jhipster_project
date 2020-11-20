@@ -1,0 +1,270 @@
+988757b72f179cf799dd4804a038dcd2
+"use strict";
+
+/* istanbul ignore next */
+function cov_2emly4uo2o() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/admin/health/health.service.ts";
+  var hash = "df394e182e6a6276d02ba0b30072bdefdc2eb206";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/admin/health/health.service.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 31
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 15
+        },
+        end: {
+          line: 6,
+          column: 46
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 24
+        },
+        end: {
+          line: 7,
+          column: 52
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 20
+        },
+        end: {
+          line: 15,
+          column: 1
+        }
+      },
+      "7": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 25
+        }
+      },
+      "8": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 13,
+          column: 83
+        }
+      },
+      "9": {
+        start: {
+          line: 16,
+          column: 0
+        },
+        end: {
+          line: 19,
+          column: 18
+        }
+      },
+      "10": {
+        start: {
+          line: 20,
+          column: 0
+        },
+        end: {
+          line: 20,
+          column: 38
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 9,
+            column: 4
+          },
+          end: {
+            line: 9,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 9,
+            column: 22
+          },
+          end: {
+            line: 11,
+            column: 5
+          }
+        },
+        line: 9
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 12,
+            column: 4
+          },
+          end: {
+            line: 12,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 12,
+            column: 18
+          },
+          end: {
+            line: 14,
+            column: 5
+          }
+        },
+        line: 12
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/admin/health/health.service.ts",
+      mappings: ";;;;AAAA,wCAA2C;AAC3C,+CAAkD;AAGlD,qDAAmD;AAmBnD,IAAa,aAAa,GAA1B,MAAa,aAAa;IACxB,YAAoB,IAAgB;QAAhB,SAAI,GAAJ,IAAI,CAAY;IAAG,CAAC;IAExC,WAAW;QACT,OAAO,IAAI,CAAC,IAAI,CAAC,GAAG,CAAS,8BAAc,GAAG,mBAAmB,CAAC,CAAC;IACrE,CAAC;CACF,CAAA;AANY,aAAa;IADzB,iBAAU,CAAC,EAAE,UAAU,EAAE,MAAM,EAAE,CAAC;6CAEP,iBAAU;GADzB,aAAa,CAMzB;AANY,sCAAa",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/admin/health/health.service.ts"],
+      sourcesContent: ["import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { SERVER_API_URL } from 'app/app.constants';\n\nexport type HealthStatus = 'UP' | 'DOWN' | 'UNKNOWN' | 'OUT_OF_SERVICE';\n\nexport type HealthKey = 'diskSpace' | 'mail' | 'ping' | 'db';\n\nexport interface Health {\n  status: HealthStatus;\n  components: {\n    [key in HealthKey]?: HealthDetails;\n  };\n}\n\nexport interface HealthDetails {\n  status: HealthStatus;\n  details: any;\n}\n\n@Injectable({ providedIn: 'root' })\nexport class HealthService {\n  constructor(private http: HttpClient) {}\n\n  checkHealth(): Observable<Health> {\n    return this.http.get<Health>(SERVER_API_URL + 'management/health');\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "df394e182e6a6276d02ba0b30072bdefdc2eb206"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2emly4uo2o = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2emly4uo2o();
+cov_2emly4uo2o().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_2emly4uo2o().s[1]++;
+exports.HealthService = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_2emly4uo2o().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_2emly4uo2o().s[3]++, require("@angular/core"));
+const http_1 =
+/* istanbul ignore next */
+(cov_2emly4uo2o().s[4]++, require("@angular/common/http"));
+const app_constants_1 =
+/* istanbul ignore next */
+(cov_2emly4uo2o().s[5]++, require("app/app.constants"));
+
+/* istanbul ignore next */
+cov_2emly4uo2o().s[6]++;
+let HealthService = class HealthService {
+  constructor(http) {
+    /* istanbul ignore next */
+    cov_2emly4uo2o().f[0]++;
+    cov_2emly4uo2o().s[7]++;
+    this.http = http;
+  }
+
+  checkHealth() {
+    /* istanbul ignore next */
+    cov_2emly4uo2o().f[1]++;
+    cov_2emly4uo2o().s[8]++;
+    return this.http.get(app_constants_1.SERVER_API_URL + 'management/health');
+  }
+
+};
+
+/* istanbul ignore next */
+cov_2emly4uo2o().s[9]++;
+HealthService = tslib_1.__decorate([core_1.Injectable({
+  providedIn: 'root'
+}), tslib_1.__metadata("design:paramtypes", [http_1.HttpClient])], HealthService);
+
+/* istanbul ignore next */
+cov_2emly4uo2o().s[10]++;
+exports.HealthService = HealthService;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL2FkbWluL2hlYWx0aC9oZWFsdGguc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUF1QmE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBdkJiLE1BQUEsTUFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLGVBQUEsQ0FBQSxDQUFBO0FBQ0EsTUFBQSxNQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsc0JBQUEsQ0FBQSxDQUFBO0FBR0EsTUFBQSxlQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsbUJBQUEsQ0FBQSxDQUFBOzs7O0FBbUJBLElBQWEsYUFBYSxHQUExQixNQUFhLGFBQWIsQ0FBMEI7QUFDeEIsRUFBQSxXQUFBLENBQW9CLElBQXBCLEVBQW9DO0FBQUE7QUFBQTtBQUFBO0FBQWhCLFNBQUEsSUFBQSxHQUFBLElBQUE7QUFBb0I7O0FBRXhDLEVBQUEsV0FBVyxHQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ1QsV0FBTyxLQUFLLElBQUwsQ0FBVSxHQUFWLENBQXNCLGVBQUEsQ0FBQSxjQUFBLEdBQWlCLG1CQUF2QyxDQUFQO0FBQ0Q7O0FBTHVCLENBQTFCOzs7O0FBQWEsYUFBYSxHQUFBLE9BQUEsQ0FBQSxVQUFBLENBQUEsQ0FEekIsTUFBQSxDQUFBLFVBQUEsQ0FBVztBQUFFLEVBQUEsVUFBVSxFQUFFO0FBQWQsQ0FBWCxDQUN5QixFLHlDQUNFLE1BQUEsQ0FBQSxVLEVBREYsQ0FBQSxFQUFiLGFBQWEsQ0FBYjs7OztBQUFBLE9BQUEsQ0FBQSxhQUFBLEdBQUEsYUFBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEluamVjdGFibGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEh0dHBDbGllbnQgfSBmcm9tICdAYW5ndWxhci9jb21tb24vaHR0cCc7XG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAncnhqcyc7XG5cbmltcG9ydCB7IFNFUlZFUl9BUElfVVJMIH0gZnJvbSAnYXBwL2FwcC5jb25zdGFudHMnO1xuXG5leHBvcnQgdHlwZSBIZWFsdGhTdGF0dXMgPSAnVVAnIHwgJ0RPV04nIHwgJ1VOS05PV04nIHwgJ09VVF9PRl9TRVJWSUNFJztcblxuZXhwb3J0IHR5cGUgSGVhbHRoS2V5ID0gJ2Rpc2tTcGFjZScgfCAnbWFpbCcgfCAncGluZycgfCAnZGInO1xuXG5leHBvcnQgaW50ZXJmYWNlIEhlYWx0aCB7XG4gIHN0YXR1czogSGVhbHRoU3RhdHVzO1xuICBjb21wb25lbnRzOiB7XG4gICAgW2tleSBpbiBIZWFsdGhLZXldPzogSGVhbHRoRGV0YWlscztcbiAgfTtcbn1cblxuZXhwb3J0IGludGVyZmFjZSBIZWFsdGhEZXRhaWxzIHtcbiAgc3RhdHVzOiBIZWFsdGhTdGF0dXM7XG4gIGRldGFpbHM6IGFueTtcbn1cblxuQEluamVjdGFibGUoeyBwcm92aWRlZEluOiAncm9vdCcgfSlcbmV4cG9ydCBjbGFzcyBIZWFsdGhTZXJ2aWNlIHtcbiAgY29uc3RydWN0b3IocHJpdmF0ZSBodHRwOiBIdHRwQ2xpZW50KSB7fVxuXG4gIGNoZWNrSGVhbHRoKCk6IE9ic2VydmFibGU8SGVhbHRoPiB7XG4gICAgcmV0dXJuIHRoaXMuaHR0cC5nZXQ8SGVhbHRoPihTRVJWRVJfQVBJX1VSTCArICdtYW5hZ2VtZW50L2hlYWx0aCcpO1xuICB9XG59XG4iXX0=

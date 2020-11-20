@@ -1,0 +1,272 @@
+afa493a5f77cff3a619bd4b64b4466b6
+"use strict";
+
+/* istanbul ignore next */
+function cov_7m1cqzr7p() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/account/activate/activate.service.ts";
+  var hash = "71065afd9e4ffd28abc86fdb6d4a122ab6a8738a";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/account/activate/activate.service.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 33
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 15
+        },
+        end: {
+          line: 6,
+          column: 46
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 24
+        },
+        end: {
+          line: 7,
+          column: 52
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 22
+        },
+        end: {
+          line: 17,
+          column: 1
+        }
+      },
+      "7": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 25
+        }
+      },
+      "8": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 15,
+          column: 11
+        }
+      },
+      "9": {
+        start: {
+          line: 18,
+          column: 0
+        },
+        end: {
+          line: 21,
+          column: 20
+        }
+      },
+      "10": {
+        start: {
+          line: 22,
+          column: 0
+        },
+        end: {
+          line: 22,
+          column: 42
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 9,
+            column: 4
+          },
+          end: {
+            line: 9,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 9,
+            column: 22
+          },
+          end: {
+            line: 11,
+            column: 5
+          }
+        },
+        line: 9
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 12,
+            column: 4
+          },
+          end: {
+            line: 12,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 12,
+            column: 13
+          },
+          end: {
+            line: 16,
+            column: 5
+          }
+        },
+        line: 12
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/account/activate/activate.service.ts",
+      mappings: ";;;;AAAA,wCAA2C;AAC3C,+CAA8D;AAG9D,qDAAmD;AAGnD,IAAa,eAAe,GAA5B,MAAa,eAAe;IAC1B,YAAoB,IAAgB;QAAhB,SAAI,GAAJ,IAAI,CAAY;IAAG,CAAC;IAExC,GAAG,CAAC,GAAW;QACb,OAAO,IAAI,CAAC,IAAI,CAAC,GAAG,CAAC,8BAAc,GAAG,cAAc,EAAE;YACpD,MAAM,EAAE,IAAI,iBAAU,EAAE,CAAC,GAAG,CAAC,KAAK,EAAE,GAAG,CAAC;SACzC,CAAC,CAAC;IACL,CAAC;CACF,CAAA;AARY,eAAe;IAD3B,iBAAU,CAAC,EAAE,UAAU,EAAE,MAAM,EAAE,CAAC;6CAEP,iBAAU;GADzB,eAAe,CAQ3B;AARY,0CAAe",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/account/activate/activate.service.ts"],
+      sourcesContent: ["import { Injectable } from '@angular/core';\nimport { HttpClient, HttpParams } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { SERVER_API_URL } from 'app/app.constants';\n\n@Injectable({ providedIn: 'root' })\nexport class ActivateService {\n  constructor(private http: HttpClient) {}\n\n  get(key: string): Observable<{}> {\n    return this.http.get(SERVER_API_URL + 'api/activate', {\n      params: new HttpParams().set('key', key),\n    });\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "71065afd9e4ffd28abc86fdb6d4a122ab6a8738a"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_7m1cqzr7p = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_7m1cqzr7p();
+cov_7m1cqzr7p().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_7m1cqzr7p().s[1]++;
+exports.ActivateService = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_7m1cqzr7p().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_7m1cqzr7p().s[3]++, require("@angular/core"));
+const http_1 =
+/* istanbul ignore next */
+(cov_7m1cqzr7p().s[4]++, require("@angular/common/http"));
+const app_constants_1 =
+/* istanbul ignore next */
+(cov_7m1cqzr7p().s[5]++, require("app/app.constants"));
+
+/* istanbul ignore next */
+cov_7m1cqzr7p().s[6]++;
+let ActivateService = class ActivateService {
+  constructor(http) {
+    /* istanbul ignore next */
+    cov_7m1cqzr7p().f[0]++;
+    cov_7m1cqzr7p().s[7]++;
+    this.http = http;
+  }
+
+  get(key) {
+    /* istanbul ignore next */
+    cov_7m1cqzr7p().f[1]++;
+    cov_7m1cqzr7p().s[8]++;
+    return this.http.get(app_constants_1.SERVER_API_URL + 'api/activate', {
+      params: new http_1.HttpParams().set('key', key)
+    });
+  }
+
+};
+
+/* istanbul ignore next */
+cov_7m1cqzr7p().s[9]++;
+ActivateService = tslib_1.__decorate([core_1.Injectable({
+  providedIn: 'root'
+}), tslib_1.__metadata("design:paramtypes", [http_1.HttpClient])], ActivateService);
+
+/* istanbul ignore next */
+cov_7m1cqzr7p().s[10]++;
+exports.ActivateService = ActivateService;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL2FjY291bnQvYWN0aXZhdGUvYWN0aXZhdGUuc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFjRzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFkSCxNQUFBLE1BQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsQ0FBQTtBQUNBLE1BQUEsTUFBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLHNCQUFBLENBQUEsQ0FBQTtBQUdBLE1BQUEsZUFBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLG1CQUFBLENBQUEsQ0FBQTs7OztBQUdBLElBQWEsZUFBZSxHQUE1QixNQUFhLGVBQWIsQ0FBNEI7QUFDMUIsRUFBQSxXQUFBLENBQW9CLElBQXBCLEVBQW9DO0FBQUE7QUFBQTtBQUFBO0FBQWhCLFNBQUEsSUFBQSxHQUFBLElBQUE7QUFBb0I7O0FBRXhDLEVBQUEsR0FBRyxDQUFDLEdBQUQsRUFBWTtBQUFBO0FBQUE7QUFBQTtBQUNiLFdBQU8sS0FBSyxJQUFMLENBQVUsR0FBVixDQUFjLGVBQUEsQ0FBQSxjQUFBLEdBQWlCLGNBQS9CLEVBQStDO0FBQ3BELE1BQUEsTUFBTSxFQUFFLElBQUksTUFBQSxDQUFBLFVBQUosR0FBaUIsR0FBakIsQ0FBcUIsS0FBckIsRUFBNEIsR0FBNUI7QUFENEMsS0FBL0MsQ0FBUDtBQUdEOztBQVB5QixDQUE1Qjs7OztBQUFhLGVBQWUsR0FBQSxPQUFBLENBQUEsVUFBQSxDQUFBLENBRDNCLE1BQUEsQ0FBQSxVQUFBLENBQVc7QUFBRSxFQUFBLFVBQVUsRUFBRTtBQUFkLENBQVgsQ0FDMkIsRSx5Q0FDQSxNQUFBLENBQUEsVSxFQURBLENBQUEsRUFBZixlQUFlLENBQWY7Ozs7QUFBQSxPQUFBLENBQUEsZUFBQSxHQUFBLGVBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBIdHRwQ2xpZW50LCBIdHRwUGFyYW1zIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uL2h0dHAnO1xuaW1wb3J0IHsgT2JzZXJ2YWJsZSB9IGZyb20gJ3J4anMnO1xuXG5pbXBvcnQgeyBTRVJWRVJfQVBJX1VSTCB9IGZyb20gJ2FwcC9hcHAuY29uc3RhbnRzJztcblxuQEluamVjdGFibGUoeyBwcm92aWRlZEluOiAncm9vdCcgfSlcbmV4cG9ydCBjbGFzcyBBY3RpdmF0ZVNlcnZpY2Uge1xuICBjb25zdHJ1Y3Rvcihwcml2YXRlIGh0dHA6IEh0dHBDbGllbnQpIHt9XG5cbiAgZ2V0KGtleTogc3RyaW5nKTogT2JzZXJ2YWJsZTx7fT4ge1xuICAgIHJldHVybiB0aGlzLmh0dHAuZ2V0KFNFUlZFUl9BUElfVVJMICsgJ2FwaS9hY3RpdmF0ZScsIHtcbiAgICAgIHBhcmFtczogbmV3IEh0dHBQYXJhbXMoKS5zZXQoJ2tleScsIGtleSksXG4gICAgfSk7XG4gIH1cbn1cbiJdfQ==

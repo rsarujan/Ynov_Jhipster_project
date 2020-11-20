@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DepartmentServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.service.impl</a> &gt; <span class="el_source">DepartmentServiceImpl.java</span></div><h1>DepartmentServiceImpl.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.service.impl;
+
+import com.pro.ynov.com.service.DepartmentService;
+import com.pro.ynov.com.domain.Department;
+import com.pro.ynov.com.repository.DepartmentRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * Service Implementation for managing {@link Department}.
+ */
+@Service
+@Transactional
+public class DepartmentServiceImpl implements DepartmentService {
+
+<span class="nc" id="L22">    private final Logger log = LoggerFactory.getLogger(DepartmentServiceImpl.class);</span>
+
+    private final DepartmentRepository departmentRepository;
+
+<span class="nc" id="L26">    public DepartmentServiceImpl(DepartmentRepository departmentRepository) {</span>
+<span class="nc" id="L27">        this.departmentRepository = departmentRepository;</span>
+<span class="nc" id="L28">    }</span>
+
+    @Override
+    public Department save(Department department) {
+<span class="nc" id="L32">        log.debug(&quot;Request to save Department : {}&quot;, department);</span>
+<span class="nc" id="L33">        return departmentRepository.save(department);</span>
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List&lt;Department&gt; findAll() {
+<span class="nc" id="L39">        log.debug(&quot;Request to get all Departments&quot;);</span>
+<span class="nc" id="L40">        return departmentRepository.findAll();</span>
+    }
+
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional&lt;Department&gt; findOne(Long id) {
+<span class="nc" id="L47">        log.debug(&quot;Request to get Department : {}&quot;, id);</span>
+<span class="nc" id="L48">        return departmentRepository.findById(id);</span>
+    }
+
+    @Override
+    public void delete(Long id) {
+<span class="nc" id="L53">        log.debug(&quot;Request to delete Department : {}&quot;, id);</span>
+<span class="nc" id="L54">        departmentRepository.deleteById(id);</span>
+<span class="nc" id="L55">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

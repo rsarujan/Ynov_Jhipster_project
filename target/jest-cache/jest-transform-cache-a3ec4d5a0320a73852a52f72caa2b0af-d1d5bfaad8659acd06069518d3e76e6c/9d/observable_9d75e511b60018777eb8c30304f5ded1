@@ -1,0 +1,10 @@
+3aa86bf22795af84d3326e9f304ef72b
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.observable = function () {
+  return typeof Symbol === 'function' && Symbol.observable || '@@observable';
+}();

@@ -1,0 +1,51 @@
+5ea8bd3e247aa2caaea70c229d9b2bc1
+/* istanbul ignore next */
+function cov_1frzm6vige() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/location/location-update.component.html";
+  var hash = "f30c83ae77f5f130cc0933c9c5e489240530f8f1";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/location/location-update.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 3591
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "f30c83ae77f5f130cc0933c9c5e489240530f8f1"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1frzm6vige = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1frzm6vige();
+cov_1frzm6vige().s[0]++;
+module.exports = "<div class=\"row justify-content-center\">\n    <div class=\"col-8\">\n        <form name=\"editForm\" role=\"form\" novalidate (ngSubmit)=\"save()\" [formGroup]=\"editForm\">\n            <h2 id=\"jhi-location-heading\" jhiTranslate=\"proBiblioApp.location.home.createOrEditLabel\">Create or edit a Location</h2>\n\n            <div>\n                <jhi-alert-error></jhi-alert-error>\n\n                <div class=\"form-group\" [hidden]=\"!editForm.get('id')!.value\">\n                    <label for=\"id\" jhiTranslate=\"global.field.id\">ID</label>\n                    <input type=\"text\" class=\"form-control\" id=\"id\" name=\"id\" formControlName=\"id\" readonly />\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.location.streetAddress\" for=\"field_streetAddress\">Street Address</label>\n                    <input type=\"text\" class=\"form-control\" name=\"streetAddress\" id=\"field_streetAddress\"\n                           formControlName=\"streetAddress\"/>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.location.postalCode\" for=\"field_postalCode\">Postal Code</label>\n                    <input type=\"text\" class=\"form-control\" name=\"postalCode\" id=\"field_postalCode\"\n                           formControlName=\"postalCode\"/>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.location.city\" for=\"field_city\">City</label>\n                    <input type=\"text\" class=\"form-control\" name=\"city\" id=\"field_city\"\n                           formControlName=\"city\"/>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.location.stateProvince\" for=\"field_stateProvince\">State Province</label>\n                    <input type=\"text\" class=\"form-control\" name=\"stateProvince\" id=\"field_stateProvince\"\n                           formControlName=\"stateProvince\"/>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.location.country\" for=\"field_country\">Country</label>\n                    <select class=\"form-control\" id=\"field_country\" name=\"country\" formControlName=\"country\">\n                        <option [ngValue]=\"null\"></option>\n                        <option [ngValue]=\"countryOption.id === editForm.get('country')!.value?.id ? editForm.get('country')!.value : countryOption\" *ngFor=\"let countryOption of countries; trackBy: trackById\">{{ countryOption.id }}</option>\n                    </select>\n                </div>\n            </div>\n\n            <div>\n                <button type=\"button\" id=\"cancel-save\" class=\"btn btn-secondary\" (click)=\"previousState()\">\n                    <fa-icon icon=\"ban\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.cancel\">Cancel</span>\n                </button>\n\n                <button type=\"submit\" id=\"save-entity\" [disabled]=\"editForm.invalid || isSaving\" class=\"btn btn-primary\">\n                    <fa-icon icon=\"save\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.save\">Save</span>\n                </button>\n            </div>\n        </form>\n    </div>\n</div>\n";

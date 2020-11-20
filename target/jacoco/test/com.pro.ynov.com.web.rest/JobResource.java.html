@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JobResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.web.rest</a> &gt; <span class="el_source">JobResource.java</span></div><h1>JobResource.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.web.rest;
+
+import com.pro.ynov.com.domain.Job;
+import com.pro.ynov.com.repository.JobRepository;
+import com.pro.ynov.com.web.rest.errors.BadRequestAlertException;
+
+import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.PaginationUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * REST controller for managing {@link com.pro.ynov.com.domain.Job}.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+@Transactional
+public class JobResource {
+
+<span class="nc" id="L35">    private final Logger log = LoggerFactory.getLogger(JobResource.class);</span>
+
+    private static final String ENTITY_NAME = &quot;job&quot;;
+
+    @Value(&quot;${jhipster.clientApp.name}&quot;)
+    private String applicationName;
+
+    private final JobRepository jobRepository;
+
+<span class="nc" id="L44">    public JobResource(JobRepository jobRepository) {</span>
+<span class="nc" id="L45">        this.jobRepository = jobRepository;</span>
+<span class="nc" id="L46">    }</span>
+
+    /**
+     * {@code POST  /jobs} : Create a new job.
+     *
+     * @param job the job to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new job, or with status {@code 400 (Bad Request)} if the job has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping(&quot;/jobs&quot;)
+    public ResponseEntity&lt;Job&gt; createJob(@RequestBody Job job) throws URISyntaxException {
+<span class="nc" id="L57">        log.debug(&quot;REST request to save Job : {}&quot;, job);</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        if (job.getId() != null) {</span>
+<span class="nc" id="L59">            throw new BadRequestAlertException(&quot;A new job cannot already have an ID&quot;, ENTITY_NAME, &quot;idexists&quot;);</span>
+        }
+<span class="nc" id="L61">        Job result = jobRepository.save(job);</span>
+<span class="nc" id="L62">        return ResponseEntity.created(new URI(&quot;/api/jobs/&quot; + result.getId()))</span>
+<span class="nc" id="L63">            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))</span>
+<span class="nc" id="L64">            .body(result);</span>
+    }
+
+    /**
+     * {@code PUT  /jobs} : Updates an existing job.
+     *
+     * @param job the job to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated job,
+     * or with status {@code 400 (Bad Request)} if the job is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the job couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PutMapping(&quot;/jobs&quot;)
+    public ResponseEntity&lt;Job&gt; updateJob(@RequestBody Job job) throws URISyntaxException {
+<span class="nc" id="L78">        log.debug(&quot;REST request to update Job : {}&quot;, job);</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (job.getId() == null) {</span>
+<span class="nc" id="L80">            throw new BadRequestAlertException(&quot;Invalid id&quot;, ENTITY_NAME, &quot;idnull&quot;);</span>
+        }
+<span class="nc" id="L82">        Job result = jobRepository.save(job);</span>
+<span class="nc" id="L83">        return ResponseEntity.ok()</span>
+<span class="nc" id="L84">            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, job.getId().toString()))</span>
+<span class="nc" id="L85">            .body(result);</span>
+    }
+
+    /**
+     * {@code GET  /jobs} : get all the jobs.
+     *
+     * @param pageable the pagination information.
+     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of jobs in body.
+     */
+    @GetMapping(&quot;/jobs&quot;)
+    public ResponseEntity&lt;List&lt;Job&gt;&gt; getAllJobs(Pageable pageable, @RequestParam(required = false, defaultValue = &quot;false&quot;) boolean eagerload) {
+<span class="nc" id="L97">        log.debug(&quot;REST request to get a page of Jobs&quot;);</span>
+        Page&lt;Job&gt; page;
+<span class="nc bnc" id="L99" title="All 2 branches missed.">        if (eagerload) {</span>
+<span class="nc" id="L100">            page = jobRepository.findAllWithEagerRelationships(pageable);</span>
+        } else {
+<span class="nc" id="L102">            page = jobRepository.findAll(pageable);</span>
+        }
+<span class="nc" id="L104">        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);</span>
+<span class="nc" id="L105">        return ResponseEntity.ok().headers(headers).body(page.getContent());</span>
+    }
+
+    /**
+     * {@code GET  /jobs/:id} : get the &quot;id&quot; job.
+     *
+     * @param id the id of the job to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the job, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping(&quot;/jobs/{id}&quot;)
+    public ResponseEntity&lt;Job&gt; getJob(@PathVariable Long id) {
+<span class="nc" id="L116">        log.debug(&quot;REST request to get Job : {}&quot;, id);</span>
+<span class="nc" id="L117">        Optional&lt;Job&gt; job = jobRepository.findOneWithEagerRelationships(id);</span>
+<span class="nc" id="L118">        return ResponseUtil.wrapOrNotFound(job);</span>
+    }
+
+    /**
+     * {@code DELETE  /jobs/:id} : delete the &quot;id&quot; job.
+     *
+     * @param id the id of the job to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping(&quot;/jobs/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteJob(@PathVariable Long id) {
+<span class="nc" id="L129">        log.debug(&quot;REST request to delete Job : {}&quot;, id);</span>
+<span class="nc" id="L130">        jobRepository.deleteById(id);</span>
+<span class="nc" id="L131">        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

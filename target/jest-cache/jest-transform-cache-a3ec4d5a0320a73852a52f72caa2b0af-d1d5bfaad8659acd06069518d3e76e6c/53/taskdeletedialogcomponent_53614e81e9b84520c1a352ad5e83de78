@@ -1,0 +1,413 @@
+5832dd96697f4ec136ef9b11e602b60f
+"use strict";
+
+/* istanbul ignore next */
+function cov_1oxtlat8kq() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/task/task-delete-dialog.component.ts";
+  var hash = "0c1db3c107431aef0b241d1a231254199228b218";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/task/task-delete-dialog.component.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 43
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 23
+        },
+        end: {
+          line: 6,
+          column: 60
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 22
+        },
+        end: {
+          line: 7,
+          column: 44
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 23
+        },
+        end: {
+          line: 8,
+          column: 48
+        }
+      },
+      "7": {
+        start: {
+          line: 9,
+          column: 32
+        },
+        end: {
+          line: 24,
+          column: 1
+        }
+      },
+      "8": {
+        start: {
+          line: 11,
+          column: 8
+        },
+        end: {
+          line: 11,
+          column: 39
+        }
+      },
+      "9": {
+        start: {
+          line: 12,
+          column: 8
+        },
+        end: {
+          line: 12,
+          column: 39
+        }
+      },
+      "10": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 13,
+          column: 41
+        }
+      },
+      "11": {
+        start: {
+          line: 16,
+          column: 8
+        },
+        end: {
+          line: 16,
+          column: 35
+        }
+      },
+      "12": {
+        start: {
+          line: 19,
+          column: 8
+        },
+        end: {
+          line: 22,
+          column: 11
+        }
+      },
+      "13": {
+        start: {
+          line: 20,
+          column: 12
+        },
+        end: {
+          line: 20,
+          column: 64
+        }
+      },
+      "14": {
+        start: {
+          line: 21,
+          column: 12
+        },
+        end: {
+          line: 21,
+          column: 37
+        }
+      },
+      "15": {
+        start: {
+          line: 25,
+          column: 0
+        },
+        end: {
+          line: 30,
+          column: 30
+        }
+      },
+      "16": {
+        start: {
+          line: 31,
+          column: 0
+        },
+        end: {
+          line: 31,
+          column: 62
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 10,
+            column: 4
+          },
+          end: {
+            line: 10,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 10,
+            column: 56
+          },
+          end: {
+            line: 14,
+            column: 5
+          }
+        },
+        line: 10
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 15,
+            column: 4
+          },
+          end: {
+            line: 15,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 15,
+            column: 13
+          },
+          end: {
+            line: 17,
+            column: 5
+          }
+        },
+        line: 15
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 18,
+            column: 4
+          },
+          end: {
+            line: 18,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 18,
+            column: 22
+          },
+          end: {
+            line: 23,
+            column: 5
+          }
+        },
+        line: 18
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 19,
+            column: 46
+          },
+          end: {
+            line: 19,
+            column: 47
+          }
+        },
+        loc: {
+          start: {
+            line: 19,
+            column: 52
+          },
+          end: {
+            line: 22,
+            column: 9
+          }
+        },
+        line: 19
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/task/task-delete-dialog.component.ts",
+      mappings: ";;;;AAAA,wCAA0C;AAC1C,6DAA4D;AAC5D,6CAA8C;AAG9C,iDAA6C;AAK7C,IAAa,yBAAyB,GAAtC,MAAa,yBAAyB;IAGpC,YAAsB,WAAwB,EAAS,WAA2B,EAAY,YAA6B;QAArG,gBAAW,GAAX,WAAW,CAAa;QAAS,gBAAW,GAAX,WAAW,CAAgB;QAAY,iBAAY,GAAZ,YAAY,CAAiB;IAAG,CAAC;IAE/H,MAAM;QACJ,IAAI,CAAC,WAAW,CAAC,OAAO,EAAE,CAAC;IAC7B,CAAC;IAED,aAAa,CAAC,EAAU;QACtB,IAAI,CAAC,WAAW,CAAC,MAAM,CAAC,EAAE,CAAC,CAAC,SAAS,CAAC,GAAG,EAAE;YACzC,IAAI,CAAC,YAAY,CAAC,SAAS,CAAC,sBAAsB,CAAC,CAAC;YACpD,IAAI,CAAC,WAAW,CAAC,KAAK,EAAE,CAAC;QAC3B,CAAC,CAAC,CAAC;IACL,CAAC;CACF,CAAA;AAfY,yBAAyB;IAHrC,gBAAS,CAAC;QACT,kBAAa,qCAAqC,CAAA;KACnD,CAAC;6CAImC,0BAAW,EAAsB,6BAAc,EAA0B,6BAAe;GAHhH,yBAAyB,CAerC;AAfY,8DAAyB",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/task/task-delete-dialog.component.ts"],
+      sourcesContent: ["import { Component } from '@angular/core';\nimport { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';\nimport { JhiEventManager } from 'ng-jhipster';\n\nimport { ITask } from 'app/shared/model/task.model';\nimport { TaskService } from './task.service';\n\n@Component({\n  templateUrl: './task-delete-dialog.component.html',\n})\nexport class TaskDeleteDialogComponent {\n  task?: ITask;\n\n  constructor(protected taskService: TaskService, public activeModal: NgbActiveModal, protected eventManager: JhiEventManager) {}\n\n  cancel(): void {\n    this.activeModal.dismiss();\n  }\n\n  confirmDelete(id: number): void {\n    this.taskService.delete(id).subscribe(() => {\n      this.eventManager.broadcast('taskListModification');\n      this.activeModal.close();\n    });\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "0c1db3c107431aef0b241d1a231254199228b218"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1oxtlat8kq = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1oxtlat8kq();
+cov_1oxtlat8kq().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1oxtlat8kq().s[1]++;
+exports.TaskDeleteDialogComponent = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_1oxtlat8kq().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_1oxtlat8kq().s[3]++, require("@angular/core"));
+const ng_bootstrap_1 =
+/* istanbul ignore next */
+(cov_1oxtlat8kq().s[4]++, require("@ng-bootstrap/ng-bootstrap"));
+const ng_jhipster_1 =
+/* istanbul ignore next */
+(cov_1oxtlat8kq().s[5]++, require("ng-jhipster"));
+const task_service_1 =
+/* istanbul ignore next */
+(cov_1oxtlat8kq().s[6]++, require("./task.service"));
+
+/* istanbul ignore next */
+cov_1oxtlat8kq().s[7]++;
+let TaskDeleteDialogComponent = class TaskDeleteDialogComponent {
+  constructor(taskService, activeModal, eventManager) {
+    /* istanbul ignore next */
+    cov_1oxtlat8kq().f[0]++;
+    cov_1oxtlat8kq().s[8]++;
+    this.taskService = taskService;
+
+    /* istanbul ignore next */
+    cov_1oxtlat8kq().s[9]++;
+    this.activeModal = activeModal;
+
+    /* istanbul ignore next */
+    cov_1oxtlat8kq().s[10]++;
+    this.eventManager = eventManager;
+  }
+
+  cancel() {
+    /* istanbul ignore next */
+    cov_1oxtlat8kq().f[1]++;
+    cov_1oxtlat8kq().s[11]++;
+    this.activeModal.dismiss();
+  }
+
+  confirmDelete(id) {
+    /* istanbul ignore next */
+    cov_1oxtlat8kq().f[2]++;
+    cov_1oxtlat8kq().s[12]++;
+    this.taskService.delete(id).subscribe(() => {
+      /* istanbul ignore next */
+      cov_1oxtlat8kq().f[3]++;
+      cov_1oxtlat8kq().s[13]++;
+      this.eventManager.broadcast('taskListModification');
+
+      /* istanbul ignore next */
+      cov_1oxtlat8kq().s[14]++;
+      this.activeModal.close();
+    });
+  }
+
+};
+
+/* istanbul ignore next */
+cov_1oxtlat8kq().s[15]++;
+TaskDeleteDialogComponent = tslib_1.__decorate([core_1.Component({
+  template: require('./task-delete-dialog.component.html')
+}), tslib_1.__metadata("design:paramtypes", [task_service_1.TaskService, ng_bootstrap_1.NgbActiveModal, ng_jhipster_1.JhiEventManager])], TaskDeleteDialogComponent);
+
+/* istanbul ignore next */
+cov_1oxtlat8kq().s[16]++;
+exports.TaskDeleteDialogComponent = TaskDeleteDialogComponent;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL2VudGl0aWVzL3Rhc2svdGFzay1kZWxldGUtZGlhbG9nLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQWdCUTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFoQlIsTUFBQSxNQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsZUFBQSxDQUFBLENBQUE7QUFDQSxNQUFBLGNBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSw0QkFBQSxDQUFBLENBQUE7QUFDQSxNQUFBLGFBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUEsQ0FBQTtBQUdBLE1BQUEsY0FBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLGdCQUFBLENBQUEsQ0FBQTs7OztBQUtBLElBQWEseUJBQXlCLEdBQXRDLE1BQWEseUJBQWIsQ0FBc0M7QUFHcEMsRUFBQSxXQUFBLENBQXNCLFdBQXRCLEVBQXVELFdBQXZELEVBQThGLFlBQTlGLEVBQTJIO0FBQUE7QUFBQTtBQUFBO0FBQXJHLFNBQUEsV0FBQSxHQUFBLFdBQUE7O0FBQXFHO0FBQUE7QUFBcEUsU0FBQSxXQUFBLEdBQUEsV0FBQTs7QUFBb0U7QUFBQTtBQUE3QixTQUFBLFlBQUEsR0FBQSxZQUFBO0FBQWlDOztBQUUvSCxFQUFBLE1BQU0sR0FBQTtBQUFBO0FBQUE7QUFBQTtBQUNKLFNBQUssV0FBTCxDQUFpQixPQUFqQjtBQUNEOztBQUVELEVBQUEsYUFBYSxDQUFDLEVBQUQsRUFBVztBQUFBO0FBQUE7QUFBQTtBQUN0QixTQUFLLFdBQUwsQ0FBaUIsTUFBakIsQ0FBd0IsRUFBeEIsRUFBNEIsU0FBNUIsQ0FBc0MsTUFBSztBQUFBO0FBQUE7QUFBQTtBQUN6QyxXQUFLLFlBQUwsQ0FBa0IsU0FBbEIsQ0FBNEIsc0JBQTVCOztBQUR5QztBQUFBO0FBRXpDLFdBQUssV0FBTCxDQUFpQixLQUFqQjtBQUNELEtBSEQ7QUFJRDs7QUFkbUMsQ0FBdEM7Ozs7QUFBYSx5QkFBeUIsR0FBQSxPQUFBLENBQUEsVUFBQSxDQUFBLENBSHJDLE1BQUEsQ0FBQSxTQUFBLENBQVU7QUFDVCxFQUFBLFFBQUEsRUFBQSxPQUFBLENBQWEscUNBQWI7QUFEUyxDQUFWLENBR3FDLEUseUNBR0QsY0FBQSxDQUFBLFcsRUFBaUMsY0FBQSxDQUFBLGMsRUFBd0MsYUFBQSxDQUFBLGUsRUFIeEUsQ0FBQSxFQUF6Qix5QkFBeUIsQ0FBekI7Ozs7QUFBQSxPQUFBLENBQUEseUJBQUEsR0FBQSx5QkFBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgTmdiQWN0aXZlTW9kYWwgfSBmcm9tICdAbmctYm9vdHN0cmFwL25nLWJvb3RzdHJhcCc7XG5pbXBvcnQgeyBKaGlFdmVudE1hbmFnZXIgfSBmcm9tICduZy1qaGlwc3Rlcic7XG5cbmltcG9ydCB7IElUYXNrIH0gZnJvbSAnYXBwL3NoYXJlZC9tb2RlbC90YXNrLm1vZGVsJztcbmltcG9ydCB7IFRhc2tTZXJ2aWNlIH0gZnJvbSAnLi90YXNrLnNlcnZpY2UnO1xuXG5AQ29tcG9uZW50KHtcbiAgdGVtcGxhdGVVcmw6ICcuL3Rhc2stZGVsZXRlLWRpYWxvZy5jb21wb25lbnQuaHRtbCcsXG59KVxuZXhwb3J0IGNsYXNzIFRhc2tEZWxldGVEaWFsb2dDb21wb25lbnQge1xuICB0YXNrPzogSVRhc2s7XG5cbiAgY29uc3RydWN0b3IocHJvdGVjdGVkIHRhc2tTZXJ2aWNlOiBUYXNrU2VydmljZSwgcHVibGljIGFjdGl2ZU1vZGFsOiBOZ2JBY3RpdmVNb2RhbCwgcHJvdGVjdGVkIGV2ZW50TWFuYWdlcjogSmhpRXZlbnRNYW5hZ2VyKSB7fVxuXG4gIGNhbmNlbCgpOiB2b2lkIHtcbiAgICB0aGlzLmFjdGl2ZU1vZGFsLmRpc21pc3MoKTtcbiAgfVxuXG4gIGNvbmZpcm1EZWxldGUoaWQ6IG51bWJlcik6IHZvaWQge1xuICAgIHRoaXMudGFza1NlcnZpY2UuZGVsZXRlKGlkKS5zdWJzY3JpYmUoKCkgPT4ge1xuICAgICAgdGhpcy5ldmVudE1hbmFnZXIuYnJvYWRjYXN0KCd0YXNrTGlzdE1vZGlmaWNhdGlvbicpO1xuICAgICAgdGhpcy5hY3RpdmVNb2RhbC5jbG9zZSgpO1xuICAgIH0pO1xuICB9XG59XG4iXX0=

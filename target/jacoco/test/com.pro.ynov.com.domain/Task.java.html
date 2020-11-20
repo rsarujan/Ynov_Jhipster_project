@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Task.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.domain</a> &gt; <span class="el_source">Task.java</span></div><h1>Task.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.domain;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModel;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.*;
+
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Task entity.\n@author The JHipster team.
+ */
+@ApiModel(description = &quot;Task entity.\n@author The JHipster team.&quot;)
+@Entity
+@Table(name = &quot;task&quot;)
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+<span class="fc" id="L21">public class Task implements Serializable {</span>
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = &quot;sequenceGenerator&quot;)
+    @SequenceGenerator(name = &quot;sequenceGenerator&quot;)
+    private Long id;
+
+    @Column(name = &quot;title&quot;)
+    private String title;
+
+    @Column(name = &quot;description&quot;)
+    private String description;
+
+<span class="fc" id="L36">    @ManyToMany(mappedBy = &quot;tasks&quot;)</span>
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnore
+    private Set&lt;Job&gt; jobs = new HashSet&lt;&gt;();
+
+    // jhipster-needle-entity-add-field - JHipster will add fields here
+    public Long getId() {
+<span class="fc" id="L43">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="fc" id="L47">        this.id = id;</span>
+<span class="fc" id="L48">    }</span>
+
+    public String getTitle() {
+<span class="fc" id="L51">        return title;</span>
+    }
+
+    public Task title(String title) {
+<span class="nc" id="L55">        this.title = title;</span>
+<span class="nc" id="L56">        return this;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="nc" id="L60">        this.title = title;</span>
+<span class="nc" id="L61">    }</span>
+
+    public String getDescription() {
+<span class="fc" id="L64">        return description;</span>
+    }
+
+    public Task description(String description) {
+<span class="nc" id="L68">        this.description = description;</span>
+<span class="nc" id="L69">        return this;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="nc" id="L73">        this.description = description;</span>
+<span class="nc" id="L74">    }</span>
+
+    public Set&lt;Job&gt; getJobs() {
+<span class="nc" id="L77">        return jobs;</span>
+    }
+
+    public Task jobs(Set&lt;Job&gt; jobs) {
+<span class="nc" id="L81">        this.jobs = jobs;</span>
+<span class="nc" id="L82">        return this;</span>
+    }
+
+    public Task addJob(Job job) {
+<span class="nc" id="L86">        this.jobs.add(job);</span>
+<span class="nc" id="L87">        job.getTasks().add(this);</span>
+<span class="nc" id="L88">        return this;</span>
+    }
+
+    public Task removeJob(Job job) {
+<span class="nc" id="L92">        this.jobs.remove(job);</span>
+<span class="nc" id="L93">        job.getTasks().remove(this);</span>
+<span class="nc" id="L94">        return this;</span>
+    }
+
+    public void setJobs(Set&lt;Job&gt; jobs) {
+<span class="nc" id="L98">        this.jobs = jobs;</span>
+<span class="nc" id="L99">    }</span>
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
+
+    @Override
+    public boolean equals(Object o) {
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (this == o) {</span>
+<span class="fc" id="L105">            return true;</span>
+        }
+<span class="fc bfc" id="L107" title="All 2 branches covered.">        if (!(o instanceof Task)) {</span>
+<span class="fc" id="L108">            return false;</span>
+        }
+<span class="fc bfc" id="L110" title="All 4 branches covered.">        return id != null &amp;&amp; id.equals(((Task) o).id);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L115">        return 31;</span>
+    }
+
+    // prettier-ignore
+    @Override
+    public String toString() {
+<span class="fc" id="L121">        return &quot;Task{&quot; +</span>
+<span class="fc" id="L122">            &quot;id=&quot; + getId() +</span>
+<span class="fc" id="L123">            &quot;, title='&quot; + getTitle() + &quot;'&quot; +</span>
+<span class="fc" id="L124">            &quot;, description='&quot; + getDescription() + &quot;'&quot; +</span>
+            &quot;}&quot;;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,291 @@
+cc7cf8f96d4a9a895843ff3bb23ddda7
+"use strict";
+
+/* istanbul ignore next */
+function cov_l5pzhq7x9() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/shared/model/employee.model.ts";
+  var hash = "68af3ac9343814d4c3aac1e58ca271bb7ec08909";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/shared/model/employee.model.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 26
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 8
+        },
+        end: {
+          line: 6,
+          column: 21
+        }
+      },
+      "3": {
+        start: {
+          line: 7,
+          column: 8
+        },
+        end: {
+          line: 7,
+          column: 35
+        }
+      },
+      "4": {
+        start: {
+          line: 8,
+          column: 8
+        },
+        end: {
+          line: 8,
+          column: 33
+        }
+      },
+      "5": {
+        start: {
+          line: 9,
+          column: 8
+        },
+        end: {
+          line: 9,
+          column: 27
+        }
+      },
+      "6": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 39
+        }
+      },
+      "7": {
+        start: {
+          line: 11,
+          column: 8
+        },
+        end: {
+          line: 11,
+          column: 33
+        }
+      },
+      "8": {
+        start: {
+          line: 12,
+          column: 8
+        },
+        end: {
+          line: 12,
+          column: 29
+        }
+      },
+      "9": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 13,
+          column: 43
+        }
+      },
+      "10": {
+        start: {
+          line: 14,
+          column: 8
+        },
+        end: {
+          line: 14,
+          column: 25
+        }
+      },
+      "11": {
+        start: {
+          line: 15,
+          column: 8
+        },
+        end: {
+          line: 15,
+          column: 31
+        }
+      },
+      "12": {
+        start: {
+          line: 16,
+          column: 8
+        },
+        end: {
+          line: 16,
+          column: 37
+        }
+      },
+      "13": {
+        start: {
+          line: 19,
+          column: 0
+        },
+        end: {
+          line: 19,
+          column: 28
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 4
+          },
+          end: {
+            line: 5,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 121
+          },
+          end: {
+            line: 17,
+            column: 5
+          }
+        },
+        line: 5
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/shared/model/employee.model.ts",
+      mappings: ";;;AAkBA,MAAa,QAAQ;IACnB,YACS,EAAW,EACX,SAAkB,EAClB,QAAiB,EACjB,KAAc,EACd,WAAoB,EACpB,QAAiB,EACjB,MAAe,EACf,aAAsB,EACtB,IAAa,EACb,OAAmB,EACnB,UAAwB;QAVxB,OAAE,GAAF,EAAE,CAAS;QACX,cAAS,GAAT,SAAS,CAAS;QAClB,aAAQ,GAAR,QAAQ,CAAS;QACjB,UAAK,GAAL,KAAK,CAAS;QACd,gBAAW,GAAX,WAAW,CAAS;QACpB,aAAQ,GAAR,QAAQ,CAAS;QACjB,WAAM,GAAN,MAAM,CAAS;QACf,kBAAa,GAAb,aAAa,CAAS;QACtB,SAAI,GAAJ,IAAI,CAAS;QACb,YAAO,GAAP,OAAO,CAAY;QACnB,eAAU,GAAV,UAAU,CAAc;IAC9B,CAAC;CACL;AAdD,4BAcC",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/shared/model/employee.model.ts"],
+      sourcesContent: ["import { Moment } from 'moment';\nimport { IJob } from 'app/shared/model/job.model';\nimport { IDepartment } from 'app/shared/model/department.model';\n\nexport interface IEmployee {\n  id?: number;\n  firstName?: string;\n  lastName?: string;\n  email?: string;\n  phoneNumber?: string;\n  hireDate?: Moment;\n  salary?: number;\n  commissionPct?: number;\n  jobs?: IJob[];\n  manager?: IEmployee;\n  department?: IDepartment;\n}\n\nexport class Employee implements IEmployee {\n  constructor(\n    public id?: number,\n    public firstName?: string,\n    public lastName?: string,\n    public email?: string,\n    public phoneNumber?: string,\n    public hireDate?: Moment,\n    public salary?: number,\n    public commissionPct?: number,\n    public jobs?: IJob[],\n    public manager?: IEmployee,\n    public department?: IDepartment\n  ) {}\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "68af3ac9343814d4c3aac1e58ca271bb7ec08909"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_l5pzhq7x9 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_l5pzhq7x9();
+cov_l5pzhq7x9().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_l5pzhq7x9().s[1]++;
+exports.Employee = void 0;
+
+class Employee {
+  constructor(id, firstName, lastName, email, phoneNumber, hireDate, salary, commissionPct, jobs, manager, department) {
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().f[0]++;
+    cov_l5pzhq7x9().s[2]++;
+    this.id = id;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[3]++;
+    this.firstName = firstName;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[4]++;
+    this.lastName = lastName;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[5]++;
+    this.email = email;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[6]++;
+    this.phoneNumber = phoneNumber;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[7]++;
+    this.hireDate = hireDate;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[8]++;
+    this.salary = salary;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[9]++;
+    this.commissionPct = commissionPct;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[10]++;
+    this.jobs = jobs;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[11]++;
+    this.manager = manager;
+
+    /* istanbul ignore next */
+    cov_l5pzhq7x9().s[12]++;
+    this.department = department;
+  }
+
+}
+
+/* istanbul ignore next */
+cov_l5pzhq7x9().s[13]++;
+exports.Employee = Employee;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL3NoYXJlZC9tb2RlbC9lbXBsb3llZS5tb2RlbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQThCVzs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBWlgsTUFBYSxRQUFiLENBQXFCO0FBQ25CLEVBQUEsV0FBQSxDQUNTLEVBRFQsRUFFUyxTQUZULEVBR1MsUUFIVCxFQUlTLEtBSlQsRUFLUyxXQUxULEVBTVMsUUFOVCxFQU9TLE1BUFQsRUFRUyxhQVJULEVBU1MsSUFUVCxFQVVTLE9BVlQsRUFXUyxVQVhULEVBV2lDO0FBQUE7QUFBQTtBQUFBO0FBVnhCLFNBQUEsRUFBQSxHQUFBLEVBQUE7O0FBVXdCO0FBQUE7QUFUeEIsU0FBQSxTQUFBLEdBQUEsU0FBQTs7QUFTd0I7QUFBQTtBQVJ4QixTQUFBLFFBQUEsR0FBQSxRQUFBOztBQVF3QjtBQUFBO0FBUHhCLFNBQUEsS0FBQSxHQUFBLEtBQUE7O0FBT3dCO0FBQUE7QUFOeEIsU0FBQSxXQUFBLEdBQUEsV0FBQTs7QUFNd0I7QUFBQTtBQUx4QixTQUFBLFFBQUEsR0FBQSxRQUFBOztBQUt3QjtBQUFBO0FBSnhCLFNBQUEsTUFBQSxHQUFBLE1BQUE7O0FBSXdCO0FBQUE7QUFIeEIsU0FBQSxhQUFBLEdBQUEsYUFBQTs7QUFHd0I7QUFBQTtBQUZ4QixTQUFBLElBQUEsR0FBQSxJQUFBOztBQUV3QjtBQUFBO0FBRHhCLFNBQUEsT0FBQSxHQUFBLE9BQUE7O0FBQ3dCO0FBQUE7QUFBeEIsU0FBQSxVQUFBLEdBQUEsVUFBQTtBQUNMOztBQWJlOzs7O0FBQXJCLE9BQUEsQ0FBQSxRQUFBLEdBQUEsUUFBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE1vbWVudCB9IGZyb20gJ21vbWVudCc7XG5pbXBvcnQgeyBJSm9iIH0gZnJvbSAnYXBwL3NoYXJlZC9tb2RlbC9qb2IubW9kZWwnO1xuaW1wb3J0IHsgSURlcGFydG1lbnQgfSBmcm9tICdhcHAvc2hhcmVkL21vZGVsL2RlcGFydG1lbnQubW9kZWwnO1xuXG5leHBvcnQgaW50ZXJmYWNlIElFbXBsb3llZSB7XG4gIGlkPzogbnVtYmVyO1xuICBmaXJzdE5hbWU/OiBzdHJpbmc7XG4gIGxhc3ROYW1lPzogc3RyaW5nO1xuICBlbWFpbD86IHN0cmluZztcbiAgcGhvbmVOdW1iZXI/OiBzdHJpbmc7XG4gIGhpcmVEYXRlPzogTW9tZW50O1xuICBzYWxhcnk/OiBudW1iZXI7XG4gIGNvbW1pc3Npb25QY3Q/OiBudW1iZXI7XG4gIGpvYnM/OiBJSm9iW107XG4gIG1hbmFnZXI/OiBJRW1wbG95ZWU7XG4gIGRlcGFydG1lbnQ/OiBJRGVwYXJ0bWVudDtcbn1cblxuZXhwb3J0IGNsYXNzIEVtcGxveWVlIGltcGxlbWVudHMgSUVtcGxveWVlIHtcbiAgY29uc3RydWN0b3IoXG4gICAgcHVibGljIGlkPzogbnVtYmVyLFxuICAgIHB1YmxpYyBmaXJzdE5hbWU/OiBzdHJpbmcsXG4gICAgcHVibGljIGxhc3ROYW1lPzogc3RyaW5nLFxuICAgIHB1YmxpYyBlbWFpbD86IHN0cmluZyxcbiAgICBwdWJsaWMgcGhvbmVOdW1iZXI/OiBzdHJpbmcsXG4gICAgcHVibGljIGhpcmVEYXRlPzogTW9tZW50LFxuICAgIHB1YmxpYyBzYWxhcnk/OiBudW1iZXIsXG4gICAgcHVibGljIGNvbW1pc3Npb25QY3Q/OiBudW1iZXIsXG4gICAgcHVibGljIGpvYnM/OiBJSm9iW10sXG4gICAgcHVibGljIG1hbmFnZXI/OiBJRW1wbG95ZWUsXG4gICAgcHVibGljIGRlcGFydG1lbnQ/OiBJRGVwYXJ0bWVudFxuICApIHt9XG59XG4iXX0=

@@ -1,0 +1,10 @@
+280ece74efd42073da06d2dfe5379f14
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.isArrayLike = function (x) {
+  return x && typeof x.length === 'number' && typeof x !== 'function';
+};

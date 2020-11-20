@@ -1,0 +1,51 @@
+4fcb596cde7a6da8d7be82d28ab495ac
+/* istanbul ignore next */
+function cov_22jzev5dug() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/job-history/job-history.component.html";
+  var hash = "90906c6e992ab858f328f13d7730293cf2c9b75a";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/Ynov_TEST_Projet/src/main/webapp/app/entities/job-history/job-history.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 5347
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "90906c6e992ab858f328f13d7730293cf2c9b75a"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_22jzev5dug = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_22jzev5dug();
+cov_22jzev5dug().s[0]++;
+module.exports = "<div>\n    <h2 id=\"page-heading\">\n        <span jhiTranslate=\"proBiblioApp.jobHistory.home.title\">Job Histories</span>\n\n        <button id=\"jh-create-entity\" class=\"btn btn-primary float-right jh-create-entity create-job-history\" [routerLink]=\"['/job-history/new']\">\n            <fa-icon icon=\"plus\"></fa-icon>\n            <span  jhiTranslate=\"proBiblioApp.jobHistory.home.createLabel\">\n            Create a new Job History\n            </span>\n        </button>\n    </h2>\n\n    <jhi-alert-error></jhi-alert-error>\n\n    <jhi-alert></jhi-alert>\n\n    <div class=\"alert alert-warning\" id=\"no-result\" *ngIf=\"jobHistories?.length === 0\">\n        <span jhiTranslate=\"proBiblioApp.jobHistory.home.notFound\">No jobHistories found</span>\n    </div>\n\n    <div class=\"table-responsive\" id=\"entities\" *ngIf=\"jobHistories && jobHistories.length > 0\">\n        <table class=\"table table-striped\" aria-describedby=\"page-heading\">\n            <thead>\n                <tr jhiSort [(predicate)]=\"predicate\" [(ascending)]=\"ascending\" [callback]=\"reset.bind(this)\">\n                    <th scope=\"col\"  jhiSortBy=\"id\"><span jhiTranslate=\"global.field.id\">ID</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"startDate\"><span jhiTranslate=\"proBiblioApp.jobHistory.startDate\">Start Date</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"endDate\"><span jhiTranslate=\"proBiblioApp.jobHistory.endDate\">End Date</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"language\"><span jhiTranslate=\"proBiblioApp.jobHistory.language\">Language</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"job.id\"><span jhiTranslate=\"proBiblioApp.jobHistory.job\">Job</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"department.id\"><span jhiTranslate=\"proBiblioApp.jobHistory.department\">Department</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"  jhiSortBy=\"employee.id\"><span jhiTranslate=\"proBiblioApp.jobHistory.employee\">Employee</span> <fa-icon icon=\"sort\"></fa-icon></th>\n                    <th scope=\"col\"></th>\n                </tr>\n            </thead>\n            <tbody infinite-scroll (scrolled)=\"loadPage(page + 1)\" [infiniteScrollDisabled]=\"page >= links['last']\" [infiniteScrollDistance]=\"0\">\n                <tr *ngFor=\"let jobHistory of jobHistories ;trackBy: trackId\">\n                    <td><a [routerLink]=\"['/job-history', jobHistory.id, 'view']\">{{ jobHistory.id }}</a></td>\n                    <td>{{ jobHistory.startDate | date:'medium' }}</td>\n                    <td>{{ jobHistory.endDate | date:'medium' }}</td>\n                    <td jhiTranslate=\"{{ 'proBiblioApp.Language.' + jobHistory.language }}\">{{ jobHistory.language }}</td>\n                    <td>\n                        <div *ngIf=\"jobHistory.job\">\n                            <a [routerLink]=\"['/job', jobHistory.job?.id, 'view']\" >{{ jobHistory.job?.id }}</a>\n                        </div>\n                    </td>\n                    <td>\n                        <div *ngIf=\"jobHistory.department\">\n                            <a [routerLink]=\"['/department', jobHistory.department?.id, 'view']\" >{{ jobHistory.department?.id }}</a>\n                        </div>\n                    </td>\n                    <td>\n                        <div *ngIf=\"jobHistory.employee\">\n                            <a [routerLink]=\"['/employee', jobHistory.employee?.id, 'view']\" >{{ jobHistory.employee?.id }}</a>\n                        </div>\n                    </td>\n                    <td class=\"text-right\">\n                        <div class=\"btn-group\">\n                            <button type=\"submit\"\n                                    [routerLink]=\"['/job-history', jobHistory.id, 'view']\"\n                                    class=\"btn btn-info btn-sm\">\n                                <fa-icon icon=\"eye\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.view\">View</span>\n                            </button>\n\n                            <button type=\"submit\"\n                                    [routerLink]=\"['/job-history', jobHistory.id, 'edit']\"\n                                    class=\"btn btn-primary btn-sm\">\n                                <fa-icon icon=\"pencil-alt\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.edit\">Edit</span>\n                            </button>\n\n                            <button type=\"submit\" (click)=\"delete(jobHistory)\"\n                                    class=\"btn btn-danger btn-sm\">\n                                <fa-icon icon=\"times\"></fa-icon>\n                                <span class=\"d-none d-md-inline\" jhiTranslate=\"entity.action.delete\">Delete</span>\n                            </button>\n                        </div>\n                    </td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n";

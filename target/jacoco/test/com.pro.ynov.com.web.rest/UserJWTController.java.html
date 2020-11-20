@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserJWTController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.web.rest</a> &gt; <span class="el_source">UserJWTController.java</span></div><h1>UserJWTController.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.web.rest;
+
+import com.pro.ynov.com.security.jwt.JWTFilter;
+import com.pro.ynov.com.security.jwt.TokenProvider;
+import com.pro.ynov.com.web.rest.vm.LoginVM;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
+/**
+ * Controller to authenticate users.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+public class UserJWTController {
+
+    private final TokenProvider tokenProvider;
+
+    private final AuthenticationManagerBuilder authenticationManagerBuilder;
+
+<span class="nc" id="L31">    public UserJWTController(TokenProvider tokenProvider, AuthenticationManagerBuilder authenticationManagerBuilder) {</span>
+<span class="nc" id="L32">        this.tokenProvider = tokenProvider;</span>
+<span class="nc" id="L33">        this.authenticationManagerBuilder = authenticationManagerBuilder;</span>
+<span class="nc" id="L34">    }</span>
+
+    @PostMapping(&quot;/authenticate&quot;)
+    public ResponseEntity&lt;JWTToken&gt; authorize(@Valid @RequestBody LoginVM loginVM) {
+
+<span class="nc" id="L39">        UsernamePasswordAuthenticationToken authenticationToken =</span>
+<span class="nc" id="L40">            new UsernamePasswordAuthenticationToken(loginVM.getUsername(), loginVM.getPassword());</span>
+
+<span class="nc" id="L42">        Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);</span>
+<span class="nc" id="L43">        SecurityContextHolder.getContext().setAuthentication(authentication);</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        boolean rememberMe = (loginVM.isRememberMe() == null) ? false : loginVM.isRememberMe();</span>
+<span class="nc" id="L45">        String jwt = tokenProvider.createToken(authentication, rememberMe);</span>
+<span class="nc" id="L46">        HttpHeaders httpHeaders = new HttpHeaders();</span>
+<span class="nc" id="L47">        httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, &quot;Bearer &quot; + jwt);</span>
+<span class="nc" id="L48">        return new ResponseEntity&lt;&gt;(new JWTToken(jwt), httpHeaders, HttpStatus.OK);</span>
+    }
+    /**
+     * Object to return as body in JWT Authentication.
+     */
+    static class JWTToken {
+
+        private String idToken;
+
+<span class="nc" id="L57">        JWTToken(String idToken) {</span>
+<span class="nc" id="L58">            this.idToken = idToken;</span>
+<span class="nc" id="L59">        }</span>
+
+        @JsonProperty(&quot;id_token&quot;)
+        String getIdToken() {
+<span class="nc" id="L63">            return idToken;</span>
+        }
+
+        void setIdToken(String idToken) {
+<span class="nc" id="L67">            this.idToken = idToken;</span>
+<span class="nc" id="L68">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

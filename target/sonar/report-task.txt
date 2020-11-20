@@ -1,0 +1,6 @@
+projectKey=proBiblio
+serverUrl=http://localhost:9001
+serverVersion=8.3.1.34397
+dashboardUrl=http://localhost:9001/dashboard?id=proBiblio
+ceTaskId=AXXhETvQYj9ukz9tAZ_c
+ceTaskUrl=http://localhost:9001/api/ce/task?id=AXXhETvQYj9ukz9tAZ_c

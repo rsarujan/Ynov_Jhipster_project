@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JobHistoryResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.web.rest</a> &gt; <span class="el_source">JobHistoryResource.java</span></div><h1>JobHistoryResource.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.web.rest;
+
+import com.pro.ynov.com.domain.JobHistory;
+import com.pro.ynov.com.service.JobHistoryService;
+import com.pro.ynov.com.web.rest.errors.BadRequestAlertException;
+
+import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.PaginationUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * REST controller for managing {@link com.pro.ynov.com.domain.JobHistory}.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+public class JobHistoryResource {
+
+<span class="fc" id="L33">    private final Logger log = LoggerFactory.getLogger(JobHistoryResource.class);</span>
+
+    private static final String ENTITY_NAME = &quot;jobHistory&quot;;
+
+    @Value(&quot;${jhipster.clientApp.name}&quot;)
+    private String applicationName;
+
+    private final JobHistoryService jobHistoryService;
+
+<span class="fc" id="L42">    public JobHistoryResource(JobHistoryService jobHistoryService) {</span>
+<span class="fc" id="L43">        this.jobHistoryService = jobHistoryService;</span>
+<span class="fc" id="L44">    }</span>
+
+    /**
+     * {@code POST  /job-histories} : Create a new jobHistory.
+     *
+     * @param jobHistory the jobHistory to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new jobHistory, or with status {@code 400 (Bad Request)} if the jobHistory has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping(&quot;/job-histories&quot;)
+    public ResponseEntity&lt;JobHistory&gt; createJobHistory(@RequestBody JobHistory jobHistory) throws URISyntaxException {
+<span class="fc" id="L55">        log.debug(&quot;REST request to save JobHistory : {}&quot;, jobHistory);</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (jobHistory.getId() != null) {</span>
+<span class="fc" id="L57">            throw new BadRequestAlertException(&quot;A new jobHistory cannot already have an ID&quot;, ENTITY_NAME, &quot;idexists&quot;);</span>
+        }
+<span class="fc" id="L59">        JobHistory result = jobHistoryService.save(jobHistory);</span>
+<span class="fc" id="L60">        return ResponseEntity.created(new URI(&quot;/api/job-histories/&quot; + result.getId()))</span>
+<span class="fc" id="L61">            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))</span>
+<span class="fc" id="L62">            .body(result);</span>
+    }
+
+    /**
+     * {@code PUT  /job-histories} : Updates an existing jobHistory.
+     *
+     * @param jobHistory the jobHistory to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated jobHistory,
+     * or with status {@code 400 (Bad Request)} if the jobHistory is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the jobHistory couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PutMapping(&quot;/job-histories&quot;)
+    public ResponseEntity&lt;JobHistory&gt; updateJobHistory(@RequestBody JobHistory jobHistory) throws URISyntaxException {
+<span class="fc" id="L76">        log.debug(&quot;REST request to update JobHistory : {}&quot;, jobHistory);</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        if (jobHistory.getId() == null) {</span>
+<span class="fc" id="L78">            throw new BadRequestAlertException(&quot;Invalid id&quot;, ENTITY_NAME, &quot;idnull&quot;);</span>
+        }
+<span class="fc" id="L80">        JobHistory result = jobHistoryService.save(jobHistory);</span>
+<span class="fc" id="L81">        return ResponseEntity.ok()</span>
+<span class="fc" id="L82">            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, jobHistory.getId().toString()))</span>
+<span class="fc" id="L83">            .body(result);</span>
+    }
+
+    /**
+     * {@code GET  /job-histories} : get all the jobHistories.
+     *
+     * @param pageable the pagination information.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of jobHistories in body.
+     */
+    @GetMapping(&quot;/job-histories&quot;)
+    public ResponseEntity&lt;List&lt;JobHistory&gt;&gt; getAllJobHistories(Pageable pageable) {
+<span class="fc" id="L94">        log.debug(&quot;REST request to get a page of JobHistories&quot;);</span>
+<span class="fc" id="L95">        Page&lt;JobHistory&gt; page = jobHistoryService.findAll(pageable);</span>
+<span class="fc" id="L96">        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);</span>
+<span class="fc" id="L97">        return ResponseEntity.ok().headers(headers).body(page.getContent());</span>
+    }
+
+    /**
+     * {@code GET  /job-histories/:id} : get the &quot;id&quot; jobHistory.
+     *
+     * @param id the id of the jobHistory to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the jobHistory, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping(&quot;/job-histories/{id}&quot;)
+    public ResponseEntity&lt;JobHistory&gt; getJobHistory(@PathVariable Long id) {
+<span class="fc" id="L108">        log.debug(&quot;REST request to get JobHistory : {}&quot;, id);</span>
+<span class="fc" id="L109">        Optional&lt;JobHistory&gt; jobHistory = jobHistoryService.findOne(id);</span>
+<span class="fc" id="L110">        return ResponseUtil.wrapOrNotFound(jobHistory);</span>
+    }
+
+    /**
+     * {@code DELETE  /job-histories/:id} : delete the &quot;id&quot; jobHistory.
+     *
+     * @param id the id of the jobHistory to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping(&quot;/job-histories/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteJobHistory(@PathVariable Long id) {
+<span class="fc" id="L121">        log.debug(&quot;REST request to delete JobHistory : {}&quot;, id);</span>
+<span class="fc" id="L122">        jobHistoryService.delete(id);</span>
+<span class="fc" id="L123">        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
