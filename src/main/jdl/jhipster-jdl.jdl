@@ -1,115 +1,47 @@
-
-entity Region {
-	regionName String
+entity Livre{
+	titre String required unique,
+    description String required,
+    isbn String required unique,
+    code String required
 }
 
-entity Country {
-	countryName String
+entity Auteur{
+	auteur String required
 }
 
-// an ignored comment
-/** not an ignored comment */
-entity Location {
-	streetAddress String,
-	postalCode String,
-	city String,
-	stateProvince String
+entity Emplacement{
+	nomEmplacement String required
 }
 
-entity Department {
-	departmentName String required
+entity Theme{
+	theme String maxlength(50) required
 }
 
-/**
- * Task entity.
- * @author The JHipster team.
- */
-entity Task {
-	title String,
-	description String
+entity Exemplaire{
+	disponibilite Boolean required
 }
 
-/**
- * The Employee entity.
- */
-entity Employee {
-	/**
-	* The firstname attribute.
-	*/
-	firstName String,
-	lastName String,
-	email String,
-	phoneNumber String,
-	hireDate Instant,
-	salary Long,
-	commissionPct Long
+entity Emprunt{
+	dateEmprunt LocalDate required
 }
 
-entity Job {
-	jobTitle String,
-	minSalary Long,
-	maxSalary Long
+relationship OneToOne{
+	Emprunt{exemplaire} to Exemplaire,
+    Livre{emplacement} to Emplacement
 }
 
-entity JobHistory {
-	startDate Instant,
-	endDate Instant,
-	language Language
+relationship ManyToOne{
+	Emprunt{user(login)} to User
 }
 
-enum Language {
-    FRENCH, ENGLISH, SPANISH
+relationship OneToMany{
+    Livre to Exemplaire{livre}
 }
 
-relationship OneToOne {
-	Country{region} to Region
+relationship ManyToMany{
+	Theme{livre(titre)} to Livre{theme},
+    Auteur{livre(titre)} to Livre{auteur}
 }
-
-relationship OneToOne {
-	Location{country} to Country
-}
-
-relationship OneToOne {
-	Department{location} to Location
-}
-
-relationship ManyToMany {
-	Job{task(title)} to Task{job}
-}
-
-// defining multiple OneToMany relationships with comments
-relationship OneToMany {
-	Employee to Job{employee},
-	/**
-	* A relationship
-	*/
-	Department to
-	/**
-	* Another side of the same relationship
-	*/
-	Employee{department}
-}
-
-relationship ManyToOne {
-	Employee{manager} to Employee
-}
-
-// defining multiple oneToOne relationships
-relationship OneToOne {
-	JobHistory{job} to Job,
-	JobHistory{department} to Department,
-	JobHistory{employee} to Employee
-}
-
-// Set pagination options
-paginate JobHistory, Employee with infinite-scroll
-paginate Job with pagination
-
-// Use Data Transfer Objects (DTO)
-// dto * with mapstruct
-
-// Set service options to all except few
-service all with serviceImpl except Employee, Job
 
 // Set an angular suffix
 // angularSuffix * with mySuffix

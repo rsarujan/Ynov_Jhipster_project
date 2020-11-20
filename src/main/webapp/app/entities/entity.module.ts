@@ -5,36 +5,28 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forChild([
       {
-        path: 'region',
-        loadChildren: () => import('./region/region.module').then(m => m.ProBiblioRegionModule),
+        path: 'livre',
+        loadChildren: () => import('./livre/livre.module').then(m => m.ProBiblioLivreModule),
       },
       {
-        path: 'country',
-        loadChildren: () => import('./country/country.module').then(m => m.ProBiblioCountryModule),
+        path: 'auteur',
+        loadChildren: () => import('./auteur/auteur.module').then(m => m.ProBiblioAuteurModule),
       },
       {
-        path: 'location',
-        loadChildren: () => import('./location/location.module').then(m => m.ProBiblioLocationModule),
+        path: 'emplacement',
+        loadChildren: () => import('./emplacement/emplacement.module').then(m => m.ProBiblioEmplacementModule),
       },
       {
-        path: 'department',
-        loadChildren: () => import('./department/department.module').then(m => m.ProBiblioDepartmentModule),
+        path: 'theme',
+        loadChildren: () => import('./theme/theme.module').then(m => m.ProBiblioThemeModule),
       },
       {
-        path: 'task',
-        loadChildren: () => import('./task/task.module').then(m => m.ProBiblioTaskModule),
+        path: 'exemplaire',
+        loadChildren: () => import('./exemplaire/exemplaire.module').then(m => m.ProBiblioExemplaireModule),
       },
       {
-        path: 'employee',
-        loadChildren: () => import('./employee/employee.module').then(m => m.ProBiblioEmployeeModule),
-      },
-      {
-        path: 'job',
-        loadChildren: () => import('./job/job.module').then(m => m.ProBiblioJobModule),
-      },
-      {
-        path: 'job-history',
-        loadChildren: () => import('./job-history/job-history.module').then(m => m.ProBiblioJobHistoryModule),
+        path: 'emprunt',
+        loadChildren: () => import('./emprunt/emprunt.module').then(m => m.ProBiblioEmpruntModule),
       },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
