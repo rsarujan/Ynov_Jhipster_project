@@ -1,0 +1,47 @@
+entity Livre{
+	titre String required unique,
+    description String required,
+    isbn String required unique,
+    code String required
+}
+
+entity Auteur{
+	auteur String required
+}
+
+entity Emplacement{
+	nomEmplacement String required
+}
+
+entity Theme{
+	theme String maxlength(50) required
+}
+
+entity Exemplaire{
+	disponibilite Boolean required
+}
+
+entity Emprunt{
+	dateEmprunt LocalDate required
+}
+
+relationship OneToOne{
+	Emprunt{exemplaire} to Exemplaire,
+    Livre{emplacement} to Emplacement
+}
+
+relationship ManyToOne{
+	Emprunt{user(login)} to User
+}
+
+relationship OneToMany{
+    Livre to Exemplaire{livre}
+}
+
+relationship ManyToMany{
+	Theme{livre(titre)} to Livre{theme},
+    Auteur{livre(titre)} to Livre{auteur}
+}
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
