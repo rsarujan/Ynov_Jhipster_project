@@ -58,11 +58,11 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>snapshots_Cpalau_Srajaratnam</id>
+            <id>snapshots</id>
             <url>https://bilonjea.jfrog.io/artifactory/libs-snapshot</url>
         </snapshotRepository>
         <repository>
-            <id>releases_Cpalau_Srajaratnam</id>
+            <id>central</id>
             <url>https://bilonjea.jfrog.io/artifactory/libs-release</url>
         </repository>
     </distributionManagement>
