@@ -39,10 +39,25 @@ jobs:
                   else
                       echo No SONAR_TOKEN, skipping...
                   fi
+            #- name: Package application
+              #run: ./mvnw -ntp package deploy -Pprod -DskipTests
             - name: Package application
-              run: ./mvnw -ntp package deploy -Pprod -DskipTests
+              run: |
+                  java -version
+                  echo "-------------------PREVIOUS SETTINGS.xml------------------------------"
+                  cat ~/.m2/settings.xml
+                  echo "-------------------PREVIOUS SETTINGS.xml------------------------------"
+                  mv src/main/settings/settings.myartifactory.xml ~/.m2/settings.xml
+                  echo "-------------------NEW SETTINGS.xml------------------------------"
+                  cat ~/.m2/settings.xml
+                  echo "-------------------NEW SETTINGS.xml------------------------------"
+                  mvn -ntp package deploy -Pprod -DskipTests
+                  
             - name: Deploy to Heroku
               if: github.event_name == 'push' && github.ref == 'refs/heads/master'
               env:
                   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
               run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=pro-biblio
+
+
+            
