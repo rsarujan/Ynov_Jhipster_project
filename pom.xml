@@ -56,6 +56,16 @@
         <!-- jhipster-needle-maven-plugin-repository -->
     </pluginRepositories>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots_Cpalau_Srajaratnam</id>
+            <url>https://bilonjea.jfrog.io/artifactory/libs-snapshot</url>
+        </snapshotRepository>
+        <repository>
+            <id>releases_Cpalau_Srajaratnam</id>
+            <url>https://bilonjea.jfrog.io/artifactory/libs-release</url>
+        </repository>
+    </distributionManagement>
     <!-- jhipster-needle-distribution-management -->
 
     <properties>
