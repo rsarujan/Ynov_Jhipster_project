@@ -44,12 +44,6 @@ jobs:
             - name: Package application
               run: |
                   java -version
-                  echo "-------------------PREVIOUS SETTINGS.xml------------------------------"
-                  cat ~/.m2/settings.xml
-                  echo "-------------------PREVIOUS SETTINGS.xml------------------------------"
-                  mv src/main/settings/settings.myartifactory.xml ~/.m2/settings.xml
-                  echo "-------------------NEW SETTINGS.xml------------------------------"
-                  cat ~/.m2/settings.xml
                   echo "-------------------NEW SETTINGS.xml------------------------------"
                   mvn -ntp package deploy -Pprod -DskipTests
                   
