@@ -43,10 +43,9 @@ jobs:
               #run: ./mvnw -ntp package deploy -Pprod -DskipTests
             - name: Package application
               run: |
-                  java -version
-                  echo "-------------------NEW SETTINGS.xml------------------------------"
-                  mvn -ntp package deploy -Pprod -DskipTests
-                  
+                cat ~/.m2/settings.xml
+                mvn -ntp package deploy -Pprod -DskipTests
+                                
             - name: Deploy to Heroku
               if: github.event_name == 'push' && github.ref == 'refs/heads/master'
               env:
