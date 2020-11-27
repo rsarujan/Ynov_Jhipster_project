@@ -40,8 +40,8 @@ jobs:
                       echo No SONAR_TOKEN, skipping...
                   fi
             - name: Package application
-              env:
-                maven-local-repo-path: ${{secrets.JFROG_OSS_REPO_SNAPSHOTS }}
+              #env:
+                #maven-local-repo-path: ${{secrets.JFROG_OSS_REPO_SNAPSHOTS }}
                 maven-repo-server-id: snapshots
                 maven-repo-server-username: ${{ secrets.JFROG_OSS_REPO_USER }}
                 maven-repo-server-password: ${{ secrets.JFROG_OSS_REPO_PASS }}
