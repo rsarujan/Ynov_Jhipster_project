@@ -47,8 +47,7 @@ jobs:
                 maven-repo-server-password: ${{ secrets.JFROG_OSS_REPO_PASS }}
               run: |
                   cat ~/.m2/settings.xml
-                  mvn -ntp package deploy -Pprod -DskipTests
-              #./mvnw -ntp package deploy -Pprod -DskipTests
+                  ./mvnw -ntp package deploy -Pprod -DskipTests
 
             - name: Deploy to Heroku
               if: github.event_name == 'push' && github.ref == 'refs/heads/master'
