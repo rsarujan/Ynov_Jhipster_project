@@ -66,6 +66,16 @@
             <url>https://bilonjea.jfrog.io/artifactory/libs-release</url>
         </repository>
     </distributionManagement>
+    <!--<distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://vps-d02dec5b.vps.ovh.net:8081/artifactory/libs-snapshot</url>
+        </snapshotRepository>
+        <repository>
+            <id>central</id>
+            <url>https://vps-d02dec5b.vps.ovh.net:8081/artifactory/libs-release</url>
+        </repository>
+    </distributionManagement>-->
     <!-- jhipster-needle-distribution-management -->
 
     <properties>
