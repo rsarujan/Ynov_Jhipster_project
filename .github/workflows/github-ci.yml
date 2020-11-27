@@ -40,7 +40,10 @@ jobs:
                       echo No SONAR_TOKEN, skipping...
                   fi
             - name: Package application
-              run: ./mvnw -ntp package deploy -Pprod -DskipTests
+              run: |
+                cat ~/.m2/settings.xml
+                mvn -ntp package deploy -Pprod -DskipTests
+              #./mvnw -ntp package deploy -Pprod -DskipTests
             - name: Deploy to Heroku
               if: github.event_name == 'push' && github.ref == 'refs/heads/master'
               env:
