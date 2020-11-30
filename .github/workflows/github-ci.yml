@@ -39,22 +39,19 @@ jobs:
                   else
                       echo No SONAR_TOKEN, skipping...
                   fi
+            #- name: Package application
+              #run: ./mvnw -ntp package deploy -Pprod -DskipTests
             - name: Package application
-              env:
-                #maven-local-repo-path: ${{secrets.JFROG_OSS_REPO_SNAPSHOTS }}
-                maven-repo-server-id: snapshots
-                maven-repo-server-username: ${{ secrets.JFROG_OSS_REPO_USER }}
-                maven-repo-server-password: ${{ secrets.JFROG_OSS_REPO_PASS }}
               run: |
-                  cat ~/.m2/settings.xml
-                  ./mvnw -ntp package deploy -Pprod -DskipTests
+                cat ~/.m2/settings.xml
+                mvn -ntp package deploy -Pprod -DskipTests
 
+                                
             - name: Deploy to Heroku
               if: github.event_name == 'push' && github.ref == 'refs/heads/master'
               env:
                   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-                  heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
-                  heroku_email: ${{secrets.HEROKU_EMAIL}}
-                  branch: "sarujan"
-                  buildpack: ${{secrets.HEROKU_BUILD_PACK}}
               run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=pro-biblio
+
+
+            
