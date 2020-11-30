@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1](https://github.com/rsarujan/Ynov_TEST_Projet/compare/v0.0.1-SNAPSHOT...v0.0.1) (2020-11-30)
+
+
+### Features
+
+* add files ([b25f605](https://github.com/rsarujan/Ynov_TEST_Projet/commit/b25f605cc4a1f04cc5cd08d2d10f1f9235d0155f))
+* remove CHANGELOG.txt ([d11088e](https://github.com/rsarujan/Ynov_TEST_Projet/commit/d11088e69cc3f3f8259df3508f02bdbf9c6c7078))
+
 ### 0.0.1-SNAPSHOT (2020-11-30)
 
 
