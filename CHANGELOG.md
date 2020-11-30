@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### 0.0.1-SNAPSHOT (2020-11-30)
+
+
+### Features
+
+* initial feature commit ([623f9ba](https://github.com/rsarujan/Ynov_TEST_Projet/commit/623f9ba07a2b77cfeb73a16d9ab31cffcd145ef7))
+
 -      56 seconds ago  (HEAD -> sarujan, origin/sarujan) Modification de la LICENSE.md (Sarujan RAJARATNAM)
 -      2 minutes ago  Modification de la LICENSE.md (Sarujan RAJARATNAM)
 -      64 minutes ago  Add CHANGELOG (Sarujan RAJARATNAM)
