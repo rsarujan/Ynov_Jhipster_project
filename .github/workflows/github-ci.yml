@@ -110,3 +110,5 @@ jobs:
                     app_name: <HEROKU_APP_NAME>
                     branch: "master"
                     #subfolder: "dist-staging"
+                    run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName
+
