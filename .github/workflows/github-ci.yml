@@ -29,67 +29,58 @@ jobs:
             - name: Run frontend test
               run: npm run test
 
-            #- name: Analyze code with SonarQube
-            #  continue-on-error: true
-            #  env:
-            #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            #      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-            #  run: |
-            #      if [ -n $SONAR_TOKEN ]; then
-            #          ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
-            #      else
-            #          echo No SONAR_TOKEN, skipping...
-            #      fi
+            - name: Analyze code with SonarQube
+              continue-on-error: true
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              run: |
+                  if [ -n $SONAR_TOKEN ]; then
+                      ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
+                  else
+                      echo No SONAR_TOKEN, skipping...
+                  fi
 
 
 
-            #- name: Cache SonarCloud packages
-            #  uses: actions/cache@v1
-            #  with:
-            #    path: ~/.sonar/cache
-            #    key: ${{ runner.os }}-sonar
-            #    restore-keys: ${{ runner.os }}-sonar
-            #- name: Cache Maven packages
-            #  uses: actions/cache@v1
-            #  with:
-            #    path: ~/.m2
-            #    key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-            #    restore-keys: ${{ runner.os }}-m2
-            #- name: Build and analyze
-            #  continue-on-error: true
-            #  env:
-            #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-            #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            - name: Cache SonarCloud packages
+              uses: actions/cache@v1
+              with:
+                path: ~/.sonar/cache
+                key: ${{ runner.os }}-sonar
+                restore-keys: ${{ runner.os }}-sonar
+            - name: Cache Maven packages
+              uses: actions/cache@v1
+              with:
+                path: ~/.m2
+                key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+                restore-keys: ${{ runner.os }}-m2
+            - name: Build and analyze
+              continue-on-error: true
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
               #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-            #  run: |
-            #      if [ -n $SONAR_TOKEN ]; then
-            #          ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
-            #      else
-            #          echo No SONAR_TOKEN, skipping...
-            #      fi
+              run: |
+                  if [ -n $SONAR_TOKEN ]; then
+                      ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
+                  else
+                      echo No SONAR_TOKEN, skipping...
+                  fi
 
 
 
-            #- name: Package application
-            #  continue-on-error: true
-            #  env:
-            #    #maven-local-repo-path: ${{secrets.JFROG_OSS_REPO_SNAPSHOTS }}
-            #    maven-repo-server-id: snapshots
-            #    maven-repo-server-username: ${{ secrets.JFROG_OSS_REPO_USER }}
-            #    maven-repo-server-password: ${{ secrets.JFROG_OSS_REPO_PASS }}
-            #  run: |
-            #      cat ~/.m2/settings.xml
-            #      ./mvnw -ntp package deploy -Pprod -DskipTests
+            - name: Package application
+              continue-on-error: true
+              env:
+                #maven-local-repo-path: ${{secrets.JFROG_OSS_REPO_SNAPSHOTS }}
+                maven-repo-server-id: snapshots
+                maven-repo-server-username: ${{ secrets.JFROG_OSS_REPO_USER }}
+                maven-repo-server-password: ${{ secrets.JFROG_OSS_REPO_PASS }}
+              run: |
+                  cat ~/.m2/settings.xml
+                  ./mvnw -ntp package deploy -Pprod -DskipTests
 
-            #- name: Deploy to Heroku
-            #  if: github.event_name == 'push' && github.ref == 'refs/heads/sarujan'
-            #  env:
-            #      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-            #      heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
-            #      heroku_email: ${{secrets.HEROKU_EMAIL}}
-            #      branch: "master"
-            #      buildpack: ${{secrets.HEROKU_BUILD_PACK}}
-            #  run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=${{secrets.HEROKU_APP_NAME}}
 
     jobdeploy:
       name: Deploy to Herroku -2
