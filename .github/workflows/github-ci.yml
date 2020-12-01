@@ -61,7 +61,7 @@ jobs:
               #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
               run: |
                   if [ -n $SONAR_TOKEN ]; then
-                      ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=rsarujan -Dsonar.host.url=https://sonarcloud.io
+                      ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
                   else
                       echo No SONAR_TOKEN, skipping...
                   fi
