@@ -22,12 +22,12 @@ jobs:
                   java-version: '11.x'
             - name: Install node.js packages
               run: npm install
-            #- name: Run backend test
-            #  run: |
-            #      chmod +x mvnw
-            #      ./mvnw -ntp clean verify -P-webpack
-            #- name: Run frontend test
-            #  run: npm run test
+            - name: Run backend test
+              run: |
+                  chmod +x mvnw
+                  ./mvnw -ntp clean verify -P-webpack
+            - name: Run frontend test
+              run: npm run test
 
             #- name: Analyze code with SonarQube
             #  continue-on-error: true
