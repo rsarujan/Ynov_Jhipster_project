@@ -91,4 +91,18 @@ jobs:
                   buildpack: ${{secrets.HEROKU_BUILD_PACK}}
               run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=${{secrets.HEROKU_APP_NAME}}
 
+    jobdeploy:
+      name: Deploy to Herroku -2
+      needs: pipeline
+      runs-on: ubuntu-20.04
+      steps:
+        - uses: actions/checkout@v2
+        - uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
+          with:
+            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
+            heroku_email: ${{secrets.HEROKU_EMAIL}}
+            branch: "master"
+            buildpack: ${{secrets.HEROKU_BUILD_PACK}}
+
 
