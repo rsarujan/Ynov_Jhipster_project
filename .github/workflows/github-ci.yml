@@ -82,7 +82,7 @@ jobs:
                   ./mvnw -ntp package deploy -Pprod -DskipTests
 
             - name: Deploy to Heroku
-              if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+              if: github.event_name == 'push' && github.ref == 'refs/heads/sarujan'
               env:
                   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
                   heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
