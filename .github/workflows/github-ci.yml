@@ -41,7 +41,7 @@ jobs:
                   fi
 
 
-                  
+
             - name: Cache SonarCloud packages
               uses: actions/cache@v1
               with:
@@ -58,8 +58,13 @@ jobs:
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-              run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-
+              #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+              run: |
+                  if [ -n $SONAR_TOKEN ]; then
+                      ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=rsarujan -Dsonar.host.url=https://sonarcloud.io
+                  else
+                      echo No SONAR_TOKEN, skipping...
+                  fi
 
 
 
