@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExceptionTranslator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.web.rest.errors</a> &gt; <span class="el_source">ExceptionTranslator.java</span></div><h1>ExceptionTranslator.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.web.rest.errors;
+
+import io.github.jhipster.config.JHipsterConstants;
+import io.github.jhipster.web.util.HeaderUtil;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.ConcurrencyFailureException;
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageConversionException;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.NativeWebRequest;
+import org.springframework.core.env.Environment;
+import org.zalando.problem.DefaultProblem;
+import org.zalando.problem.Problem;
+import org.zalando.problem.ProblemBuilder;
+import org.zalando.problem.Status;
+import org.zalando.problem.StatusType;
+import org.zalando.problem.spring.web.advice.ProblemHandling;
+import org.zalando.problem.spring.web.advice.security.SecurityAdviceTrait;
+import org.zalando.problem.violations.ConstraintViolationProblem;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.servlet.http.HttpServletRequest;
+import java.net.URI;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+/**
+ * Controller advice to translate the server side exceptions to client-friendly json structures.
+ * The error response follows RFC7807 - Problem Details for HTTP APIs (https://tools.ietf.org/html/rfc7807).
+ */
+@ControllerAdvice
+public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait {
+
+    private static final String FIELD_ERRORS_KEY = &quot;fieldErrors&quot;;
+    private static final String MESSAGE_KEY = &quot;message&quot;;
+    private static final String PATH_KEY = &quot;path&quot;;
+    private static final String VIOLATIONS_KEY = &quot;violations&quot;;
+
+    @Value(&quot;${jhipster.clientApp.name}&quot;)
+    private String applicationName;
+
+    private final Environment env;
+
+<span class="nc" id="L54">    public ExceptionTranslator(Environment env) {</span>
+<span class="nc" id="L55">        this.env = env;</span>
+<span class="nc" id="L56">    }</span>
+
+    /**
+     * Post-process the Problem payload to add the message key for the front-end if needed.
+     */
+    @Override
+    public ResponseEntity&lt;Problem&gt; process(@Nullable ResponseEntity&lt;Problem&gt; entity, NativeWebRequest request) {
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        if (entity == null) {</span>
+<span class="nc" id="L64">            return entity;</span>
+        }
+<span class="nc" id="L66">        Problem problem = entity.getBody();</span>
+<span class="nc bnc" id="L67" title="All 4 branches missed.">        if (!(problem instanceof ConstraintViolationProblem || problem instanceof DefaultProblem)) {</span>
+<span class="nc" id="L68">            return entity;</span>
+        }
+<span class="nc" id="L70">        ProblemBuilder builder = Problem.builder()</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">            .withType(Problem.DEFAULT_TYPE.equals(problem.getType()) ? ErrorConstants.DEFAULT_TYPE : problem.getType())</span>
+<span class="nc" id="L72">            .withStatus(problem.getStatus())</span>
+<span class="nc" id="L73">            .withTitle(problem.getTitle())</span>
+<span class="nc" id="L74">            .with(PATH_KEY, request.getNativeRequest(HttpServletRequest.class).getRequestURI());</span>
+
+<span class="nc bnc" id="L76" title="All 2 branches missed.">        if (problem instanceof ConstraintViolationProblem) {</span>
+<span class="nc" id="L77">            builder</span>
+<span class="nc" id="L78">                .with(VIOLATIONS_KEY, ((ConstraintViolationProblem) problem).getViolations())</span>
+<span class="nc" id="L79">                .with(MESSAGE_KEY, ErrorConstants.ERR_VALIDATION);</span>
+        } else {
+<span class="nc" id="L81">            builder</span>
+<span class="nc" id="L82">                .withCause(((DefaultProblem) problem).getCause())</span>
+<span class="nc" id="L83">                .withDetail(problem.getDetail())</span>
+<span class="nc" id="L84">                .withInstance(problem.getInstance());</span>
+<span class="nc" id="L85">            problem.getParameters().forEach(builder::with);</span>
+<span class="nc bnc" id="L86" title="All 4 branches missed.">            if (!problem.getParameters().containsKey(MESSAGE_KEY) &amp;&amp; problem.getStatus() != null) {</span>
+<span class="nc" id="L87">                builder.with(MESSAGE_KEY, &quot;error.http.&quot; + problem.getStatus().getStatusCode());</span>
+            }
+        }
+<span class="nc" id="L90">        return new ResponseEntity&lt;&gt;(builder.build(), entity.getHeaders(), entity.getStatusCode());</span>
+    }
+
+    @Override
+    public ResponseEntity&lt;Problem&gt; handleMethodArgumentNotValid(MethodArgumentNotValidException ex, @Nonnull NativeWebRequest request) {
+<span class="nc" id="L95">        BindingResult result = ex.getBindingResult();</span>
+<span class="nc" id="L96">        List&lt;FieldErrorVM&gt; fieldErrors = result.getFieldErrors().stream()</span>
+<span class="nc" id="L97">            .map(f -&gt; new FieldErrorVM(f.getObjectName().replaceFirst(&quot;DTO$&quot;, &quot;&quot;), f.getField(), f.getCode()))</span>
+<span class="nc" id="L98">            .collect(Collectors.toList());</span>
+
+<span class="nc" id="L100">        Problem problem = Problem.builder()</span>
+<span class="nc" id="L101">            .withType(ErrorConstants.CONSTRAINT_VIOLATION_TYPE)</span>
+<span class="nc" id="L102">            .withTitle(&quot;Method argument not valid&quot;)</span>
+<span class="nc" id="L103">            .withStatus(defaultConstraintViolationStatus())</span>
+<span class="nc" id="L104">            .with(MESSAGE_KEY, ErrorConstants.ERR_VALIDATION)</span>
+<span class="nc" id="L105">            .with(FIELD_ERRORS_KEY, fieldErrors)</span>
+<span class="nc" id="L106">            .build();</span>
+<span class="nc" id="L107">        return create(ex, problem, request);</span>
+    }
+
+    @ExceptionHandler
+    public ResponseEntity&lt;Problem&gt; handleEmailAlreadyUsedException(com.pro.ynov.com.service.EmailAlreadyUsedException ex, NativeWebRequest request) {
+<span class="nc" id="L112">        EmailAlreadyUsedException problem = new EmailAlreadyUsedException();</span>
+<span class="nc" id="L113">        return create(problem, request, HeaderUtil.createFailureAlert(applicationName,  true, problem.getEntityName(), problem.getErrorKey(), problem.getMessage()));</span>
+    }
+
+    @ExceptionHandler
+    public ResponseEntity&lt;Problem&gt; handleUsernameAlreadyUsedException(com.pro.ynov.com.service.UsernameAlreadyUsedException ex, NativeWebRequest request) {
+<span class="nc" id="L118">        LoginAlreadyUsedException problem = new LoginAlreadyUsedException();</span>
+<span class="nc" id="L119">        return create(problem, request, HeaderUtil.createFailureAlert(applicationName,  true, problem.getEntityName(), problem.getErrorKey(), problem.getMessage()));</span>
+    }
+
+    @ExceptionHandler
+    public ResponseEntity&lt;Problem&gt; handleInvalidPasswordException(com.pro.ynov.com.service.InvalidPasswordException ex, NativeWebRequest request) {
+<span class="nc" id="L124">        return create(new InvalidPasswordException(), request);</span>
+    }
+
+    @ExceptionHandler
+    public ResponseEntity&lt;Problem&gt; handleBadRequestAlertException(BadRequestAlertException ex, NativeWebRequest request) {
+<span class="nc" id="L129">        return create(ex, request, HeaderUtil.createFailureAlert(applicationName, true, ex.getEntityName(), ex.getErrorKey(), ex.getMessage()));</span>
+    }
+
+    @ExceptionHandler
+    public ResponseEntity&lt;Problem&gt; handleConcurrencyFailure(ConcurrencyFailureException ex, NativeWebRequest request) {
+<span class="nc" id="L134">        Problem problem = Problem.builder()</span>
+<span class="nc" id="L135">            .withStatus(Status.CONFLICT)</span>
+<span class="nc" id="L136">            .with(MESSAGE_KEY, ErrorConstants.ERR_CONCURRENCY_FAILURE)</span>
+<span class="nc" id="L137">            .build();</span>
+<span class="nc" id="L138">        return create(ex, problem, request);</span>
+    }
+
+    @Override
+    public ProblemBuilder prepare(final Throwable throwable, final StatusType status, final URI type) {
+
+<span class="nc" id="L144">        Collection&lt;String&gt; activeProfiles = Arrays.asList(env.getActiveProfiles());</span>
+
+<span class="nc bnc" id="L146" title="All 2 branches missed.">        if (activeProfiles.contains(JHipsterConstants.SPRING_PROFILE_PRODUCTION)) {</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">            if (throwable instanceof HttpMessageConversionException) {</span>
+<span class="nc" id="L148">                return Problem.builder()</span>
+<span class="nc" id="L149">                    .withType(type)</span>
+<span class="nc" id="L150">                    .withTitle(status.getReasonPhrase())</span>
+<span class="nc" id="L151">                    .withStatus(status)</span>
+<span class="nc" id="L152">                    .withDetail(&quot;Unable to convert http message&quot;)</span>
+<span class="nc" id="L153">                    .withCause(Optional.ofNullable(throwable.getCause())</span>
+<span class="nc" id="L154">                        .filter(cause -&gt; isCausalChainsEnabled())</span>
+<span class="nc" id="L155">                        .map(this::toProblem)</span>
+<span class="nc" id="L156">                        .orElse(null));</span>
+            }
+<span class="nc bnc" id="L158" title="All 2 branches missed.">            if (throwable instanceof DataAccessException) {</span>
+<span class="nc" id="L159">                return Problem.builder()</span>
+<span class="nc" id="L160">                    .withType(type)</span>
+<span class="nc" id="L161">                    .withTitle(status.getReasonPhrase())</span>
+<span class="nc" id="L162">                    .withStatus(status)</span>
+<span class="nc" id="L163">                    .withDetail(&quot;Failure during data access&quot;)</span>
+<span class="nc" id="L164">                    .withCause(Optional.ofNullable(throwable.getCause())</span>
+<span class="nc" id="L165">                        .filter(cause -&gt; isCausalChainsEnabled())</span>
+<span class="nc" id="L166">                        .map(this::toProblem)</span>
+<span class="nc" id="L167">                        .orElse(null));</span>
+            }
+<span class="nc bnc" id="L169" title="All 2 branches missed.">            if (containsPackageName(throwable.getMessage())) {</span>
+<span class="nc" id="L170">                return Problem.builder()</span>
+<span class="nc" id="L171">                    .withType(type)</span>
+<span class="nc" id="L172">                    .withTitle(status.getReasonPhrase())</span>
+<span class="nc" id="L173">                    .withStatus(status)</span>
+<span class="nc" id="L174">                    .withDetail(&quot;Unexpected runtime exception&quot;)</span>
+<span class="nc" id="L175">                    .withCause(Optional.ofNullable(throwable.getCause())</span>
+<span class="nc" id="L176">                        .filter(cause -&gt; isCausalChainsEnabled())</span>
+<span class="nc" id="L177">                        .map(this::toProblem)</span>
+<span class="nc" id="L178">                        .orElse(null));</span>
+            }
+        }
+
+<span class="nc" id="L182">        return Problem.builder()</span>
+<span class="nc" id="L183">            .withType(type)</span>
+<span class="nc" id="L184">            .withTitle(status.getReasonPhrase())</span>
+<span class="nc" id="L185">            .withStatus(status)</span>
+<span class="nc" id="L186">            .withDetail(throwable.getMessage())</span>
+<span class="nc" id="L187">            .withCause(Optional.ofNullable(throwable.getCause())</span>
+<span class="nc" id="L188">                .filter(cause -&gt; isCausalChainsEnabled())</span>
+<span class="nc" id="L189">                .map(this::toProblem)</span>
+<span class="nc" id="L190">                .orElse(null));</span>
+    }
+
+    private boolean containsPackageName(String message) {
+
+        // This list is for sure not complete
+<span class="nc" id="L196">        return StringUtils.containsAny(message, &quot;org.&quot;, &quot;java.&quot;, &quot;net.&quot;, &quot;javax.&quot;, &quot;com.&quot;, &quot;io.&quot;, &quot;de.&quot;, &quot;com.pro.ynov.com&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,51 @@
+3cbe79db0ce7afeb18e8bf25aa779fae
+/* istanbul ignore next */
+function cov_ra8brna8q() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/entities/emprunt/emprunt-update.component.html";
+  var hash = "820acdd5c33c19a9e9c3e77aec0223fe7b8257d0";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/entities/emprunt/emprunt-update.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 3910
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "820acdd5c33c19a9e9c3e77aec0223fe7b8257d0"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_ra8brna8q = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_ra8brna8q();
+cov_ra8brna8q().s[0]++;
+module.exports = "<div class=\"row justify-content-center\">\n    <div class=\"col-8\">\n        <form name=\"editForm\" role=\"form\" novalidate (ngSubmit)=\"save()\" [formGroup]=\"editForm\">\n            <h2 id=\"jhi-emprunt-heading\" jhiTranslate=\"proBiblioApp.emprunt.home.createOrEditLabel\">Create or edit a Emprunt</h2>\n\n            <div>\n                <jhi-alert-error></jhi-alert-error>\n\n                <div class=\"form-group\" [hidden]=\"!editForm.get('id')!.value\">\n                    <label for=\"id\" jhiTranslate=\"global.field.id\">ID</label>\n                    <input type=\"text\" class=\"form-control\" id=\"id\" name=\"id\" formControlName=\"id\" readonly />\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.emprunt.dateEmprunt\" for=\"field_dateEmprunt\">Date Emprunt</label>\n                    <div class=\"input-group\">\n                        <input id=\"field_dateEmprunt\" type=\"text\" class=\"form-control\" name=\"dateEmprunt\" ngbDatepicker #dateEmpruntDp=\"ngbDatepicker\" formControlName=\"dateEmprunt\"/>\n                        <span class=\"input-group-append\">\n                            <button type=\"button\" class=\"btn btn-secondary\" (click)=\"dateEmpruntDp.toggle()\"><fa-icon icon=\"calendar-alt\"></fa-icon></button>\n                        </span>\n                    </div>\n                    <div *ngIf=\"editForm.get('dateEmprunt')!.invalid && (editForm.get('dateEmprunt')!.dirty || editForm.get('dateEmprunt')!.touched)\">\n                        <small class=\"form-text text-danger\"\n                               *ngIf=\"editForm.get('dateEmprunt')?.errors?.required\" jhiTranslate=\"entity.validation.required\">\n                        This field is required.\n                        </small>\n                    </div>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.emprunt.exemplaire\" for=\"field_exemplaire\">Exemplaire</label>\n                    <select class=\"form-control\" id=\"field_exemplaire\" name=\"exemplaire\" formControlName=\"exemplaire\">\n                        <option [ngValue]=\"null\"></option>\n                        <option [ngValue]=\"exemplaireOption.id === editForm.get('exemplaire')!.value?.id ? editForm.get('exemplaire')!.value : exemplaireOption\" *ngFor=\"let exemplaireOption of exemplaires; trackBy: trackById\">{{ exemplaireOption.id }}</option>\n                    </select>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.emprunt.user\" for=\"field_user\">User</label>\n                    <select class=\"form-control\" id=\"field_user\" name=\"user\" formControlName=\"user\">\n                        <option [ngValue]=\"null\"></option>\n                        <option [ngValue]=\"userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption\" *ngFor=\"let userOption of users; trackBy: trackById\">{{ userOption.login }}</option>\n                    </select>\n                </div>\n            </div>\n\n            <div>\n                <button type=\"button\" id=\"cancel-save\" class=\"btn btn-secondary\" (click)=\"previousState()\">\n                    <fa-icon icon=\"ban\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.cancel\">Cancel</span>\n                </button>\n\n                <button type=\"submit\" id=\"save-entity\" [disabled]=\"editForm.invalid || isSaving\" class=\"btn btn-primary\">\n                    <fa-icon icon=\"save\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.save\">Save</span>\n                </button>\n            </div>\n        </form>\n    </div>\n</div>\n";

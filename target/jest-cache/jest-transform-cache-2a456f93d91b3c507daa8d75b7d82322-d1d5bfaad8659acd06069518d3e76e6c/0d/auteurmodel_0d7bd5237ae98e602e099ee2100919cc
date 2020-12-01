@@ -1,0 +1,171 @@
+803ae36f0b54ff6fd64c71a3ac68de12
+"use strict";
+
+/* istanbul ignore next */
+function cov_12hsman41m() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/shared/model/auteur.model.ts";
+  var hash = "53a3e52343bbf4619dca530768b0d1f8315759a1";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/shared/model/auteur.model.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 24
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 8
+        },
+        end: {
+          line: 6,
+          column: 21
+        }
+      },
+      "3": {
+        start: {
+          line: 7,
+          column: 8
+        },
+        end: {
+          line: 7,
+          column: 29
+        }
+      },
+      "4": {
+        start: {
+          line: 8,
+          column: 8
+        },
+        end: {
+          line: 8,
+          column: 29
+        }
+      },
+      "5": {
+        start: {
+          line: 11,
+          column: 0
+        },
+        end: {
+          line: 11,
+          column: 24
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 4
+          },
+          end: {
+            line: 5,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 36
+          },
+          end: {
+            line: 9,
+            column: 5
+          }
+        },
+        line: 5
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/shared/model/auteur.model.ts",
+      mappings: ";;;AAQA,MAAa,MAAM;IACjB,YAAmB,EAAW,EAAS,MAAe,EAAS,MAAiB;QAA7D,OAAE,GAAF,EAAE,CAAS;QAAS,WAAM,GAAN,MAAM,CAAS;QAAS,WAAM,GAAN,MAAM,CAAW;IAAG,CAAC;CACrF;AAFD,wBAEC",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/shared/model/auteur.model.ts"],
+      sourcesContent: ["import { ILivre } from 'app/shared/model/livre.model';\n\nexport interface IAuteur {\n  id?: number;\n  auteur?: string;\n  livres?: ILivre[];\n}\n\nexport class Auteur implements IAuteur {\n  constructor(public id?: number, public auteur?: string, public livres?: ILivre[]) {}\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "53a3e52343bbf4619dca530768b0d1f8315759a1"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_12hsman41m = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_12hsman41m();
+cov_12hsman41m().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_12hsman41m().s[1]++;
+exports.Auteur = void 0;
+
+class Auteur {
+  constructor(id, auteur, livres) {
+    /* istanbul ignore next */
+    cov_12hsman41m().f[0]++;
+    cov_12hsman41m().s[2]++;
+    this.id = id;
+
+    /* istanbul ignore next */
+    cov_12hsman41m().s[3]++;
+    this.auteur = auteur;
+
+    /* istanbul ignore next */
+    cov_12hsman41m().s[4]++;
+    this.livres = livres;
+  }
+
+}
+
+/* istanbul ignore next */
+cov_12hsman41m().s[5]++;
+exports.Auteur = Auteur;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWU5PVl9QUk9KRVRfQklCTElPVEhFUVVFX0NMRU1FTkNFX1NBUlVKQU4vWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL3NoYXJlZC9tb2RlbC9hdXRldXIubW9kZWwudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQVFBLE1BQWEsTUFBYixDQUFtQjtBQUNqQixFQUFBLFdBQUEsQ0FBbUIsRUFBbkIsRUFBdUMsTUFBdkMsRUFBK0QsTUFBL0QsRUFBZ0Y7QUFBQTtBQUFBO0FBQUE7QUFBN0QsU0FBQSxFQUFBLEdBQUEsRUFBQTs7QUFBNkQ7QUFBQTtBQUF6QyxTQUFBLE1BQUEsR0FBQSxNQUFBOztBQUF5QztBQUFBO0FBQWpCLFNBQUEsTUFBQSxHQUFBLE1BQUE7QUFBcUI7O0FBRG5FOzs7O0FBQW5CLE9BQUEsQ0FBQSxNQUFBLEdBQUEsTUFBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IElMaXZyZSB9IGZyb20gJ2FwcC9zaGFyZWQvbW9kZWwvbGl2cmUubW9kZWwnO1xuXG5leHBvcnQgaW50ZXJmYWNlIElBdXRldXIge1xuICBpZD86IG51bWJlcjtcbiAgYXV0ZXVyPzogc3RyaW5nO1xuICBsaXZyZXM/OiBJTGl2cmVbXTtcbn1cblxuZXhwb3J0IGNsYXNzIEF1dGV1ciBpbXBsZW1lbnRzIElBdXRldXIge1xuICBjb25zdHJ1Y3RvcihwdWJsaWMgaWQ/OiBudW1iZXIsIHB1YmxpYyBhdXRldXI/OiBzdHJpbmcsIHB1YmxpYyBsaXZyZXM/OiBJTGl2cmVbXSkge31cbn1cbiJdfQ==

@@ -1,0 +1,51 @@
+456e49d4e31f7677ece22e65f7dafa02
+/* istanbul ignore next */
+function cov_14a1otd22j() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/entities/emplacement/emplacement-update.component.html";
+  var hash = "d7781ef88102fe097848448dcd03d926750f4eaf";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/entities/emplacement/emplacement-update.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 2256
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "d7781ef88102fe097848448dcd03d926750f4eaf"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_14a1otd22j = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_14a1otd22j();
+cov_14a1otd22j().s[0]++;
+module.exports = "<div class=\"row justify-content-center\">\n    <div class=\"col-8\">\n        <form name=\"editForm\" role=\"form\" novalidate (ngSubmit)=\"save()\" [formGroup]=\"editForm\">\n            <h2 id=\"jhi-emplacement-heading\" jhiTranslate=\"proBiblioApp.emplacement.home.createOrEditLabel\">Create or edit a Emplacement</h2>\n\n            <div>\n                <jhi-alert-error></jhi-alert-error>\n\n                <div class=\"form-group\" [hidden]=\"!editForm.get('id')!.value\">\n                    <label for=\"id\" jhiTranslate=\"global.field.id\">ID</label>\n                    <input type=\"text\" class=\"form-control\" id=\"id\" name=\"id\" formControlName=\"id\" readonly />\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.emplacement.nomEmplacement\" for=\"field_nomEmplacement\">Nom Emplacement</label>\n                    <input type=\"text\" class=\"form-control\" name=\"nomEmplacement\" id=\"field_nomEmplacement\"\n                           formControlName=\"nomEmplacement\"/>\n                    <div *ngIf=\"editForm.get('nomEmplacement')!.invalid && (editForm.get('nomEmplacement')!.dirty || editForm.get('nomEmplacement')!.touched)\">\n                        <small class=\"form-text text-danger\"\n                               *ngIf=\"editForm.get('nomEmplacement')?.errors?.required\" jhiTranslate=\"entity.validation.required\">\n                        This field is required.\n                        </small>\n                    </div>\n                </div>\n            </div>\n\n            <div>\n                <button type=\"button\" id=\"cancel-save\" class=\"btn btn-secondary\" (click)=\"previousState()\">\n                    <fa-icon icon=\"ban\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.cancel\">Cancel</span>\n                </button>\n\n                <button type=\"submit\" id=\"save-entity\" [disabled]=\"editForm.invalid || isSaving\" class=\"btn btn-primary\">\n                    <fa-icon icon=\"save\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.save\">Save</span>\n                </button>\n            </div>\n        </form>\n    </div>\n</div>\n";

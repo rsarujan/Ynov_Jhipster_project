@@ -1,0 +1,561 @@
+6495e8425d9e6678f7bc1bcf0af3b4f9
+"use strict";
+
+/* istanbul ignore next */
+function cov_1qcmb7wzcc() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/health/health-modal.component.ts";
+  var hash = "6ee2a032dd35a36a95764da0b6f81b8ea9f17a56";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/health/health-modal.component.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 38
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 23
+        },
+        end: {
+          line: 6,
+          column: 60
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 27
+        },
+        end: {
+          line: 33,
+          column: 1
+        }
+      },
+      "6": {
+        start: {
+          line: 9,
+          column: 8
+        },
+        end: {
+          line: 9,
+          column: 39
+        }
+      },
+      "7": {
+        start: {
+          line: 12,
+          column: 8
+        },
+        end: {
+          line: 22,
+          column: 9
+        }
+      },
+      "8": {
+        start: {
+          line: 14,
+          column: 24
+        },
+        end: {
+          line: 14,
+          column: 42
+        }
+      },
+      "9": {
+        start: {
+          line: 15,
+          column: 12
+        },
+        end: {
+          line: 21,
+          column: 13
+        }
+      },
+      "10": {
+        start: {
+          line: 17,
+          column: 16
+        },
+        end: {
+          line: 17,
+          column: 46
+        }
+      },
+      "11": {
+        start: {
+          line: 20,
+          column: 16
+        },
+        end: {
+          line: 20,
+          column: 60
+        }
+      },
+      "12": {
+        start: {
+          line: 23,
+          column: 8
+        },
+        end: {
+          line: 28,
+          column: 9
+        }
+      },
+      "13": {
+        start: {
+          line: 24,
+          column: 12
+        },
+        end: {
+          line: 24,
+          column: 41
+        }
+      },
+      "14": {
+        start: {
+          line: 27,
+          column: 12
+        },
+        end: {
+          line: 27,
+          column: 36
+        }
+      },
+      "15": {
+        start: {
+          line: 31,
+          column: 8
+        },
+        end: {
+          line: 31,
+          column: 35
+        }
+      },
+      "16": {
+        start: {
+          line: 34,
+          column: 0
+        },
+        end: {
+          line: 40,
+          column: 25
+        }
+      },
+      "17": {
+        start: {
+          line: 41,
+          column: 0
+        },
+        end: {
+          line: 41,
+          column: 52
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 8,
+            column: 4
+          },
+          end: {
+            line: 8,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 8,
+            column: 29
+          },
+          end: {
+            line: 10,
+            column: 5
+          }
+        },
+        line: 8
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 11,
+            column: 4
+          },
+          end: {
+            line: 11,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 11,
+            column: 25
+          },
+          end: {
+            line: 29,
+            column: 5
+          }
+        },
+        line: 11
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 30,
+            column: 4
+          },
+          end: {
+            line: 30,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 30,
+            column: 14
+          },
+          end: {
+            line: 32,
+            column: 5
+          }
+        },
+        line: 30
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 12,
+            column: 8
+          },
+          end: {
+            line: 22,
+            column: 9
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 12,
+            column: 8
+          },
+          end: {
+            line: 22,
+            column: 9
+          }
+        }, {
+          start: {
+            line: 12,
+            column: 8
+          },
+          end: {
+            line: 22,
+            column: 9
+          }
+        }],
+        line: 12
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 12,
+            column: 12
+          },
+          end: {
+            line: 12,
+            column: 58
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 12,
+            column: 12
+          },
+          end: {
+            line: 12,
+            column: 23
+          }
+        }, {
+          start: {
+            line: 12,
+            column: 27
+          },
+          end: {
+            line: 12,
+            column: 58
+          }
+        }],
+        line: 12
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 15,
+            column: 12
+          },
+          end: {
+            line: 21,
+            column: 13
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 15,
+            column: 12
+          },
+          end: {
+            line: 21,
+            column: 13
+          }
+        }, {
+          start: {
+            line: 15,
+            column: 12
+          },
+          end: {
+            line: 21,
+            column: 13
+          }
+        }],
+        line: 15
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 23,
+            column: 8
+          },
+          end: {
+            line: 28,
+            column: 9
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 23,
+            column: 8
+          },
+          end: {
+            line: 28,
+            column: 9
+          }
+        }, {
+          start: {
+            line: 23,
+            column: 8
+          },
+          end: {
+            line: 28,
+            column: 9
+          }
+        }],
+        line: 23
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0],
+      "3": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/health/health-modal.component.ts",
+      mappings: ";;;;AAAA,wCAA0C;AAC1C,6DAA4D;AAQ5D,IAAa,oBAAoB,GAAjC,MAAa,oBAAoB;IAG/B,YAAmB,WAA2B;QAA3B,gBAAW,GAAX,WAAW,CAAgB;IAAG,CAAC;IAElD,aAAa,CAAC,KAAU;QACtB,IAAI,IAAI,CAAC,MAAM,IAAI,IAAI,CAAC,MAAM,CAAC,GAAG,KAAK,WAAW,EAAE;YAClD,yDAAyD;YACzD,MAAM,GAAG,GAAG,KAAK,GAAG,UAAU,CAAC;YAC/B,IAAI,GAAG,GAAG,CAAC,EAAE;gBACX,QAAQ;gBACR,OAAO,GAAG,CAAC,OAAO,CAAC,CAAC,CAAC,GAAG,KAAK,CAAC;aAC/B;iBAAM;gBACL,OAAO,CAAC,KAAK,GAAG,OAAO,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,GAAG,KAAK,CAAC;aAC7C;SACF;QAED,IAAI,OAAO,KAAK,KAAK,QAAQ,EAAE;YAC7B,OAAO,IAAI,CAAC,SAAS,CAAC,KAAK,CAAC,CAAC;SAC9B;aAAM;YACL,OAAO,KAAK,CAAC,QAAQ,EAAE,CAAC;SACzB;IACH,CAAC;IAED,OAAO;QACL,IAAI,CAAC,WAAW,CAAC,OAAO,EAAE,CAAC;IAC7B,CAAC;CACF,CAAA;AA3BY,oBAAoB;IAJhC,gBAAS,CAAC;QACT,QAAQ,EAAE,kBAAkB;QAC5B,kBAAa,+BAA+B,CAAA;KAC7C,CAAC;6CAIgC,6BAAc;GAHnC,oBAAoB,CA2BhC;AA3BY,oDAAoB",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/health/health-modal.component.ts"],
+      sourcesContent: ["import { Component } from '@angular/core';\nimport { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';\n\nimport { HealthKey, HealthDetails } from './health.service';\n\n@Component({\n  selector: 'jhi-health-modal',\n  templateUrl: './health-modal.component.html',\n})\nexport class HealthModalComponent {\n  health?: { key: HealthKey; value: HealthDetails };\n\n  constructor(public activeModal: NgbActiveModal) {}\n\n  readableValue(value: any): string {\n    if (this.health && this.health.key === 'diskSpace') {\n      // Should display storage space in an human readable unit\n      const val = value / 1073741824;\n      if (val > 1) {\n        // Value\n        return val.toFixed(2) + ' GB';\n      } else {\n        return (value / 1048576).toFixed(2) + ' MB';\n      }\n    }\n\n    if (typeof value === 'object') {\n      return JSON.stringify(value);\n    } else {\n      return value.toString();\n    }\n  }\n\n  dismiss(): void {\n    this.activeModal.dismiss();\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "6ee2a032dd35a36a95764da0b6f81b8ea9f17a56"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1qcmb7wzcc = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1qcmb7wzcc();
+cov_1qcmb7wzcc().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1qcmb7wzcc().s[1]++;
+exports.HealthModalComponent = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_1qcmb7wzcc().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_1qcmb7wzcc().s[3]++, require("@angular/core"));
+const ng_bootstrap_1 =
+/* istanbul ignore next */
+(cov_1qcmb7wzcc().s[4]++, require("@ng-bootstrap/ng-bootstrap"));
+
+/* istanbul ignore next */
+cov_1qcmb7wzcc().s[5]++;
+let HealthModalComponent = class HealthModalComponent {
+  constructor(activeModal) {
+    /* istanbul ignore next */
+    cov_1qcmb7wzcc().f[0]++;
+    cov_1qcmb7wzcc().s[6]++;
+    this.activeModal = activeModal;
+  }
+
+  readableValue(value) {
+    /* istanbul ignore next */
+    cov_1qcmb7wzcc().f[1]++;
+    cov_1qcmb7wzcc().s[7]++;
+
+    if (
+    /* istanbul ignore next */
+    (cov_1qcmb7wzcc().b[1][0]++, this.health) &&
+    /* istanbul ignore next */
+    (cov_1qcmb7wzcc().b[1][1]++, this.health.key === 'diskSpace')) {
+      /* istanbul ignore next */
+      cov_1qcmb7wzcc().b[0][0]++;
+      // Should display storage space in an human readable unit
+      const val =
+      /* istanbul ignore next */
+      (cov_1qcmb7wzcc().s[8]++, value / 1073741824);
+
+      /* istanbul ignore next */
+      cov_1qcmb7wzcc().s[9]++;
+
+      if (val > 1) {
+        /* istanbul ignore next */
+        cov_1qcmb7wzcc().b[2][0]++;
+        cov_1qcmb7wzcc().s[10]++;
+        // Value
+        return val.toFixed(2) + ' GB';
+      } else {
+        /* istanbul ignore next */
+        cov_1qcmb7wzcc().b[2][1]++;
+        cov_1qcmb7wzcc().s[11]++;
+        return (value / 1048576).toFixed(2) + ' MB';
+      }
+    } else
+    /* istanbul ignore next */
+    {
+      cov_1qcmb7wzcc().b[0][1]++;
+    }
+
+    cov_1qcmb7wzcc().s[12]++;
+
+    if (typeof value === 'object') {
+      /* istanbul ignore next */
+      cov_1qcmb7wzcc().b[3][0]++;
+      cov_1qcmb7wzcc().s[13]++;
+      return JSON.stringify(value);
+    } else {
+      /* istanbul ignore next */
+      cov_1qcmb7wzcc().b[3][1]++;
+      cov_1qcmb7wzcc().s[14]++;
+      return value.toString();
+    }
+  }
+
+  dismiss() {
+    /* istanbul ignore next */
+    cov_1qcmb7wzcc().f[2]++;
+    cov_1qcmb7wzcc().s[15]++;
+    this.activeModal.dismiss();
+  }
+
+};
+
+/* istanbul ignore next */
+cov_1qcmb7wzcc().s[16]++;
+HealthModalComponent = tslib_1.__decorate([core_1.Component({
+  selector: 'jhi-health-modal',
+  template: require('./health-modal.component.html')
+}), tslib_1.__metadata("design:paramtypes", [ng_bootstrap_1.NgbActiveModal])], HealthModalComponent);
+
+/* istanbul ignore next */
+cov_1qcmb7wzcc().s[17]++;
+exports.HealthModalComponent = HealthModalComponent;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWU5PVl9QUk9KRVRfQklCTElPVEhFUVVFX0NMRU1FTkNFX1NBUlVKQU4vWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL2FkbWluL2hlYWx0aC9oZWFsdGgtbW9kYWwuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsTUFBQSxNQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsZUFBQSxDQUFBLENBQUE7QUFDQSxNQUFBLGNBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSw0QkFBQSxDQUFBLENBQUE7Ozs7QUFRQSxJQUFhLG9CQUFvQixHQUFqQyxNQUFhLG9CQUFiLENBQWlDO0FBRy9CLEVBQUEsV0FBQSxDQUFtQixXQUFuQixFQUE4QztBQUFBO0FBQUE7QUFBQTtBQUEzQixTQUFBLFdBQUEsR0FBQSxXQUFBO0FBQStCOztBQUVsRCxFQUFBLGFBQWEsQ0FBQyxLQUFELEVBQVc7QUFBQTtBQUFBO0FBQUE7O0FBQ3RCO0FBQUk7QUFBQSxzQ0FBSyxNQUFMO0FBQUE7QUFBQSxpQ0FBZSxLQUFLLE1BQUwsQ0FBWSxHQUFaLEtBQW9CLFdBQW5DLENBQUosRUFBb0Q7QUFBQTtBQUFBO0FBQ2xEO0FBQ0EsWUFBTSxHQUFHO0FBQUE7QUFBQSxnQ0FBRyxLQUFLLEdBQUcsVUFBWCxDQUFUOztBQUZrRDtBQUFBOztBQUdsRCxVQUFJLEdBQUcsR0FBRyxDQUFWLEVBQWE7QUFBQTtBQUFBO0FBQUE7QUFDWDtBQUNBLGVBQU8sR0FBRyxDQUFDLE9BQUosQ0FBWSxDQUFaLElBQWlCLEtBQXhCO0FBQ0QsT0FIRCxNQUdPO0FBQUE7QUFBQTtBQUFBO0FBQ0wsZUFBTyxDQUFDLEtBQUssR0FBRyxPQUFULEVBQWtCLE9BQWxCLENBQTBCLENBQTFCLElBQStCLEtBQXRDO0FBQ0Q7QUFDRixLQVREO0FBQUE7QUFBQTtBQUFBO0FBQUE7O0FBRHNCOztBQVl0QixRQUFJLE9BQU8sS0FBUCxLQUFpQixRQUFyQixFQUErQjtBQUFBO0FBQUE7QUFBQTtBQUM3QixhQUFPLElBQUksQ0FBQyxTQUFMLENBQWUsS0FBZixDQUFQO0FBQ0QsS0FGRCxNQUVPO0FBQUE7QUFBQTtBQUFBO0FBQ0wsYUFBTyxLQUFLLENBQUMsUUFBTixFQUFQO0FBQ0Q7QUFDRjs7QUFFRCxFQUFBLE9BQU8sR0FBQTtBQUFBO0FBQUE7QUFBQTtBQUNMLFNBQUssV0FBTCxDQUFpQixPQUFqQjtBQUNEOztBQTFCOEIsQ0FBakM7Ozs7QUFBYSxvQkFBb0IsR0FBQSxPQUFBLENBQUEsVUFBQSxDQUFBLENBSmhDLE1BQUEsQ0FBQSxTQUFBLENBQVU7QUFDVCxFQUFBLFFBQVEsRUFBRSxrQkFERDtBQUVULEVBQUEsUUFBQSxFQUFBLE9BQUEsQ0FBYSwrQkFBYjtBQUZTLENBQVYsQ0FJZ0MsRSx5Q0FHQyxjQUFBLENBQUEsYyxFQUhELENBQUEsRUFBcEIsb0JBQW9CLENBQXBCOzs7O0FBQUEsT0FBQSxDQUFBLG9CQUFBLEdBQUEsb0JBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IE5nYkFjdGl2ZU1vZGFsIH0gZnJvbSAnQG5nLWJvb3RzdHJhcC9uZy1ib290c3RyYXAnO1xuXG5pbXBvcnQgeyBIZWFsdGhLZXksIEhlYWx0aERldGFpbHMgfSBmcm9tICcuL2hlYWx0aC5zZXJ2aWNlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnamhpLWhlYWx0aC1tb2RhbCcsXG4gIHRlbXBsYXRlVXJsOiAnLi9oZWFsdGgtbW9kYWwuY29tcG9uZW50Lmh0bWwnLFxufSlcbmV4cG9ydCBjbGFzcyBIZWFsdGhNb2RhbENvbXBvbmVudCB7XG4gIGhlYWx0aD86IHsga2V5OiBIZWFsdGhLZXk7IHZhbHVlOiBIZWFsdGhEZXRhaWxzIH07XG5cbiAgY29uc3RydWN0b3IocHVibGljIGFjdGl2ZU1vZGFsOiBOZ2JBY3RpdmVNb2RhbCkge31cblxuICByZWFkYWJsZVZhbHVlKHZhbHVlOiBhbnkpOiBzdHJpbmcge1xuICAgIGlmICh0aGlzLmhlYWx0aCAmJiB0aGlzLmhlYWx0aC5rZXkgPT09ICdkaXNrU3BhY2UnKSB7XG4gICAgICAvLyBTaG91bGQgZGlzcGxheSBzdG9yYWdlIHNwYWNlIGluIGFuIGh1bWFuIHJlYWRhYmxlIHVuaXRcbiAgICAgIGNvbnN0IHZhbCA9IHZhbHVlIC8gMTA3Mzc0MTgyNDtcbiAgICAgIGlmICh2YWwgPiAxKSB7XG4gICAgICAgIC8vIFZhbHVlXG4gICAgICAgIHJldHVybiB2YWwudG9GaXhlZCgyKSArICcgR0InO1xuICAgICAgfSBlbHNlIHtcbiAgICAgICAgcmV0dXJuICh2YWx1ZSAvIDEwNDg1NzYpLnRvRml4ZWQoMikgKyAnIE1CJztcbiAgICAgIH1cbiAgICB9XG5cbiAgICBpZiAodHlwZW9mIHZhbHVlID09PSAnb2JqZWN0Jykge1xuICAgICAgcmV0dXJuIEpTT04uc3RyaW5naWZ5KHZhbHVlKTtcbiAgICB9IGVsc2Uge1xuICAgICAgcmV0dXJuIHZhbHVlLnRvU3RyaW5nKCk7XG4gICAgfVxuICB9XG5cbiAgZGlzbWlzcygpOiB2b2lkIHtcbiAgICB0aGlzLmFjdGl2ZU1vZGFsLmRpc21pc3MoKTtcbiAgfVxufVxuIl19

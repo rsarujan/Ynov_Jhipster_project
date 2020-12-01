@@ -1,0 +1,51 @@
+1c69445390f7101ce26c5a5e52df180e
+/* istanbul ignore next */
+function cov_xrfs1y4dv() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/entities/livre/livre-detail.component.html";
+  var hash = "8746ec10f07a8bb5eb82867d62fc38fe99866521";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/entities/livre/livre-detail.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 2070
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "8746ec10f07a8bb5eb82867d62fc38fe99866521"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_xrfs1y4dv = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_xrfs1y4dv();
+cov_xrfs1y4dv().s[0]++;
+module.exports = "<div class=\"row justify-content-center\">\n    <div class=\"col-8\">\n        <div *ngIf=\"livre\">\n            <h2><span jhiTranslate=\"proBiblioApp.livre.detail.title\">Livre</span> {{ livre.id }}</h2>\n\n            <hr>\n\n            <jhi-alert-error></jhi-alert-error>\n\n            <dl class=\"row-md jh-entity-details\">\n                <dt><span jhiTranslate=\"proBiblioApp.livre.titre\">Titre</span></dt>\n                <dd>\n                    <span>{{ livre.titre }}</span>\n                </dd>\n                <dt><span jhiTranslate=\"proBiblioApp.livre.description\">Description</span></dt>\n                <dd>\n                    <span>{{ livre.description }}</span>\n                </dd>\n                <dt><span jhiTranslate=\"proBiblioApp.livre.isbn\">Isbn</span></dt>\n                <dd>\n                    <span>{{ livre.isbn }}</span>\n                </dd>\n                <dt><span jhiTranslate=\"proBiblioApp.livre.code\">Code</span></dt>\n                <dd>\n                    <span>{{ livre.code }}</span>\n                </dd>\n                <dt><span jhiTranslate=\"proBiblioApp.livre.emplacement\">Emplacement</span></dt>\n                <dd>\n                    <div *ngIf=\"livre.emplacement\">\n                        <a [routerLink]=\"['/emplacement', livre.emplacement?.id, 'view']\">{{ livre.emplacement?.id }}</a>\n                    </div>\n                </dd>\n            </dl>\n\n            <button type=\"submit\"\n                    (click)=\"previousState()\"\n                    class=\"btn btn-info\">\n                <fa-icon icon=\"arrow-left\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.back\">Back</span>\n            </button>\n\n            <button type=\"button\"\n                    [routerLink]=\"['/livre', livre.id, 'edit']\"\n                    class=\"btn btn-primary\">\n                <fa-icon icon=\"pencil-alt\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.edit\">Edit</span>\n            </button>\n        </div>\n    </div>\n</div>\n";

@@ -1,0 +1,12 @@
+8548827348a9707d9112a6dbafd93bee
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function isDate(value) {
+  return value instanceof Date && !isNaN(+value);
+}
+
+exports.isDate = isDate;

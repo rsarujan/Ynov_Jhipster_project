@@ -145,9 +145,9 @@
         <junit.utReportFolder>${project.testresult.directory}/test</junit.utReportFolder>
         <junit.itReportFolder>${project.testresult.directory}/integrationTest</junit.itReportFolder>
         <!-- jhipster-needle-maven-property -->
-        <sonar.projectKey>rsarujan_Ynov_TEST_Projet</sonar.projectKey>
+        <!--<sonar.projectKey>rsarujan_Ynov_TEST_Projet</sonar.projectKey>
         <sonar.organization>rsarujan</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>-->
     </properties>
 
 
@@ -827,7 +827,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <!-- Force alphabetical order to have a reproducible build -->
+                        <!-- Force alphabetical order to have a reproducible build-->
                         <runOrder>alphabetical</runOrder>
                         <reportsDirectory>${junit.utReportFolder}</reportsDirectory>
                         <excludes>

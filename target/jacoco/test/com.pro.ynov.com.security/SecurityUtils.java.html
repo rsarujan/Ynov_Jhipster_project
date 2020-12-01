@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SecurityUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.security</a> &gt; <span class="el_source">SecurityUtils.java</span></div><h1>SecurityUtils.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.security;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Optional;
+import java.util.stream.Stream;
+
+/**
+ * Utility class for Spring Security.
+ */
+public final class SecurityUtils {
+
+    private SecurityUtils() {
+    }
+
+    /**
+     * Get the login of the current user.
+     *
+     * @return the login of the current user.
+     */
+    public static Optional&lt;String&gt; getCurrentUserLogin() {
+<span class="fc" id="L26">        SecurityContext securityContext = SecurityContextHolder.getContext();</span>
+<span class="fc" id="L27">        return Optional.ofNullable(extractPrincipal(securityContext.getAuthentication()));</span>
+    }
+
+    private static String extractPrincipal(Authentication authentication) {
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if (authentication == null) {</span>
+<span class="nc" id="L32">            return null;</span>
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        } else if (authentication.getPrincipal() instanceof UserDetails) {</span>
+<span class="nc" id="L34">            UserDetails springSecurityUser = (UserDetails) authentication.getPrincipal();</span>
+<span class="nc" id="L35">            return springSecurityUser.getUsername();</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        } else if (authentication.getPrincipal() instanceof String) {</span>
+<span class="fc" id="L37">            return (String) authentication.getPrincipal();</span>
+        }
+<span class="nc" id="L39">        return null;</span>
+    }
+
+
+    /**
+     * Get the JWT of the current user.
+     *
+     * @return the JWT of the current user.
+     */
+    public static Optional&lt;String&gt; getCurrentUserJWT() {
+<span class="fc" id="L49">        SecurityContext securityContext = SecurityContextHolder.getContext();</span>
+<span class="fc" id="L50">        return Optional.ofNullable(securityContext.getAuthentication())</span>
+<span class="fc" id="L51">            .filter(authentication -&gt; authentication.getCredentials() instanceof String)</span>
+<span class="fc" id="L52">            .map(authentication -&gt; (String) authentication.getCredentials());</span>
+    }
+
+    /**
+     * Check if a user is authenticated.
+     *
+     * @return true if the user is authenticated, false otherwise.
+     */
+    public static boolean isAuthenticated() {
+<span class="fc" id="L61">        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        return authentication != null &amp;&amp;</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">            getAuthorities(authentication).noneMatch(AuthoritiesConstants.ANONYMOUS::equals);</span>
+    }
+
+    /**
+     * If the current user has a specific authority (security role).
+     * &lt;p&gt;
+     * The name of this method comes from the {@code isUserInRole()} method in the Servlet API.
+     *
+     * @param authority the authority to check.
+     * @return true if the current user has the authority, false otherwise.
+     */
+    public static boolean isCurrentUserInRole(String authority) {
+<span class="fc" id="L75">        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();</span>
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">        return authentication != null &amp;&amp;</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">            getAuthorities(authentication).anyMatch(authority::equals);</span>
+    }
+
+    private static Stream&lt;String&gt; getAuthorities(Authentication authentication) {
+<span class="fc" id="L81">        return authentication.getAuthorities().stream()</span>
+<span class="fc" id="L82">            .map(GrantedAuthority::getAuthority);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

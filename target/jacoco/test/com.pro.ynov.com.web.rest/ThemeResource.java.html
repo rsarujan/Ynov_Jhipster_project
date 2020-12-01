@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ThemeResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.web.rest</a> &gt; <span class="el_source">ThemeResource.java</span></div><h1>ThemeResource.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.web.rest;
+
+import com.pro.ynov.com.domain.Theme;
+import com.pro.ynov.com.repository.ThemeRepository;
+import com.pro.ynov.com.web.rest.errors.BadRequestAlertException;
+
+import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * REST controller for managing {@link com.pro.ynov.com.domain.Theme}.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+@Transactional
+public class ThemeResource {
+
+<span class="nc" id="L30">    private final Logger log = LoggerFactory.getLogger(ThemeResource.class);</span>
+
+    private static final String ENTITY_NAME = &quot;theme&quot;;
+
+    @Value(&quot;${jhipster.clientApp.name}&quot;)
+    private String applicationName;
+
+    private final ThemeRepository themeRepository;
+
+<span class="nc" id="L39">    public ThemeResource(ThemeRepository themeRepository) {</span>
+<span class="nc" id="L40">        this.themeRepository = themeRepository;</span>
+<span class="nc" id="L41">    }</span>
+
+    /**
+     * {@code POST  /themes} : Create a new theme.
+     *
+     * @param theme the theme to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new theme, or with status {@code 400 (Bad Request)} if the theme has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping(&quot;/themes&quot;)
+    public ResponseEntity&lt;Theme&gt; createTheme(@Valid @RequestBody Theme theme) throws URISyntaxException {
+<span class="nc" id="L52">        log.debug(&quot;REST request to save Theme : {}&quot;, theme);</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">        if (theme.getId() != null) {</span>
+<span class="nc" id="L54">            throw new BadRequestAlertException(&quot;A new theme cannot already have an ID&quot;, ENTITY_NAME, &quot;idexists&quot;);</span>
+        }
+<span class="nc" id="L56">        Theme result = themeRepository.save(theme);</span>
+<span class="nc" id="L57">        return ResponseEntity.created(new URI(&quot;/api/themes/&quot; + result.getId()))</span>
+<span class="nc" id="L58">            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))</span>
+<span class="nc" id="L59">            .body(result);</span>
+    }
+
+    /**
+     * {@code PUT  /themes} : Updates an existing theme.
+     *
+     * @param theme the theme to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated theme,
+     * or with status {@code 400 (Bad Request)} if the theme is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the theme couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PutMapping(&quot;/themes&quot;)
+    public ResponseEntity&lt;Theme&gt; updateTheme(@Valid @RequestBody Theme theme) throws URISyntaxException {
+<span class="nc" id="L73">        log.debug(&quot;REST request to update Theme : {}&quot;, theme);</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (theme.getId() == null) {</span>
+<span class="nc" id="L75">            throw new BadRequestAlertException(&quot;Invalid id&quot;, ENTITY_NAME, &quot;idnull&quot;);</span>
+        }
+<span class="nc" id="L77">        Theme result = themeRepository.save(theme);</span>
+<span class="nc" id="L78">        return ResponseEntity.ok()</span>
+<span class="nc" id="L79">            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, theme.getId().toString()))</span>
+<span class="nc" id="L80">            .body(result);</span>
+    }
+
+    /**
+     * {@code GET  /themes} : get all the themes.
+     *
+     * @param eagerload flag to eager load entities from relationships (This is applicable for many-to-many).
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of themes in body.
+     */
+    @GetMapping(&quot;/themes&quot;)
+    public List&lt;Theme&gt; getAllThemes(@RequestParam(required = false, defaultValue = &quot;false&quot;) boolean eagerload) {
+<span class="nc" id="L91">        log.debug(&quot;REST request to get all Themes&quot;);</span>
+<span class="nc" id="L92">        return themeRepository.findAllWithEagerRelationships();</span>
+    }
+
+    /**
+     * {@code GET  /themes/:id} : get the &quot;id&quot; theme.
+     *
+     * @param id the id of the theme to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the theme, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping(&quot;/themes/{id}&quot;)
+    public ResponseEntity&lt;Theme&gt; getTheme(@PathVariable Long id) {
+<span class="nc" id="L103">        log.debug(&quot;REST request to get Theme : {}&quot;, id);</span>
+<span class="nc" id="L104">        Optional&lt;Theme&gt; theme = themeRepository.findOneWithEagerRelationships(id);</span>
+<span class="nc" id="L105">        return ResponseUtil.wrapOrNotFound(theme);</span>
+    }
+
+    /**
+     * {@code DELETE  /themes/:id} : delete the &quot;id&quot; theme.
+     *
+     * @param id the id of the theme to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping(&quot;/themes/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteTheme(@PathVariable Long id) {
+<span class="nc" id="L116">        log.debug(&quot;REST request to delete Theme : {}&quot;, id);</span>
+<span class="nc" id="L117">        themeRepository.deleteById(id);</span>
+<span class="nc" id="L118">        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

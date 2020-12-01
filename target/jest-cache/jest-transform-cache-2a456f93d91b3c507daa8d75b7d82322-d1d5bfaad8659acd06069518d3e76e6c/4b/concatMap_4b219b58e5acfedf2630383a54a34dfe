@@ -1,0 +1,14 @@
+8bee3f467266f1b22fe168156ad76bb0
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var mergeMap_1 = require("./mergeMap");
+
+function concatMap(project, resultSelector) {
+  return mergeMap_1.mergeMap(project, resultSelector, 1);
+}
+
+exports.concatMap = concatMap;

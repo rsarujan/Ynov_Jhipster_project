@@ -1,0 +1,313 @@
+885b287a476f07c6438383a045f7890b
+"use strict";
+
+/* istanbul ignore next */
+function cov_1v5ycy2zqw() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/metrics/metrics.service.ts";
+  var hash = "0aba237901e5ba32258a299a4e9c9d3f8ef73a27";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/metrics/metrics.service.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 32
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 15
+        },
+        end: {
+          line: 6,
+          column: 46
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 24
+        },
+        end: {
+          line: 7,
+          column: 52
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 21
+        },
+        end: {
+          line: 18,
+          column: 1
+        }
+      },
+      "7": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 25
+        }
+      },
+      "8": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 13,
+          column: 87
+        }
+      },
+      "9": {
+        start: {
+          line: 16,
+          column: 8
+        },
+        end: {
+          line: 16,
+          column: 87
+        }
+      },
+      "10": {
+        start: {
+          line: 19,
+          column: 0
+        },
+        end: {
+          line: 22,
+          column: 19
+        }
+      },
+      "11": {
+        start: {
+          line: 23,
+          column: 0
+        },
+        end: {
+          line: 23,
+          column: 40
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 9,
+            column: 4
+          },
+          end: {
+            line: 9,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 9,
+            column: 22
+          },
+          end: {
+            line: 11,
+            column: 5
+          }
+        },
+        line: 9
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 12,
+            column: 4
+          },
+          end: {
+            line: 12,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 12,
+            column: 17
+          },
+          end: {
+            line: 14,
+            column: 5
+          }
+        },
+        line: 12
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 15,
+            column: 4
+          },
+          end: {
+            line: 15,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 15,
+            column: 17
+          },
+          end: {
+            line: 17,
+            column: 5
+          }
+        },
+        line: 15
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/metrics/metrics.service.ts",
+      mappings: ";;;;AAAA,wCAA2C;AAC3C,+CAAkD;AAGlD,qDAAmD;AAQnD,IAAa,cAAc,GAA3B,MAAa,cAAc;IACzB,YAAoB,IAAgB;QAAhB,SAAI,GAAJ,IAAI,CAAY;IAAG,CAAC;IAExC,UAAU;QACR,OAAO,IAAI,CAAC,IAAI,CAAC,GAAG,CAAU,8BAAc,GAAG,uBAAuB,CAAC,CAAC;IAC1E,CAAC;IAED,UAAU;QACR,OAAO,IAAI,CAAC,IAAI,CAAC,GAAG,CAAa,8BAAc,GAAG,uBAAuB,CAAC,CAAC;IAC7E,CAAC;CACF,CAAA;AAVY,cAAc;IAD1B,iBAAU,CAAC,EAAE,UAAU,EAAE,MAAM,EAAE,CAAC;6CAEP,iBAAU;GADzB,cAAc,CAU1B;AAVY,wCAAc",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/metrics/metrics.service.ts"],
+      sourcesContent: ["import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { SERVER_API_URL } from 'app/app.constants';\n\nexport type MetricsKey = 'jvm' | 'http.server.requests' | 'cache' | 'services' | 'databases' | 'garbageCollector' | 'processMetrics';\nexport type Metrics = { [key in MetricsKey]: any };\nexport type Thread = any;\nexport type ThreadDump = { threads: Thread[] };\n\n@Injectable({ providedIn: 'root' })\nexport class MetricsService {\n  constructor(private http: HttpClient) {}\n\n  getMetrics(): Observable<Metrics> {\n    return this.http.get<Metrics>(SERVER_API_URL + 'management/jhimetrics');\n  }\n\n  threadDump(): Observable<ThreadDump> {\n    return this.http.get<ThreadDump>(SERVER_API_URL + 'management/threaddump');\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "0aba237901e5ba32258a299a4e9c9d3f8ef73a27"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1v5ycy2zqw = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1v5ycy2zqw();
+cov_1v5ycy2zqw().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1v5ycy2zqw().s[1]++;
+exports.MetricsService = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_1v5ycy2zqw().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_1v5ycy2zqw().s[3]++, require("@angular/core"));
+const http_1 =
+/* istanbul ignore next */
+(cov_1v5ycy2zqw().s[4]++, require("@angular/common/http"));
+const app_constants_1 =
+/* istanbul ignore next */
+(cov_1v5ycy2zqw().s[5]++, require("app/app.constants"));
+
+/* istanbul ignore next */
+cov_1v5ycy2zqw().s[6]++;
+let MetricsService = class MetricsService {
+  constructor(http) {
+    /* istanbul ignore next */
+    cov_1v5ycy2zqw().f[0]++;
+    cov_1v5ycy2zqw().s[7]++;
+    this.http = http;
+  }
+
+  getMetrics() {
+    /* istanbul ignore next */
+    cov_1v5ycy2zqw().f[1]++;
+    cov_1v5ycy2zqw().s[8]++;
+    return this.http.get(app_constants_1.SERVER_API_URL + 'management/jhimetrics');
+  }
+
+  threadDump() {
+    /* istanbul ignore next */
+    cov_1v5ycy2zqw().f[2]++;
+    cov_1v5ycy2zqw().s[9]++;
+    return this.http.get(app_constants_1.SERVER_API_URL + 'management/threaddump');
+  }
+
+};
+
+/* istanbul ignore next */
+cov_1v5ycy2zqw().s[10]++;
+MetricsService = tslib_1.__decorate([core_1.Injectable({
+  providedIn: 'root'
+}), tslib_1.__metadata("design:paramtypes", [http_1.HttpClient])], MetricsService);
+
+/* istanbul ignore next */
+cov_1v5ycy2zqw().s[11]++;
+exports.MetricsService = MetricsService;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWU5PVl9QUk9KRVRfQklCTElPVEhFUVVFX0NMRU1FTkNFX1NBUlVKQU4vWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL2FkbWluL21ldHJpY3MvbWV0cmljcy5zZXJ2aWNlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQW9CSTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFwQkosTUFBQSxNQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsZUFBQSxDQUFBLENBQUE7QUFDQSxNQUFBLE1BQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxzQkFBQSxDQUFBLENBQUE7QUFHQSxNQUFBLGVBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxtQkFBQSxDQUFBLENBQUE7Ozs7QUFRQSxJQUFhLGNBQWMsR0FBM0IsTUFBYSxjQUFiLENBQTJCO0FBQ3pCLEVBQUEsV0FBQSxDQUFvQixJQUFwQixFQUFvQztBQUFBO0FBQUE7QUFBQTtBQUFoQixTQUFBLElBQUEsR0FBQSxJQUFBO0FBQW9COztBQUV4QyxFQUFBLFVBQVUsR0FBQTtBQUFBO0FBQUE7QUFBQTtBQUNSLFdBQU8sS0FBSyxJQUFMLENBQVUsR0FBVixDQUF1QixlQUFBLENBQUEsY0FBQSxHQUFpQix1QkFBeEMsQ0FBUDtBQUNEOztBQUVELEVBQUEsVUFBVSxHQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ1IsV0FBTyxLQUFLLElBQUwsQ0FBVSxHQUFWLENBQTBCLGVBQUEsQ0FBQSxjQUFBLEdBQWlCLHVCQUEzQyxDQUFQO0FBQ0Q7O0FBVHdCLENBQTNCOzs7O0FBQWEsY0FBYyxHQUFBLE9BQUEsQ0FBQSxVQUFBLENBQUEsQ0FEMUIsTUFBQSxDQUFBLFVBQUEsQ0FBVztBQUFFLEVBQUEsVUFBVSxFQUFFO0FBQWQsQ0FBWCxDQUMwQixFLHlDQUNDLE1BQUEsQ0FBQSxVLEVBREQsQ0FBQSxFQUFkLGNBQWMsQ0FBZDs7OztBQUFBLE9BQUEsQ0FBQSxjQUFBLEdBQUEsY0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEluamVjdGFibGUgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEh0dHBDbGllbnQgfSBmcm9tICdAYW5ndWxhci9jb21tb24vaHR0cCc7XG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAncnhqcyc7XG5cbmltcG9ydCB7IFNFUlZFUl9BUElfVVJMIH0gZnJvbSAnYXBwL2FwcC5jb25zdGFudHMnO1xuXG5leHBvcnQgdHlwZSBNZXRyaWNzS2V5ID0gJ2p2bScgfCAnaHR0cC5zZXJ2ZXIucmVxdWVzdHMnIHwgJ2NhY2hlJyB8ICdzZXJ2aWNlcycgfCAnZGF0YWJhc2VzJyB8ICdnYXJiYWdlQ29sbGVjdG9yJyB8ICdwcm9jZXNzTWV0cmljcyc7XG5leHBvcnQgdHlwZSBNZXRyaWNzID0geyBba2V5IGluIE1ldHJpY3NLZXldOiBhbnkgfTtcbmV4cG9ydCB0eXBlIFRocmVhZCA9IGFueTtcbmV4cG9ydCB0eXBlIFRocmVhZER1bXAgPSB7IHRocmVhZHM6IFRocmVhZFtdIH07XG5cbkBJbmplY3RhYmxlKHsgcHJvdmlkZWRJbjogJ3Jvb3QnIH0pXG5leHBvcnQgY2xhc3MgTWV0cmljc1NlcnZpY2Uge1xuICBjb25zdHJ1Y3Rvcihwcml2YXRlIGh0dHA6IEh0dHBDbGllbnQpIHt9XG5cbiAgZ2V0TWV0cmljcygpOiBPYnNlcnZhYmxlPE1ldHJpY3M+IHtcbiAgICByZXR1cm4gdGhpcy5odHRwLmdldDxNZXRyaWNzPihTRVJWRVJfQVBJX1VSTCArICdtYW5hZ2VtZW50L2poaW1ldHJpY3MnKTtcbiAgfVxuXG4gIHRocmVhZER1bXAoKTogT2JzZXJ2YWJsZTxUaHJlYWREdW1wPiB7XG4gICAgcmV0dXJuIHRoaXMuaHR0cC5nZXQ8VGhyZWFkRHVtcD4oU0VSVkVSX0FQSV9VUkwgKyAnbWFuYWdlbWVudC90aHJlYWRkdW1wJyk7XG4gIH1cbn1cbiJdfQ==

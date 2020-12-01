@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmplacementResource.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pro Biblio</a> &gt; <a href="index.source.html" class="el_package">com.pro.ynov.com.web.rest</a> &gt; <span class="el_source">EmplacementResource.java</span></div><h1>EmplacementResource.java</h1><pre class="source lang-java linenums">package com.pro.ynov.com.web.rest;
+
+import com.pro.ynov.com.domain.Emplacement;
+import com.pro.ynov.com.repository.EmplacementRepository;
+import com.pro.ynov.com.web.rest.errors.BadRequestAlertException;
+
+import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * REST controller for managing {@link com.pro.ynov.com.domain.Emplacement}.
+ */
+@RestController
+@RequestMapping(&quot;/api&quot;)
+@Transactional
+public class EmplacementResource {
+
+<span class="fc" id="L30">    private final Logger log = LoggerFactory.getLogger(EmplacementResource.class);</span>
+
+    private static final String ENTITY_NAME = &quot;emplacement&quot;;
+
+    @Value(&quot;${jhipster.clientApp.name}&quot;)
+    private String applicationName;
+
+    private final EmplacementRepository emplacementRepository;
+
+<span class="fc" id="L39">    public EmplacementResource(EmplacementRepository emplacementRepository) {</span>
+<span class="fc" id="L40">        this.emplacementRepository = emplacementRepository;</span>
+<span class="fc" id="L41">    }</span>
+
+    /**
+     * {@code POST  /emplacements} : Create a new emplacement.
+     *
+     * @param emplacement the emplacement to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new emplacement, or with status {@code 400 (Bad Request)} if the emplacement has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping(&quot;/emplacements&quot;)
+    public ResponseEntity&lt;Emplacement&gt; createEmplacement(@Valid @RequestBody Emplacement emplacement) throws URISyntaxException {
+<span class="fc" id="L52">        log.debug(&quot;REST request to save Emplacement : {}&quot;, emplacement);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (emplacement.getId() != null) {</span>
+<span class="fc" id="L54">            throw new BadRequestAlertException(&quot;A new emplacement cannot already have an ID&quot;, ENTITY_NAME, &quot;idexists&quot;);</span>
+        }
+<span class="fc" id="L56">        Emplacement result = emplacementRepository.save(emplacement);</span>
+<span class="fc" id="L57">        return ResponseEntity.created(new URI(&quot;/api/emplacements/&quot; + result.getId()))</span>
+<span class="fc" id="L58">            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))</span>
+<span class="fc" id="L59">            .body(result);</span>
+    }
+
+    /**
+     * {@code PUT  /emplacements} : Updates an existing emplacement.
+     *
+     * @param emplacement the emplacement to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated emplacement,
+     * or with status {@code 400 (Bad Request)} if the emplacement is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the emplacement couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PutMapping(&quot;/emplacements&quot;)
+    public ResponseEntity&lt;Emplacement&gt; updateEmplacement(@Valid @RequestBody Emplacement emplacement) throws URISyntaxException {
+<span class="fc" id="L73">        log.debug(&quot;REST request to update Emplacement : {}&quot;, emplacement);</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (emplacement.getId() == null) {</span>
+<span class="fc" id="L75">            throw new BadRequestAlertException(&quot;Invalid id&quot;, ENTITY_NAME, &quot;idnull&quot;);</span>
+        }
+<span class="fc" id="L77">        Emplacement result = emplacementRepository.save(emplacement);</span>
+<span class="fc" id="L78">        return ResponseEntity.ok()</span>
+<span class="fc" id="L79">            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, emplacement.getId().toString()))</span>
+<span class="fc" id="L80">            .body(result);</span>
+    }
+
+    /**
+     * {@code GET  /emplacements} : get all the emplacements.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of emplacements in body.
+     */
+    @GetMapping(&quot;/emplacements&quot;)
+    public List&lt;Emplacement&gt; getAllEmplacements() {
+<span class="fc" id="L90">        log.debug(&quot;REST request to get all Emplacements&quot;);</span>
+<span class="fc" id="L91">        return emplacementRepository.findAll();</span>
+    }
+
+    /**
+     * {@code GET  /emplacements/:id} : get the &quot;id&quot; emplacement.
+     *
+     * @param id the id of the emplacement to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the emplacement, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping(&quot;/emplacements/{id}&quot;)
+    public ResponseEntity&lt;Emplacement&gt; getEmplacement(@PathVariable Long id) {
+<span class="fc" id="L102">        log.debug(&quot;REST request to get Emplacement : {}&quot;, id);</span>
+<span class="fc" id="L103">        Optional&lt;Emplacement&gt; emplacement = emplacementRepository.findById(id);</span>
+<span class="fc" id="L104">        return ResponseUtil.wrapOrNotFound(emplacement);</span>
+    }
+
+    /**
+     * {@code DELETE  /emplacements/:id} : delete the &quot;id&quot; emplacement.
+     *
+     * @param id the id of the emplacement to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping(&quot;/emplacements/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteEmplacement(@PathVariable Long id) {
+<span class="fc" id="L115">        log.debug(&quot;REST request to delete Emplacement : {}&quot;, id);</span>
+<span class="fc" id="L116">        emplacementRepository.deleteById(id);</span>
+<span class="fc" id="L117">        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -1,0 +1,12 @@
+bb72fc36efb0294bdcafcee5a9fe865e
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function isScheduler(value) {
+  return value && typeof value.schedule === 'function';
+}
+
+exports.isScheduler = isScheduler;

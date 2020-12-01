@@ -1,0 +1,51 @@
+d675daabce5692333f9d476b1560ef04
+/* istanbul ignore next */
+function cov_wvsjixvgs() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/entities/theme/theme-update.component.html";
+  var hash = "29c3eeb8bc3e41769e873079ce75db06d34726ef";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/entities/theme/theme-update.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 2999
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "29c3eeb8bc3e41769e873079ce75db06d34726ef"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_wvsjixvgs = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_wvsjixvgs();
+cov_wvsjixvgs().s[0]++;
+module.exports = "<div class=\"row justify-content-center\">\n    <div class=\"col-8\">\n        <form name=\"editForm\" role=\"form\" novalidate (ngSubmit)=\"save()\" [formGroup]=\"editForm\">\n            <h2 id=\"jhi-theme-heading\" jhiTranslate=\"proBiblioApp.theme.home.createOrEditLabel\">Create or edit a Theme</h2>\n\n            <div>\n                <jhi-alert-error></jhi-alert-error>\n\n                <div class=\"form-group\" [hidden]=\"!editForm.get('id')!.value\">\n                    <label for=\"id\" jhiTranslate=\"global.field.id\">ID</label>\n                    <input type=\"text\" class=\"form-control\" id=\"id\" name=\"id\" formControlName=\"id\" readonly />\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"form-control-label\" jhiTranslate=\"proBiblioApp.theme.theme\" for=\"field_theme\">Theme</label>\n                    <input type=\"text\" class=\"form-control\" name=\"theme\" id=\"field_theme\"\n                           formControlName=\"theme\"/>\n                    <div *ngIf=\"editForm.get('theme')!.invalid && (editForm.get('theme')!.dirty || editForm.get('theme')!.touched)\">\n                        <small class=\"form-text text-danger\"\n                               *ngIf=\"editForm.get('theme')?.errors?.required\" jhiTranslate=\"entity.validation.required\">\n                        This field is required.\n                        </small>\n                        <small class=\"form-text text-danger\"\n                               *ngIf=\"editForm.get('theme')?.errors?.maxlength\" jhiTranslate=\"entity.validation.maxlength\" [translateValues]=\"{ max: 50 }\">\n                        This field cannot be longer than 50 characters.\n                        </small>\n                    </div>\n                </div>\n\n                <div class=\"form-group\">\n                    <label jhiTranslate=\"proBiblioApp.theme.livre\" for=\"field_livres\">Livre</label>\n                    <select class=\"form-control\" id=\"field_livres\" multiple name=\"livres\" formControlName=\"livres\">\n                        <option [ngValue]=\"getSelected(editForm.get('livres')!.value, livreOption)\" *ngFor=\"let livreOption of livres; trackBy: trackById\">{{ livreOption.titre }}</option>\n                    </select>\n                </div>\n            </div>\n\n            <div>\n                <button type=\"button\" id=\"cancel-save\" class=\"btn btn-secondary\" (click)=\"previousState()\">\n                    <fa-icon icon=\"ban\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.cancel\">Cancel</span>\n                </button>\n\n                <button type=\"submit\" id=\"save-entity\" [disabled]=\"editForm.invalid || isSaving\" class=\"btn btn-primary\">\n                    <fa-icon icon=\"save\"></fa-icon>&nbsp;<span jhiTranslate=\"entity.action.save\">Save</span>\n                </button>\n            </div>\n        </form>\n    </div>\n</div>\n";

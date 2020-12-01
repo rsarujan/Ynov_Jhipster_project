@@ -1,0 +1,16 @@
+f86b08edb98f4ac0f7e2f533fe868d56
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var zip_1 = require("../observable/zip");
+
+function zipAll(project) {
+  return function (source) {
+    return source.lift(new zip_1.ZipOperator(project));
+  };
+}
+
+exports.zipAll = zipAll;

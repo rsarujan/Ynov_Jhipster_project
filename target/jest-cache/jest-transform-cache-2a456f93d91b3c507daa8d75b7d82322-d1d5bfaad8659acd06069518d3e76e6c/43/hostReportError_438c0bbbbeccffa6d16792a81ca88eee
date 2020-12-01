@@ -1,0 +1,14 @@
+3a226ddb2503dbaa3ca5d2d599b14940
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function hostReportError(err) {
+  setTimeout(function () {
+    throw err;
+  }, 0);
+}
+
+exports.hostReportError = hostReportError;

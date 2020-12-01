@@ -1,0 +1,14 @@
+ce30439d1b52552651427912f66e7385
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var iterator_1 = require("../symbol/iterator");
+
+function isIterable(input) {
+  return input && typeof input[iterator_1.iterator] === 'function';
+}
+
+exports.isIterable = isIterable;

@@ -1,0 +1,18 @@
+f10b35dbf4d57fab6b28c856d98c0c64
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var Observable_1 = require("../Observable");
+
+var noop_1 = require("../util/noop");
+
+exports.NEVER = new Observable_1.Observable(noop_1.noop);
+
+function never() {
+  return exports.NEVER;
+}
+
+exports.never = never;

@@ -1,0 +1,414 @@
+ecff057ce7fd932e3889f7300230c162
+"use strict";
+
+/* istanbul ignore next */
+function cov_1b510igex1() {
+  var path = "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/user-management/user-management-delete-dialog.component.ts";
+  var hash = "b67f7e68c2142f334db2767975399a0def38df71";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/user-management/user-management-delete-dialog.component.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 53
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 23
+        },
+        end: {
+          line: 6,
+          column: 60
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 22
+        },
+        end: {
+          line: 7,
+          column: 44
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 23
+        },
+        end: {
+          line: 8,
+          column: 60
+        }
+      },
+      "7": {
+        start: {
+          line: 9,
+          column: 42
+        },
+        end: {
+          line: 24,
+          column: 1
+        }
+      },
+      "8": {
+        start: {
+          line: 11,
+          column: 8
+        },
+        end: {
+          line: 11,
+          column: 39
+        }
+      },
+      "9": {
+        start: {
+          line: 12,
+          column: 8
+        },
+        end: {
+          line: 12,
+          column: 39
+        }
+      },
+      "10": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 13,
+          column: 41
+        }
+      },
+      "11": {
+        start: {
+          line: 16,
+          column: 8
+        },
+        end: {
+          line: 16,
+          column: 35
+        }
+      },
+      "12": {
+        start: {
+          line: 19,
+          column: 8
+        },
+        end: {
+          line: 22,
+          column: 11
+        }
+      },
+      "13": {
+        start: {
+          line: 20,
+          column: 12
+        },
+        end: {
+          line: 20,
+          column: 64
+        }
+      },
+      "14": {
+        start: {
+          line: 21,
+          column: 12
+        },
+        end: {
+          line: 21,
+          column: 37
+        }
+      },
+      "15": {
+        start: {
+          line: 25,
+          column: 0
+        },
+        end: {
+          line: 31,
+          column: 40
+        }
+      },
+      "16": {
+        start: {
+          line: 32,
+          column: 0
+        },
+        end: {
+          line: 32,
+          column: 82
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 10,
+            column: 4
+          },
+          end: {
+            line: 10,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 10,
+            column: 56
+          },
+          end: {
+            line: 14,
+            column: 5
+          }
+        },
+        line: 10
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 15,
+            column: 4
+          },
+          end: {
+            line: 15,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 15,
+            column: 13
+          },
+          end: {
+            line: 17,
+            column: 5
+          }
+        },
+        line: 15
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 18,
+            column: 4
+          },
+          end: {
+            line: 18,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 18,
+            column: 25
+          },
+          end: {
+            line: 23,
+            column: 5
+          }
+        },
+        line: 18
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 19,
+            column: 49
+          },
+          end: {
+            line: 19,
+            column: 50
+          }
+        },
+        loc: {
+          start: {
+            line: 19,
+            column: 55
+          },
+          end: {
+            line: 22,
+            column: 9
+          }
+        },
+        line: 19
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/user-management/user-management-delete-dialog.component.ts",
+      mappings: ";;;;AAAA,wCAA0C;AAC1C,6DAA4D;AAC5D,6CAA8C;AAG9C,6DAAyD;AAMzD,IAAa,mCAAmC,GAAhD,MAAa,mCAAmC;IAG9C,YAAoB,WAAwB,EAAS,WAA2B,EAAU,YAA6B;QAAnG,gBAAW,GAAX,WAAW,CAAa;QAAS,gBAAW,GAAX,WAAW,CAAgB;QAAU,iBAAY,GAAZ,YAAY,CAAiB;IAAG,CAAC;IAE3H,MAAM;QACJ,IAAI,CAAC,WAAW,CAAC,OAAO,EAAE,CAAC;IAC7B,CAAC;IAED,aAAa,CAAC,KAAa;QACzB,IAAI,CAAC,WAAW,CAAC,MAAM,CAAC,KAAK,CAAC,CAAC,SAAS,CAAC,GAAG,EAAE;YAC5C,IAAI,CAAC,YAAY,CAAC,SAAS,CAAC,sBAAsB,CAAC,CAAC;YACpD,IAAI,CAAC,WAAW,CAAC,KAAK,EAAE,CAAC;QAC3B,CAAC,CAAC,CAAC;IACL,CAAC;CACF,CAAA;AAfY,mCAAmC;IAJ/C,gBAAS,CAAC;QACT,QAAQ,EAAE,6BAA6B;QACvC,kBAAa,gDAAgD,CAAA;KAC9D,CAAC;6CAIiC,0BAAW,EAAsB,6BAAc,EAAwB,6BAAe;GAH5G,mCAAmC,CAe/C;AAfY,kFAAmC",
+      names: [],
+      sources: ["/Users/sarujanrajaratnam/Desktop/Ynov/YNOV_PROJET_BIBLIOTHEQUE_CLEMENCE_SARUJAN/Ynov_TEST_Projet/src/main/webapp/app/admin/user-management/user-management-delete-dialog.component.ts"],
+      sourcesContent: ["import { Component } from '@angular/core';\nimport { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';\nimport { JhiEventManager } from 'ng-jhipster';\n\nimport { User } from 'app/core/user/user.model';\nimport { UserService } from 'app/core/user/user.service';\n\n@Component({\n  selector: 'jhi-user-mgmt-delete-dialog',\n  templateUrl: './user-management-delete-dialog.component.html',\n})\nexport class UserManagementDeleteDialogComponent {\n  user?: User;\n\n  constructor(private userService: UserService, public activeModal: NgbActiveModal, private eventManager: JhiEventManager) {}\n\n  cancel(): void {\n    this.activeModal.dismiss();\n  }\n\n  confirmDelete(login: string): void {\n    this.userService.delete(login).subscribe(() => {\n      this.eventManager.broadcast('userListModification');\n      this.activeModal.close();\n    });\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "b67f7e68c2142f334db2767975399a0def38df71"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1b510igex1 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1b510igex1();
+cov_1b510igex1().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1b510igex1().s[1]++;
+exports.UserManagementDeleteDialogComponent = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_1b510igex1().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_1b510igex1().s[3]++, require("@angular/core"));
+const ng_bootstrap_1 =
+/* istanbul ignore next */
+(cov_1b510igex1().s[4]++, require("@ng-bootstrap/ng-bootstrap"));
+const ng_jhipster_1 =
+/* istanbul ignore next */
+(cov_1b510igex1().s[5]++, require("ng-jhipster"));
+const user_service_1 =
+/* istanbul ignore next */
+(cov_1b510igex1().s[6]++, require("app/core/user/user.service"));
+
+/* istanbul ignore next */
+cov_1b510igex1().s[7]++;
+let UserManagementDeleteDialogComponent = class UserManagementDeleteDialogComponent {
+  constructor(userService, activeModal, eventManager) {
+    /* istanbul ignore next */
+    cov_1b510igex1().f[0]++;
+    cov_1b510igex1().s[8]++;
+    this.userService = userService;
+
+    /* istanbul ignore next */
+    cov_1b510igex1().s[9]++;
+    this.activeModal = activeModal;
+
+    /* istanbul ignore next */
+    cov_1b510igex1().s[10]++;
+    this.eventManager = eventManager;
+  }
+
+  cancel() {
+    /* istanbul ignore next */
+    cov_1b510igex1().f[1]++;
+    cov_1b510igex1().s[11]++;
+    this.activeModal.dismiss();
+  }
+
+  confirmDelete(login) {
+    /* istanbul ignore next */
+    cov_1b510igex1().f[2]++;
+    cov_1b510igex1().s[12]++;
+    this.userService.delete(login).subscribe(() => {
+      /* istanbul ignore next */
+      cov_1b510igex1().f[3]++;
+      cov_1b510igex1().s[13]++;
+      this.eventManager.broadcast('userListModification');
+
+      /* istanbul ignore next */
+      cov_1b510igex1().s[14]++;
+      this.activeModal.close();
+    });
+  }
+
+};
+
+/* istanbul ignore next */
+cov_1b510igex1().s[15]++;
+UserManagementDeleteDialogComponent = tslib_1.__decorate([core_1.Component({
+  selector: 'jhi-user-mgmt-delete-dialog',
+  template: require('./user-management-delete-dialog.component.html')
+}), tslib_1.__metadata("design:paramtypes", [user_service_1.UserService, ng_bootstrap_1.NgbActiveModal, ng_jhipster_1.JhiEventManager])], UserManagementDeleteDialogComponent);
+
+/* istanbul ignore next */
+cov_1b510igex1().s[16]++;
+exports.UserManagementDeleteDialogComponent = UserManagementDeleteDialogComponent;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zYXJ1amFucmFqYXJhdG5hbS9EZXNrdG9wL1lub3YvWU5PVl9QUk9KRVRfQklCTElPVEhFUVVFX0NMRU1FTkNFX1NBUlVKQU4vWW5vdl9URVNUX1Byb2pldC9zcmMvbWFpbi93ZWJhcHAvYXBwL2FkbWluL3VzZXItbWFuYWdlbWVudC91c2VyLW1hbmFnZW1lbnQtZGVsZXRlLWRpYWxvZy5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFpQlE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBakJSLE1BQUEsTUFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLGVBQUEsQ0FBQSxDQUFBO0FBQ0EsTUFBQSxjQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsNEJBQUEsQ0FBQSxDQUFBO0FBQ0EsTUFBQSxhQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsYUFBQSxDQUFBLENBQUE7QUFHQSxNQUFBLGNBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSw0QkFBQSxDQUFBLENBQUE7Ozs7QUFNQSxJQUFhLG1DQUFtQyxHQUFoRCxNQUFhLG1DQUFiLENBQWdEO0FBRzlDLEVBQUEsV0FBQSxDQUFvQixXQUFwQixFQUFxRCxXQUFyRCxFQUEwRixZQUExRixFQUF1SDtBQUFBO0FBQUE7QUFBQTtBQUFuRyxTQUFBLFdBQUEsR0FBQSxXQUFBOztBQUFtRztBQUFBO0FBQWxFLFNBQUEsV0FBQSxHQUFBLFdBQUE7O0FBQWtFO0FBQUE7QUFBN0IsU0FBQSxZQUFBLEdBQUEsWUFBQTtBQUFpQzs7QUFFM0gsRUFBQSxNQUFNLEdBQUE7QUFBQTtBQUFBO0FBQUE7QUFDSixTQUFLLFdBQUwsQ0FBaUIsT0FBakI7QUFDRDs7QUFFRCxFQUFBLGFBQWEsQ0FBQyxLQUFELEVBQWM7QUFBQTtBQUFBO0FBQUE7QUFDekIsU0FBSyxXQUFMLENBQWlCLE1BQWpCLENBQXdCLEtBQXhCLEVBQStCLFNBQS9CLENBQXlDLE1BQUs7QUFBQTtBQUFBO0FBQUE7QUFDNUMsV0FBSyxZQUFMLENBQWtCLFNBQWxCLENBQTRCLHNCQUE1Qjs7QUFENEM7QUFBQTtBQUU1QyxXQUFLLFdBQUwsQ0FBaUIsS0FBakI7QUFDRCxLQUhEO0FBSUQ7O0FBZDZDLENBQWhEOzs7O0FBQWEsbUNBQW1DLEdBQUEsT0FBQSxDQUFBLFVBQUEsQ0FBQSxDQUovQyxNQUFBLENBQUEsU0FBQSxDQUFVO0FBQ1QsRUFBQSxRQUFRLEVBQUUsNkJBREQ7QUFFVCxFQUFBLFFBQUEsRUFBQSxPQUFBLENBQWEsZ0RBQWI7QUFGUyxDQUFWLENBSStDLEUseUNBR2IsY0FBQSxDQUFBLFcsRUFBaUMsY0FBQSxDQUFBLGMsRUFBc0MsYUFBQSxDQUFBLGUsRUFIMUQsQ0FBQSxFQUFuQyxtQ0FBbUMsQ0FBbkM7Ozs7QUFBQSxPQUFBLENBQUEsbUNBQUEsR0FBQSxtQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgTmdiQWN0aXZlTW9kYWwgfSBmcm9tICdAbmctYm9vdHN0cmFwL25nLWJvb3RzdHJhcCc7XG5pbXBvcnQgeyBKaGlFdmVudE1hbmFnZXIgfSBmcm9tICduZy1qaGlwc3Rlcic7XG5cbmltcG9ydCB7IFVzZXIgfSBmcm9tICdhcHAvY29yZS91c2VyL3VzZXIubW9kZWwnO1xuaW1wb3J0IHsgVXNlclNlcnZpY2UgfSBmcm9tICdhcHAvY29yZS91c2VyL3VzZXIuc2VydmljZSc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ2poaS11c2VyLW1nbXQtZGVsZXRlLWRpYWxvZycsXG4gIHRlbXBsYXRlVXJsOiAnLi91c2VyLW1hbmFnZW1lbnQtZGVsZXRlLWRpYWxvZy5jb21wb25lbnQuaHRtbCcsXG59KVxuZXhwb3J0IGNsYXNzIFVzZXJNYW5hZ2VtZW50RGVsZXRlRGlhbG9nQ29tcG9uZW50IHtcbiAgdXNlcj86IFVzZXI7XG5cbiAgY29uc3RydWN0b3IocHJpdmF0ZSB1c2VyU2VydmljZTogVXNlclNlcnZpY2UsIHB1YmxpYyBhY3RpdmVNb2RhbDogTmdiQWN0aXZlTW9kYWwsIHByaXZhdGUgZXZlbnRNYW5hZ2VyOiBKaGlFdmVudE1hbmFnZXIpIHt9XG5cbiAgY2FuY2VsKCk6IHZvaWQge1xuICAgIHRoaXMuYWN0aXZlTW9kYWwuZGlzbWlzcygpO1xuICB9XG5cbiAgY29uZmlybURlbGV0ZShsb2dpbjogc3RyaW5nKTogdm9pZCB7XG4gICAgdGhpcy51c2VyU2VydmljZS5kZWxldGUobG9naW4pLnN1YnNjcmliZSgoKSA9PiB7XG4gICAgICB0aGlzLmV2ZW50TWFuYWdlci5icm9hZGNhc3QoJ3VzZXJMaXN0TW9kaWZpY2F0aW9uJyk7XG4gICAgICB0aGlzLmFjdGl2ZU1vZGFsLmNsb3NlKCk7XG4gICAgfSk7XG4gIH1cbn1cbiJdfQ==

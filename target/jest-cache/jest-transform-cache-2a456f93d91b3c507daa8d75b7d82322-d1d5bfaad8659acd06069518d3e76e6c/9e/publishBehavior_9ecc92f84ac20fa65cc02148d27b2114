@@ -1,0 +1,18 @@
+f08704a5291b557323e7bc7ce2229a1d
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var BehaviorSubject_1 = require("../BehaviorSubject");
+
+var multicast_1 = require("./multicast");
+
+function publishBehavior(value) {
+  return function (source) {
+    return multicast_1.multicast(new BehaviorSubject_1.BehaviorSubject(value))(source);
+  };
+}
+
+exports.publishBehavior = publishBehavior;
