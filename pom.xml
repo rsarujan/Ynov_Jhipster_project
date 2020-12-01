@@ -56,6 +56,26 @@
         <!-- jhipster-needle-maven-plugin-repository -->
     </pluginRepositories>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://bilonjea.jfrog.io/artifactory/libs-snapshot</url>
+        </snapshotRepository>
+        <repository>
+            <id>central</id>
+            <url>https://bilonjea.jfrog.io/artifactory/libs-release</url>
+        </repository>
+    </distributionManagement>
+    <!--<distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://vps-d02dec5b.vps.ovh.net:8081/artifactory/libs-snapshot</url>
+        </snapshotRepository>
+        <repository>
+            <id>central</id>
+            <url>https://vps-d02dec5b.vps.ovh.net:8081/artifactory/libs-release</url>
+        </repository>
+    </distributionManagement>-->
     <!-- jhipster-needle-distribution-management -->
 
     <properties>
@@ -125,7 +145,11 @@
         <junit.utReportFolder>${project.testresult.directory}/test</junit.utReportFolder>
         <junit.itReportFolder>${project.testresult.directory}/integrationTest</junit.itReportFolder>
         <!-- jhipster-needle-maven-property -->
+        <!--<sonar.projectKey>rsarujan_Ynov_TEST_Projet</sonar.projectKey>
+        <sonar.organization>rsarujan</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>-->
     </properties>
+
 
     <dependencyManagement>
         <dependencies>
@@ -803,7 +827,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <!-- Force alphabetical order to have a reproducible build -->
+                        <!-- Force alphabetical order to have a reproducible build-->
                         <runOrder>alphabetical</runOrder>
                         <reportsDirectory>${junit.utReportFolder}</reportsDirectory>
                         <excludes>
