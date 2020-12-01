@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.pro.ynov.com.config.WebConfigurerTest
--------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.384 s - in com.pro.ynov.com.config.WebConfigurerTest

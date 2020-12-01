@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.pro.ynov.com.service.mapper.UserMapperTest
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s - in com.pro.ynov.com.service.mapper.UserMapperTest
