@@ -1,6 +1,8 @@
 name: Application CI
-branches:
-  - 'sarujan'
+trigger:
+  branches:
+    include:
+    - sarujan
 on: [push, pull_request]
 jobs:
     pipeline:
