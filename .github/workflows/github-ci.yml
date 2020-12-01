@@ -1,4 +1,6 @@
 name: Application CI
+branches:
+  - 'sarujan'
 on: [push, pull_request]
 jobs:
     pipeline:
