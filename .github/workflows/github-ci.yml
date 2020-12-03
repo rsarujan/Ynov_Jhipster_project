@@ -81,7 +81,7 @@ jobs:
 
             - name: Package application -2 
               run: |
-                echo "<?xml version="1.0" encoding="UTF-8"?>
+                echo '<?xml version="1.0" encoding="UTF-8"?>
                       <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
                       <servers>
@@ -91,7 +91,7 @@ jobs:
                              <password>${{ secrets.JFROG_OSS_REPO_PASS }}</password>
                          </server>
                      </servers>
-                     </settings>" > ~/.m2/settings.xml
+                     </settings>' > ~/.m2/settings.xml
              
                  cat ~/.m2/settings.xml
                  mvn -ntp package deploy -Pprod -DskipTests
