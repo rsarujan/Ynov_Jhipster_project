@@ -28,44 +28,44 @@ jobs:
                   ./mvnw -ntp clean verify -P-webpack
             - name: Run frontend test
               run: npm run test
-            - name: Analyze code with SonarQube
-              continue-on-error: true
-              env:
-                  GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}
-                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-              run: |
-                  if [ -n $SONAR_TOKEN ]; then
-                      ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
-                  else
-                      echo No SONAR_TOKEN, skipping...
-                  fi
-
-
-
-            #- name: Cache SonarCloud packages
-            #  uses: actions/cache@v1
-            #  with:
-            #    path: ~/.sonar/cache
-            #    key: ${{ runner.os }}-sonar
-            #    restore-keys: ${{ runner.os }}-sonar
-            #- name: Cache Maven packages
-            #  uses: actions/cache@v1
-            #  with:
-            #    path: ~/.m2
-            #    key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-            #    restore-keys: ${{ runner.os }}-m2
-            #- name: Build and analyze
+            #- name: Analyze code with SonarQube
             #  continue-on-error: true
             #  env:
-            #    GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}  # Needed to get PR information, if any
-            #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-            #  #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+            #      GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}
+            #      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             #  run: |
             #      if [ -n $SONAR_TOKEN ]; then
             #          ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
             #      else
             #          echo No SONAR_TOKEN, skipping...
             #      fi
+
+
+
+            - name: Cache SonarCloud packages
+              uses: actions/cache@v1
+              with:
+                path: ~/.sonar/cache
+                key: ${{ runner.os }}-sonar
+                restore-keys: ${{ runner.os }}-sonar
+            - name: Cache Maven packages
+              uses: actions/cache@v1
+              with:
+                path: ~/.m2
+                key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+                restore-keys: ${{ runner.os }}-m2
+            - name: Build and analyze
+              continue-on-error: true
+              env:
+                GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}  # Needed to get PR information, if any
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+              run: |
+                  if [ -n $SONAR_TOKEN ]; then
+                      ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
+                  else
+                      echo No SONAR_TOKEN, skipping...
+                  fi
 
 
 
