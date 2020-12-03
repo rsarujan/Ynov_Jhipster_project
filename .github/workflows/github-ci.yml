@@ -28,7 +28,6 @@ jobs:
                   ./mvnw -ntp clean verify -P-webpack
             - name: Run frontend test
               run: npm run test
-
             - name: Analyze code with SonarQube
               continue-on-error: true
               env:
@@ -56,7 +55,6 @@ jobs:
                 key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
                 restore-keys: ${{ runner.os }}-m2
             - name: Build and analyze
-              continue-on-error: true
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -70,30 +68,39 @@ jobs:
 
 
 
-            - name: Package application
-              continue-on-error: true
-              env:
-                #maven-local-repo-path: ${{secrets.JFROG_OSS_REPO_SNAPSHOTS }}
-                maven-repo-server-id: snapshots
-                maven-repo-server-username: ${{ secrets.JFROG_OSS_REPO_USER }}
-                maven-repo-server-password: ${{ secrets.JFROG_OSS_REPO_PASS }}
+            #- name: Package application
+            #  env:
+            #    #maven-local-repo-path: ${{secrets.JFROG_OSS_REPO_SNAPSHOTS }}
+            #    maven-repo-server-id: snapshots
+            #    maven-repo-server-username: ${{ secrets.JFROG_OSS_REPO_USER }}
+            #    maven-repo-server-password: ${{ secrets.JFROG_OSS_REPO_PASS }}
+            #  run: |
+            #      cat ~/.m2/settings.xml
+            #      ./mvnw -ntp package deploy -Pprod -DskipTests
+
+            - name: Package application -2 
               run: |
-                  cat ~/.m2/settings.xml
-                  ./mvnw -ntp package deploy -Pprod -DskipTests
+                echo "<?xml version="1.0" encoding="UTF-8"?>
+                      <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                      <servers>
+                         <server>
+                             <id>${{ secrets.JFROG_OSS_REPO_SNAPSHOTS }}</id>
+                             <username>${{ secrets.JFROG_OSS_REPO_USER }}</username>
+                             <password>${{ secrets.JFROG_OSS_REPO_PASS }}</password>
+                         </server>
+                     </servers>
+                     </settings>" > ~/.m2/settings.xml
+             
+                 cat ~/.m2/settings.xml
+                 mvn -ntp package deploy -Pprod -DskipTests
 
-
-    jobdeploy:
-      name: Deploy to Herroku -2
-      needs: pipeline
-      runs-on: ubuntu-20.04
-      steps:
-        - uses: actions/checkout@v2
-        - uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
-          with:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
-            heroku_email: ${{secrets.HEROKU_EMAIL}}
-            branch: "master"
-            buildpack: ${{secrets.HEROKU_BUILD_PACK}}
-
-
+            - name: Deploy to Heroku
+              if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+              env:
+                  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+                  heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
+                  heroku_email: ${{secrets.HEROKU_EMAIL}}
+                  branch: "sarujan"
+                  buildpack: ${{secrets.HEROKU_BUILD_PACK}}
+              run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=pro-biblio
