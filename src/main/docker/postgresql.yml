@@ -2,8 +2,8 @@ version: '2'
 services:
   probiblio-postgresql:
     image: postgres:12.3
-    # volumes:
-    #     - ~/volumes/jhipster/proBiblio/postgresql/:/var/lib/postgresql/data/
+    volumes:
+      - ~/volumes/jhipster/proBiblio/postgresql/:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=proBiblio
       - POSTGRES_PASSWORD=
