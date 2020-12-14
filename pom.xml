@@ -3,13 +3,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- =============================================================== -->
+    <!-- Informations du projet -->
+    <!-- =============================================================== -->
+    <!-- ===== Informations Maven ===== -->
     <groupId>com.pro.ynov.com</groupId>
     <artifactId>pro-biblio</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <!-- ===== Informations générales ===== -->
     <name>Pro Biblio</name>
+    <description>
+        Création d'une application de gestion de location de livres sous Jhipster - Projet Ynov (Module: Dev logiciel avancé - MAJ1)
+    </description>
+    
+    <!-- ===== Organisation ===== -->
+    <organization>
+        <name>Ynov Paris Campus</name>
+        <url>https://www.ynov.com/</url>
+    </organization>
 
+    <!-- ===== Licences ===== -->
+    <licenses>
+        <license>
+            <name>GNU General Public License v3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.fr.html</url>
+        </license>
+    </licenses>
 
+    <!-- ===== Développer ===== -->
 	<developers>
 		<developer>
 			<name>Clémence</name>
