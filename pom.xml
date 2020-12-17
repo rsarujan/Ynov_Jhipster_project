@@ -38,16 +38,20 @@
 			<name>Clémence</name>
 			<email>clement.palau@ynov.com</email>
 			<roles>
-				<role></role>
+				<role>Créer les fonctions fonctionnels du projets</role>
+                <role>Gérer le Backend</role>
 			</roles>
 		</developer>
 		<developer>
 			<name>Sarujan</name>
 			<email>sarujan.rajaratnam@ynov.com</email>
 			<roles>
-				<role>Création du projet sous Jhipster</role>
+				<role>Créer du projet sous Jhipster</role>
 				<role>Deployer le projet sous Heroku</role>
 				<role>Déployer le code sous Sonar</role>
+                <role>Créer des différents pipelines CI-CD</role>
+                <role>Créer de la BDD</role>
+                <role>Définir les users stories</role>
 			</roles>
 		</developer>
 	</developers>
@@ -58,8 +62,6 @@
 			<email>j.bilong@gmail.comm</email>
 			<roles>
 				<role>Enseignant</role>
-				<role>Aider sur le projet</role>
-				<role>Mettre une note</role>
 			</roles>
 		</contributor>
 	</contributors>

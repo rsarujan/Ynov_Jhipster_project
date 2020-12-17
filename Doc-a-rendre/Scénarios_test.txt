@@ -1,0 +1,29 @@
+Liste des scénarios de tests :
+  - 1er test - Creation d'un nouveau collaborateur :
+    - Enregistrement d'un utilisateur
+    - Connexion via le compte admin
+    - Accès à la liste des utilisateurs
+    - Vérifier que l'utilisateur existe sinon création d'un nouvel utilisateur
+    - Ouvrir la page de modification de l'utilisateur créé précédemment
+    - Modifier le rôle de l'utilisateur en collaborateur à partir de l'administration
+    - Enregistrer les modifications
+    - Verifier la modification du rôle
+
+
+  - 2e test - Creation d'un nouveau livre :
+    - Connecter avec le compte administrateur
+    - Accés à la liste des livres
+    - Appuyer sur le bouton "Créer un nouveau livre"
+    - Ajouter le titre du livre dans le champs "Titre"
+    - Renseigné le champs "Description" via la quatrième de couverture
+    - Inscrire l'ISBN dans le champs "ISBN"
+    - Renseigné le champs "Code" en suivant la classification décimale universelle
+    - Selectionné dans le champs de liste déroulante "Auteur", le(s) auteur(s) du livre
+    - Selectionné dans le champs de liste déroulante "Theme", le(s) thème(s) du livre
+    - Selectionné dans le champs de liste déroulante "Emplacement", l'emplacement du livre
+    - Appuyer sur le bouton "Sauvegarder"
+    - Vérifier la création du/des nouveau(x) livre(s)
+
+
+  - 3eme test - Emprunter un livre :
+    - Connexion via un compte utilisateur
