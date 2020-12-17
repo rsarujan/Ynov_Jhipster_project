@@ -52,6 +52,10 @@
                 <role>Créer des différents pipelines CI-CD</role>
                 <role>Créer de la BDD</role>
                 <role>Définir les users stories</role>
+                <role>Définir le cas d'utilisation</role>
+                <role>Faire le test manuellement</role>
+                <role>Rédiger le fichier .pdf</role>
+                <role>Rédiger le REAME.md en ajoutant une LICENCE.md</role>
 			</roles>
 		</developer>
 	</developers>
