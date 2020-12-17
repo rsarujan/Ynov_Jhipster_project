@@ -1,15 +1,16 @@
 # proBiblio
 
-## Project description 
+## Project description
+
 This project consists in creating a book rental management application under Jhipster.
 This application was generated using JHipster 6.10.5, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.5](https://www.jhipster.tech/documentation-archive/v6.10.5).
-
 
 ## How to run the project
 
 Before running the project, we invite you to run the different containers of Docker:
 
 To run the Sonar container, please type this command:
+
 ```
 docker-compose -f src/main/docker/sonar.yml up -d
 ```
@@ -20,9 +21,10 @@ To run the Postgres container, please type this command:
 docker-compose -f src/main/docker/postgresql.yml up -d
 ```
 
-To Import or copy the content of the SQL script, please use the 'export.sql' file located in 'src/main/docker/export.sql'.
+To Import or copy the content of the SQL script, please use the 'export.sql' file located in 'Doc-a-rendre/Script/export.sql'.
 
 After you have running the different containers, we invite you to enter this command in order to run the program locally [http://localhost:8080](http://localhost:8080):
+
 ```
 
 java -jar target/*.jar
@@ -31,7 +33,6 @@ java -jar target/*.jar
 ```
 
 If you encounter any problems during the launch of the Jhpister project, we invite you to follow the different steps mentioned below in order to make it work.
-
 
 ## Development
 
