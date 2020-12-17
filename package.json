@@ -24,6 +24,7 @@
     "@ngx-translate/http-loader": "5.0.0",
     "bootstrap": "4.5.0",
     "bootswatch": "4.5.0",
+    "e2e": "^0.0.8",
     "moment": "2.27.0",
     "ng-jhipster": "0.15.0",
     "ngx-cookie-service": "3.0.4",

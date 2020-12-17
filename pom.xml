@@ -3,28 +3,55 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- =============================================================== -->
+    <!-- Informations du projet -->
+    <!-- =============================================================== -->
+    <!-- ===== Informations Maven ===== -->
     <groupId>com.pro.ynov.com</groupId>
     <artifactId>pro-biblio</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <!-- ===== Informations générales ===== -->
     <name>Pro Biblio</name>
+    <description>
+        Création d'une application de gestion de location de livres sous Jhipster - Projet Ynov (Module: Dev logiciel avancé - MAJ1)
+    </description>
+    
+    <!-- ===== Organisation ===== -->
+    <organization>
+        <name>Ynov Paris Campus</name>
+        <url>https://www.ynov.com/</url>
+    </organization>
 
+    <!-- ===== Licences ===== -->
+    <licenses>
+        <license>
+            <name>GNU General Public License v3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.fr.html</url>
+        </license>
+    </licenses>
 
+    <!-- ===== Développer ===== -->
 	<developers>
 		<developer>
 			<name>Clémence</name>
 			<email>clement.palau@ynov.com</email>
 			<roles>
-				<role></role>
+				<role>Créer les fonctions fonctionnels du projets</role>
+                <role>Gérer le Backend</role>
 			</roles>
 		</developer>
 		<developer>
 			<name>Sarujan</name>
 			<email>sarujan.rajaratnam@ynov.com</email>
 			<roles>
-				<role>Création du projet sous Jhipster</role>
+				<role>Créer du projet sous Jhipster</role>
 				<role>Deployer le projet sous Heroku</role>
 				<role>Déployer le code sous Sonar</role>
+                <role>Créer des différents pipelines CI-CD</role>
+                <role>Créer de la BDD</role>
+                <role>Définir les users stories</role>
 			</roles>
 		</developer>
 	</developers>
@@ -35,8 +62,6 @@
 			<email>j.bilong@gmail.comm</email>
 			<roles>
 				<role>Enseignant</role>
-				<role>Aider sur le projet</role>
-				<role>Mettre une note</role>
 			</roles>
 		</contributor>
 	</contributors>
