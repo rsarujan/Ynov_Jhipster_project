@@ -107,18 +107,7 @@ jobs:
                  cat ~/.m2/settings.xml
                  mvn -ntp package deploy -Pprod -DskipTests
 
-            #- name: Deploy to Heroku
-            #  if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-            #  env:
-            #      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-            #      heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
-            #      heroku_email: ${{secrets.HEROKU_EMAIL}}
-            #      branch: "master"
-            #      buildpack: ${{secrets.HEROKU_BUILD_PACK}}
-            #  run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=${{secrets.HEROKU_APP_NAME}}
-
-
-
+            
             - name: Deploy to Heroku
               on:
                 push:
