@@ -101,7 +101,6 @@ jobs:
                 sonar_url: "https://sonarcloud.io"
                 sonar_branch: "master"
                 sonar_token: ${{ secrets.SONAR_TOKEN }}
-                project_key: "proBiblio"
 
             #- name: Package application
             #  env:
