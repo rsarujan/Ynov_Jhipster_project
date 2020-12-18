@@ -92,15 +92,8 @@ jobs:
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-              #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}} -Dsonar.branch.name=master
-              run: ./mvnw -ntp initialize sonar:sonar -Dsonar.login=${{secrets.SONAR_TOKEN}} -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}} -Dsonar.branch.name=master
-
-            - name: Sonar Build Breaker
-              uses: DevOps575/sonar-build-breaker@v1.0.0
-              with:
-                sonar_url: "https://sonarcloud.io"
-                sonar_branch: "master"
-                sonar_token: ${{ secrets.SONAR_TOKEN }}
+              run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}} -Dsonar.branch.name=main
+              #run: ./mvnw -ntp initialize sonar:sonar -Dsonar.login=${{secrets.SONAR_TOKEN}} -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}} -Dsonar.branch.name=main
 
             #- name: Package application
             #  env:
