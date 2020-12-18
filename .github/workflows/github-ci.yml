@@ -54,18 +54,18 @@ jobs:
                 path: ~/.m2
                 key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
                 restore-keys: ${{ runner.os }}-m2
-            - name: Build and analyze
-              continue-on-error: true
-              env:
-                GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}  # Needed to get PR information, if any
-                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-              #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-              run: |
-                  if [ -n $SONAR_TOKEN ]; then
-                      ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
-                  else
-                      echo No SONAR_TOKEN, skipping...
-                  fi
+            #- name: Build and analyze
+            #  continue-on-error: true
+            #  env:
+            #    GITHUB_TOKEN: ${{ secrets.YOUR_GITHUB_TOKEN }}  # Needed to get PR information, if any
+            #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            #  #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+            #  run: |
+            #      if [ -n $SONAR_TOKEN ]; then
+            #          ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}}
+            #      else
+            #          echo No SONAR_TOKEN, skipping...
+            #      fi
 
 
             #- name: Analyze code with SonarQube
@@ -82,14 +82,11 @@ jobs:
             #      fi
                 
             - name: SonarCloud Scan
-              - uses: actions/checkout@v2
-                with:
-                  # Disabling shallow clone is recommended for improving relevancy of reporting
-                  fetch-depth: 0
-              - uses: sonarsource/sonarcloud-github-action@master
-                env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              continue-on-error: true
+              uses: sonarsource/sonarcloud-github-action@master
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
 
