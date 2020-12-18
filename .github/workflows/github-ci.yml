@@ -87,6 +87,13 @@ jobs:
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              run: |
+                java -version
+                if [ -n $SONAR_TOKEN ]; then
+                    mvn -ntp initialize sonar:sonar -Dsonar.organization=${{ secrets.SONAR_ORGANISATION_KEY }} -Dsonar.host.url=${{ secrets.SONAR_URL }}
+                else
+                    echo No SONAR_TOKEN, skipping...
+                fi
 
 
 
