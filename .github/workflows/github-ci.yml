@@ -93,7 +93,7 @@ jobs:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
               #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}} -Dsonar.branch.name=master
-              run: ./mvnw -ntp initialize sonar:sonar -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}} -Dsonar.branch.name=master
+              run: ./mvnw -ntp initialize sonar:sonar -Dsonar.login=${{secrets.SONAR_TOKEN}} -Dsonar.organization=${{secrets.SONAR_ORGANISATION_KEY}} -Dsonar.host.url=${{secrets.SONAR_URL}} -Dsonar.branch.name=master
 
 
             #- name: Package application
